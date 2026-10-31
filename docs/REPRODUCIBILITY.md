@@ -1,6 +1,6 @@
 # Reproducing the frozen formalization
 
-This repository preserves release `fidelity-20261031` of the Lean software `0.2.0-rc3`. The browsable source view and repository wrapper are packaging conveniences around the unchanged frozen archives. The procedure below runs the original checker in a complete extracted project.
+This [repository](https://github.com/VerMoriarty/affine-dual-jacobi-trudi) provides the [paper PDF](../paper/paper.pdf), its [single-file LaTeX source](../paper/main.tex), and release `fidelity-20261031` of the Lean software `0.2.0-rc3`. The paper references [fixed formalization commit `7d58ee5913d67d8036991a5a363260f24f0625bf`](https://github.com/VerMoriarty/affine-dual-jacobi-trudi/tree/7d58ee5913d67d8036991a5a363260f24f0625bf). The browsable source view and repository wrapper are packaging conveniences around the unchanged frozen archives. The procedure below runs the original checker in a complete extracted project.
 
 ## Frozen bytes and browsable files
 
@@ -13,9 +13,9 @@ Both archives use the top-level directory `affine_dual_jt_complete/`. The source
 
 The files in [`../formalization/`](../formalization/) are copied byte for byte from the source ZIP, preserving its internal relative paths. The view omits `fidelity/runs/`, `fidelity/packets/`, `fidelity/reviews/`, and `DELIVERY_MANIFEST.sha256`; these remain in the archive. [`source-view-manifest.json`](source-view-manifest.json) binds the view to the source archive and lists the omissions. In particular, omitted historical environments are referenced by the review records and must be restored before the complete checker can pass. The original full delivery manifest applies to the extracted project.
 
-The frozen manuscript source is `source.tex`; the authoritative mathematical input is `fidelity/inputs/authoritative.pdf`, whose SHA-256 is `b13eaa9ed2a2dc2919980a702965a2d138ee634b49d9a32125ddeaa67fece7ab`. The manuscript source SHA-256 is `4141e8fa7c8fc8d7499b1d10bb77fcc1440d229169f44610709ebaf8968a5a19`. The authoritative input PDF and the originally packaged PDF have the same mathematical body but differ in their final AI-use declarations, as recorded in `fidelity/inputs/pdf_difference.txt`. Both frozen inputs are retained.
+The historical frozen manuscript source is [`formalization/source.tex`](../formalization/source.tex), with its originally packaged PDF at [`formalization/source.pdf`](../formalization/source.pdf); the authoritative mathematical input in the complete extracted project is `fidelity/inputs/authoritative.pdf`, whose SHA-256 is `b13eaa9ed2a2dc2919980a702965a2d138ee634b49d9a32125ddeaa67fece7ab`. The manuscript source SHA-256 is `4141e8fa7c8fc8d7499b1d10bb77fcc1440d229169f44610709ebaf8968a5a19`. The authoritative input PDF and the originally packaged PDF have the same mathematical body but differ in their final AI-use declarations, as recorded in `fidelity/inputs/pdf_difference.txt`. Both frozen inputs are retained.
 
-The single-file publication edition is to be added as `paper/main.tex` and `paper/paper.pdf` after the public URL and fixed formalization commit are available. Publication-file preparation does not itself constitute a new Lean verification.
+The current paper is [`paper/paper.pdf`](../paper/paper.pdf), built from [`paper/main.tex`](../paper/main.tex). The frozen manuscript files remain historical inputs; publication-file preparation does not itself constitute a new Lean verification.
 
 ## Prepare the environment and run
 
@@ -62,7 +62,7 @@ The checker binds the mathematical inputs and checker tools to their hashes, ver
 
 It then exports the compiled environment, checks mathematical declarations and their transitive axiom dependencies, validates independent specification certificates and recorded review evidence, checks route dependencies, and runs supporting exact-arithmetic experiments and compiled semantic mutations. It also rebuilds the project twice in fresh directories, once from a source copy and once from a newly generated ZIP. Those reconstructions start without project build artifacts and share only the checked, pinned dependency checkouts and caches.
 
-The existing archive manifests and past reports establish received byte identity and historical outcomes. A fresh run provides current compilation evidence. Existing success labels are not used in place of new build results. The repository CI is intended to provide the fixed environment and invoke the same full wrapper; consult its actual result for the relevant commit. No successful GitHub CI run is claimed by this document.
+The existing archive manifests and past reports establish received byte identity and historical outcomes. A fresh run provides current compilation evidence. Existing success labels are not used in place of new build results. The complete local `github-preparation-20261101` run is recorded below. The repository CI is intended to provide the fixed environment and invoke the same full wrapper; consult its actual result for the relevant commit. The local result is not a GitHub Actions result, and no successful GitHub CI run is claimed by this document.
 
 ## Mathematical scope and certificate map
 
@@ -100,11 +100,13 @@ Theorem 3.1 has an arbitrary-field interface with its kernel and nonzero-minor a
 
 Corollary 6.2 and its zero-parameter supplement assume `n, k ≥ 1`. In the `Ct` case the exponent `k*y² - j*y` is zero at `j = k, y = 1`; the proof retains that term. It does not assert that every nonzero affine shift vanishes at zero parameter. The zero-parameter supplement also keeps the finite left-hand ratios separate from the half factors on the right.
 
-## Trust and historical evidence
+## Trust and verification evidence
 
 The mathematical transitive axiom allowlist is exactly `propext`, `Classical.choice`, and `Quot.sound`. The audit checks compiled mathematical declarations and their dependencies; source scans provide additional checks. `FidelityLean/Export.lean` has an `unsafe main` for Lean's environment-loading API. That executable is separately hashed, excluded from the mathematical import set, and forbidden as an import of mathematical modules.
 
 Kernel verification establishes proofs of formal types. Interpretation of the paper and agreement with its proof route are supported by separately recorded isolated-agent reviews. The checker validates their structures, source bindings, packet boundaries, and dependency evidence. It does not authenticate reviewer identity, actual understanding, or attestations about fresh context. Exact-arithmetic experiments and error probes support the audit without proving the general identities.
+
+The complete local run `github-preparation-20261101` records overall `pass`, with kernel, object correspondence, reproduction, route correspondence, and statement correspondence all `pass`. The [provenance summary](provenance/GITHUB_PREPARATION.json) records its input and tool bindings and identifies the [compressed full report](../artifacts/github-preparation-20261101-report.json.gz). The compressed report SHA-256 is `8dfa17bd5d35f81c29c2c67d829c148ed38c81abe3a09f82d3b595f04323aa1f`; the uncompressed report SHA-256 is `9e3fbb60291bb92fff25a227304ab7ffce9afd1a7a54c1dfb32df3f0e4008b2f`. The run finished at `2026-10-31T17:22:25.081+00:00` (2026-11-01 in China). It ran locally on macOS and reused the checked, pinned dependency cache. It is not a GitHub Actions run.
 
 The source ZIP contains the historical report `fidelity/runs/acceptance-final-20261031/report.json`, recording an overall pass. Its SHA-256 is `c97d92673ed323de94082fb07c44301918f7153178ec39b27f1f6098fc07e1e7`. The verification ZIP contains the additional origin-host run `fidelity/runs/final-delivery-zip-20261031/report.json`, recording a pass after extraction of the final source ZIP; its SHA-256 is `0ee821c2f22dc4c8c7e1921da9c95c1191977d9d504784b4e9b82bef99a7e58c`.
 

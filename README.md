@@ -2,9 +2,9 @@
 
 Lean 4 proofs and reproducibility materials for **Affine Dual Jacobi–Trudi Identities for Classical Hall–Littlewood Polynomials via Complementary Minors**, by **Helen W. J. Zhang** and **Chengdong Zhao**. The Lean formalization was developed by **Hangzhou Logicon AI Studio**.
 
-[中文简版](docs/README.zh-CN.md) · [Reproduction and mathematical scope](docs/REPRODUCIBILITY.md) · [Citation metadata](CITATION.cff)
+[Paper PDF](paper/paper.pdf) · [LaTeX source](paper/main.tex) · [中文简版](docs/README.zh-CN.md) · [Reproduction and mathematical scope](docs/REPRODUCIBILITY.md) · [Citation metadata](CITATION.cff)
 
-This repository is being prepared for publication. Its frozen formalization release is `fidelity-20261031`, software version `0.2.0-rc3`. The existing acceptance records concern the frozen release; they do not establish that this repository's GitHub CI has passed.
+This [repository](https://github.com/VerMoriarty/affine-dual-jacobi-trudi) provides the paper, Lean proofs, and reproducibility materials. Its frozen formalization release is `fidelity-20261031`, software version `0.2.0-rc3`; [the fixed code commit](https://github.com/VerMoriarty/affine-dual-jacobi-trudi/tree/7d58ee5913d67d8036991a5a363260f24f0625bf) identifies the formalization referenced by the paper. The complete local run `github-preparation-20261101` passed. This is local verification evidence, not a GitHub Actions result.
 
 ## Mathematical coverage
 
@@ -18,16 +18,18 @@ The paper interfaces use a rational-function field over the rationals, with inde
 
 | Path | Contents |
 | --- | --- |
+| [`paper/paper.pdf`](paper/paper.pdf), [`paper/main.tex`](paper/main.tex) | The paper PDF and its single-file LaTeX source, with a link to the fixed formalization commit. |
 | [`formalization/`](formalization/) | Browsable files copied byte for byte from the frozen source ZIP, with the omissions listed below. |
 | [`formalization/AffineDualJT/`](formalization/AffineDualJT/) | Mathematical implementation and proofs. |
 | [`formalization/FidelityLean/`](formalization/FidelityLean/) | Independent specifications, object bridges, and certificates of the specification types. |
-| [`artifacts/`](artifacts/) | The unchanged frozen source ZIP and additive historical verification ZIP, with their SHA-256 files. |
+| [`artifacts/`](artifacts/) | The unchanged frozen source ZIP and additive historical verification ZIP, their SHA-256 files, and the compressed local preparation report. |
+| [`docs/provenance/GITHUB_PREPARATION.json`](docs/provenance/GITHUB_PREPARATION.json) | Summary and hash bindings for the complete local `github-preparation-20261101` run. |
 | [`docs/source-view-manifest.json`](docs/source-view-manifest.json) | Binding between the source archive, browsable files, and omitted paths. |
 | [`tools/verify.py`](tools/verify.py) | Repository wrapper for byte checks, extraction, and the full frozen checker. |
 
 The browsable view omits `fidelity/runs/`, `fidelity/packets/`, `fidelity/reviews/`, and `DELIVERY_MANIFEST.sha256`. The complete frozen project, including the evidence required by the checker, is in the source ZIP. Use the wrapper below to restore it. The instructions inside `formalization/README.md` are preserved from that complete project and should be applied in the extracted working directory.
 
-The frozen manuscript is already available as [`formalization/source.tex`](formalization/source.tex) and [`formalization/source.pdf`](formalization/source.pdf). The single-file publication edition, intended for `paper/main.tex` and `paper/paper.pdf`, will be added after a public repository URL and fixed formalization commit are available. A local paper copy during preparation is not a published repository artifact.
+Read the paper in [`paper/paper.pdf`](paper/paper.pdf), with single-file source in [`paper/main.tex`](paper/main.tex). The frozen [`formalization/source.tex`](formalization/source.tex) and [`formalization/source.pdf`](formalization/source.pdf) are retained as historical inputs to the frozen formalization; their provenance is described in the [reproduction notes](docs/REPRODUCIBILITY.md#frozen-bytes-and-browsable-files).
 
 ## Reproduce
 
@@ -56,7 +58,9 @@ The extracted `lean-toolchain` selects **Lean `4.35.0-rc3`** through Elan. The l
 
 The mathematical axiom allowlist is `propext`, `Classical.choice`, and `Quot.sound`. The Lean kernel checks proofs of formal statements. Matching natural-language mathematics and proof routes to those statements also relies on the separately recorded agent reviews. Hashes and checker validation do not authenticate reviewer identity or establish actual understanding. The separately hashed environment-export executable has an `unsafe main` for the environment-loading API; mathematical modules may not import it.
 
-Historical runs `acceptance-final-20261031` and `final-delivery-zip-20261031` record passing checks on the origin host. Their fresh project reconstructions shared checked, pinned dependency caches. Any current CI result must be read from the workflow for the relevant commit; the historical records are not a substitute for it.
+The complete local run `github-preparation-20261101` passed all five reported dimensions: kernel, object correspondence, reproduction, route correspondence, and statement correspondence. Its [provenance summary](docs/provenance/GITHUB_PREPARATION.json) binds the inputs, tools, and [compressed full report](artifacts/github-preparation-20261101-report.json.gz). This local macOS run reused the checked, pinned dependency cache and is not a GitHub Actions result.
+
+Historical runs `acceptance-final-20261031` and `final-delivery-zip-20261031` also record passing checks on the origin host. Their fresh project reconstructions shared checked, pinned dependency caches. Any current CI result must be read from the workflow for the relevant commit; these records do not establish that GitHub Actions has passed.
 
 ## Attribution
 
@@ -64,4 +68,4 @@ The supplied statement is reproduced verbatim:
 
 > This Lean 4 formalization was developed by Hangzhou Logicon AI Studio, with AI assistance from OpenAI Codex (GPT-6.1 Sol), under human supervision and review.
 
-For the mathematical paper, use the authors and title in `preferred-citation` in [`CITATION.cff`](CITATION.cff). Its top-level author identifies the accompanying software artifact. No public URL or DOI is supplied while publication is being prepared.
+For the mathematical paper, use the authors and title in `preferred-citation` in [`CITATION.cff`](CITATION.cff). Its top-level author identifies the accompanying software artifact. Version `0.2.0-rc3` and date `2026-10-31` identify the frozen software release, not the date of GitHub publication. No DOI is claimed.

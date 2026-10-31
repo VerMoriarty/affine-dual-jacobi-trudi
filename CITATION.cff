@@ -10,7 +10,7 @@
   ],
   "version": "0.2.0-rc3",
   "date-released": "2026-10-31",
-  "abstract": "Lean 4 formalization and reproducibility materials accompanying the mathematical manuscript. Repository publication is being prepared; no public repository URL or DOI is supplied. Version 0.2.0-rc3 and date 2026-10-31 identify the existing frozen fidelity-20261031 software release, not a completed public repository publication.",
+  "abstract": "Lean 4 formalization and reproducibility materials accompanying the mathematical manuscript, with the paper and code available in the public repository. Version 0.2.0-rc3 and date 2026-10-31 identify the existing frozen fidelity-20261031 software release, not the date of GitHub publication. No DOI is claimed.",
   "preferred-citation": {
     "type": "unpublished",
     "title": "Affine Dual Jacobi-Trudi Identities for Classical Hall-Littlewood Polynomials via Complementary Minors",
@@ -27,6 +27,9 @@
         "affiliation": "School of Mathematics and Statistics, Central South University",
         "email": "cdzhao@csu.edu.cn"
       }
-    ]
-  }
+    ],
+    "url": "https://github.com/VerMoriarty/affine-dual-jacobi-trudi/blob/main/paper/paper.pdf"
+  },
+  "repository-code": "https://github.com/VerMoriarty/affine-dual-jacobi-trudi.git",
+  "url": "https://github.com/VerMoriarty/affine-dual-jacobi-trudi"
 }
