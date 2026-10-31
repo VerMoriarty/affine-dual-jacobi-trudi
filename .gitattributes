@@ -1,0 +1,5 @@
+* text=auto
+formalization/** -text
+artifacts/** -text
+*.pdf -text
+*.zip -text

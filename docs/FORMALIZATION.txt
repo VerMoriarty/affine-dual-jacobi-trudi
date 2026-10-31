@@ -1,0 +1,523 @@
+FORMALIZATION AND REPRODUCIBILITY SUPPLEMENT
+
+Paper: Affine Dual Jacobi-Trudi Identities for Classical Hall-Littlewood
+Polynomials via Complementary Minors
+Edition: minimal disclosure edition, prepared locally on 2026-11-01
+Frozen Lean release: fidelity-20261031
+GitHub URL pending
+
+This supplement records the existing formalization and the evidence supplied
+with the frozen release. Preparing this publication edition did not rebuild
+Lean or rerun the full fidelity checker. The new edition's validation reports
+concern the publication files and their preservation and presentation checks.
+The Lean results and reconstruction outcomes below are attributed to the
+previously recorded runs, with their dates and content bindings stated below.
+
+All source paths in this document are relative to the frozen project root,
+affine_dual_jt_complete/, unless an edition-relative path is explicitly given.
+After extracting the source ZIP, that root is the directory containing
+lean-toolchain, lakefile.toml, AffineDualJT/, FidelityLean/ and scripts/.
+No personal computer path is required to use these instructions.
+
+1. MATHEMATICAL SCOPE AND SOURCE MATERIAL
+
+The release supplies certificates for all 16 numbered theorem, proposition,
+lemma and corollary environments in the mathematical paper. A separate
+seventeenth aggregate entry certifies the seven zero-parameter specializations
+in the final sentence of Corollary 6.2. These are aggregate entry counts, not
+counts of individual Lean theorems or independently stated mathematical claims.
+
+The frozen source manuscript is source.tex. The authoritative mathematical PDF
+is fidelity/inputs/authoritative.pdf. Their SHA-256 values are:
+
+  source.tex
+    4141e8fa7c8fc8d7499b1d10bb77fcc1440d229169f44610709ebaf8968a5a19
+  fidelity/inputs/authoritative.pdf
+    b13eaa9ed2a2dc2919980a702965a2d138ee634b49d9a32125ddeaa67fece7ab
+
+The source ZIP also retains the original input archive and the provenance and
+review materials selected by its delivery manifest. The authoritative PDF and
+the PDF originally packaged with the input archive have the same mathematical
+body; their final AI-use declarations differ, as recorded in
+fidelity/inputs/pdf_difference.txt. This supplement does not resolve that
+provenance difference by silently replacing either frozen input.
+
+The detailed material formerly placed in the author-edition paper is preserved
+in publication/author_edition/formalization.tex and
+publication/author_edition/appendix.tex in the working project. This supplement
+restates the relevant information so that readers need not obtain those
+edition files. The complete executable example supplied here is copied from
+publication/author_edition/ListingCheck.lean without changing its bytes.
+
+2. INDEPENDENT DEFINITIONS AND THEIR IMPLEMENTATION BRIDGES
+
+FidelityLean/Spec.lean imports Mathlib, not the implementation modules. In the
+namespace Fidelity.Spec it defines the paper's objects and proposition types.
+The assertions defined with "def ... : Prop" are specifications, not axioms
+or proofs. FidelityLean/ZeroParameterSpec.lean imports this specification and
+adds the seven zero-parameter proposition types.
+
+The paper's symbolic field is represented by
+
+  ParameterField n = FractionRing (MvPolynomial (Fin (n + 1)) Q).
+
+Slot zero is the indeterminate t, or tau in the square-root cases. The other
+slots are the n independent variables; symbolicX packages them as units.
+Theorems prove that these indeterminates are nonzero. Lean's Fin indices begin
+at zero, while paperIndex i = i.val + 1 gives the paper's indices 1,...,k.
+All coefficient and affine-shift indices are integers.
+
+The seven Weyl objects are defined independently of their affine determinants.
+For a signed permutation w, let u_a be x_(sigma(a)) or its inverse according
+to the sign at output position a. Put q=t except in BC and Bminus, where
+q=tau^2. The specification P is the finite sum of
+
+  [product_a u_a^(-k) rho_c(q,tau,u_a)]
+  [product_(a<b) ((q u_a-u_b)(1-q u_a u_b)) /
+                    ((u_a-u_b)(1-u_a u_b))]
+
+over all signed permutations, divided by V_n(q) nu_c(n,k,q,tau), where
+
+  V_n(q) = product_(r=1,...,n) (1 + q + ... + q^(r-1)).
+
+The boundary factors and width-zero normalizations are:
+
+  Case     rho_c(q,tau,z)             nu_c(n,0,q,tau)
+  C0       1/(1-z^2)                  1
+  Ct       (1-q z^2)/(1-z^2)          product_(r=1,...,n) (1+q^r)
+  BC       (1+tau z)/(1-z^2)          1
+  B0       1/(1-z)                    1
+  Bminus   (1+tau z)/(1-z)            product_(r=0,...,n-1) (1-tau^(2r+1))
+  Bplus    1                          product_(r=0,...,n-1) (1+q^r)
+  Bt       (1-q z)/(1-z)              product_(r=1,...,n) (1+q^r)
+
+For positive k the factor nu_c is 1. The exact definitions are P, parameter,
+rho, nuZero, nu, Vn, weylPoint, weylPairProduct and weylSummand in Spec.lean.
+
+The generating polynomials and their coefficients are independently defined:
+
+  Edot(z)  = product_a (1+x_a z)(1+x_a^(-1) z),
+  Eddot(z) = (1+z) Edot(z).
+
+dotCoeff x r is the coefficient of z^r in Edot for 0<=r<=2n, and is zero
+outside that interval. ddotCoeff has the analogous cutoff 0<=r<=2n+1.
+Their coefficient conventions retain e_(2n-r)=e_r,
+ee_(2n+1-r)=ee_r and ee_r=e_r+e_(r-1), including the zero extensions.
+Writing these as e_r and ee_r and using one-based i, the four row kernels are
+
+  lambda_i(m) = e_(n-i+m) - e_(n+i+m),
+  h_i(m)      = e_(n-i+m) + e_(n+i+m-1),
+  hPlus_i(m)  = e_(n-i+m) + e_(n+i+m-2),
+  hHat_i(m)   = ee_(n-i+m) + ee_(n+i+m-1).
+
+For a period K and weights w_j(y), JK is the sum over y in Z^k of
+
+  det_(i,j=1,...,k) [w_j(y_i) row_i(j-K y_i)].
+
+JKEven restricts this sum to Even(sum_i y_i). It does not require each y_i
+to be even. The code uses finsum and proves finite support for the relevant
+integrands; no arbitrary numerical truncation is substituted for the sum.
+
+In these conventions, the seven main affine interfaces have the following
+data. Each exponent below is an integer, j ranges from 1 to k, and y is an
+integer shift.
+
+  Case     K       row      w_j(y)                         prefactor/lattice
+  B0       2k+1    h        (-1)^y t^[k y^2+(y^2+y)/2-j y]  1, all Z^k
+  Bminus   2k      h        tau^[2k y^2-(2j-1)y]             1, all Z^k
+  Bplus    2k      hPlus    (-1)^y t^[k y^2-(j-1)y]          1/2, all Z^k
+  C0       2k+2    lambda   t^[(k+1)y^2-j y]                1, all Z^k
+  Ct       2k      lambda   t^[k y^2-j y]                    1, even total sum
+  BC       2k+1    lambda   (-1)^y tau^[(2k+1)y^2-2j y]      1, all Z^k
+  Bt       2k      hHat     (-1)^y t^[k y^2-(j-1)y]          1/2, all Z^k
+
+For B0, Fidelity.Bridge.expB0_eq proves that the implemented integer
+expression agrees with the printed half-integral-looking exponent
+((2k+1)y^2-(2j-1)y)/2, including for negative y. The square-root cases use
+integer powers of tau and the relation t=tau^2, rather than an undefined
+choice of a square root in an arbitrary field.
+
+FidelityLean/CoefficientBridge.lean proves equality of the independent and
+implemented polynomials, coefficient functions, four kernels, affine
+integrands, full sums, even-total-sum lattice, and weights. Actual declaration
+names include Fidelity.Bridge.Edot_eq, dotCoeff_eq, ddotCoeff_eq,
+lambdaKernel_eq, hKernel_eq, hPlusKernel_eq, hHatKernel_eq, jIntegrand_eq,
+JK_eq, EvenLattice_eq, JKEven_eq and AffineFiniteSupport_eq.
+
+FidelityLean/WeylBridge.lean proves the corresponding Weyl-object identities.
+Its signsReindex equivalence reconciles signs indexed by output positions
+with signs indexed by permuted variables. weylSummand_eq and
+weylSum_numerator_eq identify the summands and finite orbit sums;
+P_eq_weylSum and P_C0/P_Ct/P_BC/P_B0/P_Bminus/P_Bplus/P_Bt identify the seven
+normalized objects. These bridge equalities use Lean's totalized field
+operations and do not themselves assert regularity of an uncancelled quotient.
+
+The certificate layer then proves the independent specification types using
+these bridges. FidelityLean/Certificates.lean exposes the closed aggregate
+acceptance types listed in Section 5. The conclusion cannot be supplied as
+an additional hypothesis while retaining those acceptance types.
+
+3. PROOF ROUTE AND CONDITIONS THAT REMAIN PART OF THE STATEMENTS
+
+The development follows the paper's finite-to-affine determinant route:
+
+  (a) Finite Weyl sums are converted into alternant and finite determinant
+      ratios. Alternation, reflection, degree and normalization arguments
+      support Lemma 2.1; the seven finite column families and their unit
+      tail minors support Proposition 2.2.
+
+  (b) The complementary-minor identity of Theorem 3.1 transfers between the
+      finite determinant and the complementary kernel determinant. Its
+      specification retains X*U=0 and transpose(Y)*Z=0 and all four nonzero
+      selected-minor assumptions. The implementation includes the sign,
+      Cauchy-Binet and top-form steps, rather than replacing this result by
+      the desired final Hall-Littlewood identity.
+
+  (c) Generating coefficients give the three folded kernel matrices and their
+      complementary minors (Lemma 3.2). Folding and unfolding integer-indexed
+      sequences, with finite-support and fixed-center accounting, yield
+      Lemma 3.3.
+
+  (d) Ordinary residue sequences produce C0/BC and B0/Bminus (Propositions
+      4.1 and 4.2). The exceptional cases require the even-total-sum parity
+      projection for Ct and the fixed-center or adjacent-column calculations
+      for Bplus and Bt (Section 5). The half factors are retained.
+
+  (e) Width zero is proved separately (Proposition 6.1). Classical determinant
+      identities and seven zero-parameter specializations are then derived
+      with the required cancellation and polynomial-specialization arguments
+      (Corollary 6.2 and the additional zero-parameter certificate).
+
+Relevant implementation modules include FiniteWeyl, ComplementaryMinors,
+PaperTopForms, PaperCauchyBinet, Kernels, CoefficientMinors, Folding,
+FiniteUnfolding, OrdinaryC0Identity, OrdinaryBCIdentity, OrdinaryBIdentities,
+ExceptionalCtIdentity, ExceptionalBplusIdentity, ExceptionalBtIdentity,
+WidthZero and PaperSpecializations, all under AffineDualJT/.
+fidelity/route_requirements.json and fidelity/proof_route_paths.json record
+the selected checkpoints and actual transitive dependency paths;
+fidelity/proof_route.mmd gives the route diagram. The frozen report records
+8 groups of route checks with 54 specified checkpoints. Dependency checks
+establish that the named steps occur in the proof dependency closure;
+correspondence with the paper's method is separately reviewed semantic evidence.
+
+The main identities require n>=1. The displayed half-determinant identities
+for Bplus and Bt require k>=1; their width-zero value is separately 1.
+Proposition 6.1 covers all seven normalized width-zero values. Proposition
+2.2, the positive-width kernel/minor interfaces and Section 4--5 determinant
+applications retain their positive-rank and positive-width conditions.
+Lemma 3.3 quantifies over arbitrary integer-indexed sequences in the paper's
+field. Lemmas 5.2 and 5.4 retain k>0 and nonzero parameter hypotheses; the
+symbolic indeterminate is proved nonzero at their paper entrypoints.
+
+The Hall-Littlewood conclusions use the paper's rational-function field,
+where the needed regularity and nonzero denominators are proved. Theorem 3.1
+has its own arbitrary-field interface. An auxiliary general-field definition
+does not make every raw quotient formula valid at all numeric poles: Lean
+totalizes division, while a removable singularity is evaluated only after
+the relevant cancellation or polynomial continuation has been justified.
+
+Corollary 6.2 and its zero-parameter addendum assume n,k>=1. In Ct the
+exponent k*y^2-j*y is zero at j=k,y=1, so a blanket claim that every nonzero
+shift vanishes at t=0 would be false. The recorded proof retains this term
+and uses the finite ratio and parity identity. The zero-parameter addendum
+does not insert the right-side half factors into the left finite ratios.
+
+4. EXISTING CERTIFICATE INTERFACE EXAMPLE
+
+supplementary/ListingCheck.lean (relative to this edition or the outer bundle)
+is the following complete existing interface example. It restates (1.3) with
+the explicit n>0 condition and applies Fidelity.Certificate.A13. It is an
+example of the certificate interface already present in the release, not a
+new proof development or a claim that Lean was rebuilt for this edition.
+Nat, Int and Units F denote natural numbers, integers and the units of F.
+
+  import FidelityLean.MainCertificates
+  noncomputable section
+  open Fidelity.Spec
+  namespace PublicationExample
+  variable {F : Type*} [Field F]
+
+  def MainA13 {n : Nat} (k : Nat)
+      (x : Fin n -> Units F) (t : F) : Prop :=
+    P .B0 k x t 0 =
+      JK (k := k) (2 * (k : Int) + 1)
+        (weightB0 t) (hKernel x)
+
+  def StatementA13 (n k : Nat) : Prop :=
+    0 < n -> MainA13 k (symbolicX n) (symbolicParameter n)
+
+  example (n k : Nat) : StatementA13 n k :=
+    Fidelity.Certificate.A13 n k
+  end PublicationExample
+
+The example has SHA-256
+  61e43e8f3ed02a99e4eaecd5d2137000d246af9304ac46c58d5e2ff0708d750f
+and is 495 bytes. The author-edition metadata records its earlier successful
+Lean compilation. That historical excerpt check is separate from the full
+frozen fidelity run and from the current publication-file checks.
+
+5. COMPLETE PAPER-TO-LEAN CORRESPONDENCE
+
+Every specification name below has prefix Fidelity.Spec. and every certificate
+name has prefix Fidelity.Certificate. The entrypoint file is
+FidelityLean/Certificates.lean. The source column names certificate proof
+modules, all under FidelityLean/:
+
+  M = MainCertificates.lean       F = FiniteCertificates.lean
+  G = FoldingCertificates.lean    S = SequenceCertificates.lean
+  Z = ZeroParameterCertificates.lean
+
+ No. Paper result       Specification                    Certificate       Src.
+  1  Theorem A          StatementTheoremA                 accepted_A        M
+  2  Theorem B          StatementTheoremB                 accepted_B        M
+  3  Lemma 2.1          StatementLemma21                  accepted_L21      F
+  4  Proposition 2.2    StatementProposition22            accepted_P22      F
+  5  Theorem 3.1        StatementTheorem31                accepted_T31      F
+  6  Lemma 3.2          StatementLemma32                  accepted_L32      G
+  7  Lemma 3.3          StatementLemma33                  accepted_L33      G
+  8  Proposition 4.1    StatementProposition41            accepted_P41      M
+  9  Proposition 4.2    StatementProposition42            accepted_P42      M
+ 10  Proposition 5.1    StatementProposition51            accepted_P51      M
+ 11  Lemma 5.2          StatementLemma52                  accepted_L52      S
+ 12  Proposition 5.3    StatementProposition53            accepted_P53      M
+ 13  Lemma 5.4          StatementLemma54                  accepted_L54      S
+ 14  Proposition 5.5    StatementProposition55            accepted_P55      M
+ 15  Proposition 6.1    StatementProposition61            accepted_P61      M
+ 16  Corollary 6.2      StatementCorollary62              accepted_C62      M,Z
+ 17  Corollary 6.2      Corollary62ZeroSpecializations    accepted_C62_zero Z
+     zero-parameter supplement: all seven cases
+
+The binders of accepted_L21 and accepted_P61 are "forall n : Nat". All other
+entries have binders "forall n k : Nat", except accepted_L33, which also
+quantifies over b : Fin k -> Int -> ParameterField n. The n/k positivity
+conditions occur in the specification propositions, as described above.
+accepted_T31 additionally quantifies over a field inside StatementTheorem31.
+
+The individual seven main formula certificates in MainCertificates.lean are:
+
+  (1.3) B0      A13        (1.4) Bminus  A14
+  (1.5) Bplus   A15        (1.6) C0      A16
+  (1.7) Ct      A17        (1.8) BC      A18
+  (1.9) Bt      B19
+
+fidelity/certificates.json is the machine-readable 17-entry manifest, including
+its many-to-many links to the source obligations. The frozen audit contains
+424 canonical source obligations and 2709 compiled declarations, including
+definitions, instances and helper declarations. Neither number is a count
+of numbered paper results. The two source-only independent extractions contain
+411 and 341 unique obligations; their reconciliation is recorded separately.
+
+6. FIXED ENVIRONMENT, CONTENT BINDINGS AND EVIDENCE BOUNDARIES
+
+Software version:             0.2.0-rc3
+Release label:                fidelity-20261031
+lean-toolchain:               leanprover/lean4:v4.35.0-rc3
+Recorded Lean compiler commit:
+  470d5ce1400764999581fd26d5d72b00d990b0f4
+Locked mathlib commit:
+  c55e6e786f49471c72fbddbec5415808896aec1e
+
+lake-manifest.json locks the dependency revisions. lakefile.toml names the
+mathlib release tag, while the manifest fixes the actual commit. Preserve
+both files and lean-toolchain; changing a dependency pin changes the checked
+environment. The checker verifies the actual Lean version, all dependency
+HEAD revisions and absence of tracked dependency changes. The source ZIP
+excludes installed toolchains, .lake caches and Git history.
+
+The transitive mathematical axiom allowlist is exactly
+
+  propext, Classical.choice, Quot.sound.
+
+The frozen audit checks the exported mathematical declarations and their
+transitive dependencies. Text scans are supporting checks. The executable
+environment-export tool FidelityLean/Export.lean uses an unsafe main for
+Lean's environment-loading API; it is separately hashed, is excluded from
+the mathematical import set, and may not be imported by mathematical modules.
+This tooling boundary must not be described as an unsafe mathematical proof.
+
+The local frozen receipt fidelity/ACCEPTANCE.json records the completed run
+acceptance-final-20261031,
+overall pass, no unresolved findings, with these bindings:
+
+  Mathematical input snapshot SHA-256:
+    1dceb00ab137370076aec552c9042c36a497ad067d8c6d4dca82aaa8146b2a3b
+  Checker/tool snapshot SHA-256:
+    6c5c3187092f7fab9d449bb2fa8a454c4522ce19066ae82c4be2be397682cb04
+  Report: fidelity/runs/acceptance-final-20261031/report.json
+  Report SHA-256:
+    c97d92673ed323de94082fb07c44301918f7153178ec39b27f1f6098fc07e1e7
+
+The source ZIP supplies this full report. The summary receipt ACCEPTANCE.json
+is a local record and is not included as a separate file in either frozen ZIP;
+the outer publication bundle supplies an unchanged copy as
+provenance/ACCEPTANCE.json. Readers can inspect that receipt and the distributed
+full report for the recorded outcome.
+
+The recorded dimensions are kernel, object correspondence, statement
+correspondence, route correspondence and reproduction. Kernel checks establish
+proofs of the formal types. Natural-language interpretation, semantic fidelity
+and the match to the paper's proof route are supported by separately recorded
+isolated-agent reviews, not by the Lean kernel itself. The checker validates
+review structures, input hashes, packet isolation and dependency evidence;
+it does not authenticate a human/model identity, actual understanding or
+the truth of a reviewer attestation about context isolation.
+
+The recorded exact-arithmetic experiments, fault-injection checks and checker
+regression tests support the audit. They do not prove the general identities.
+The release report records 654 exact experiment cases, 25,594 comparisons,
+11 detected numerical error probes, 3 compiled semantic mutations rejected by
+the independent acceptance types, and 90 passing checker regression tests.
+These are historical run results, not new experiments for this edition.
+
+The statement supplied by the authors is retained verbatim in the paper:
+
+  This Lean 4 formalization was developed by Hangzhou Logicon AI Studio,
+  with AI assistance from OpenAI Codex (GPT-6.1 Sol), under human supervision
+  and review.
+
+Its attribution to human supervision and review is the supplied declaration;
+the automatic isolated-agent reviews and kernel checks have the distinct
+evidence scopes just described.
+
+7. FULL CHECKER COMMAND AND RECEIVER REPRODUCTION
+
+The full audit entrypoint, from the extracted frozen project root, is:
+
+  python3 scripts/check_fidelity.py
+
+It creates a new run directory, compiles all mathematical project modules and
+specification/certificate modules, exports their actual environment, checks
+the axiom allowlist, independent acceptance types, bound review evidence and
+route dependencies, performs the supporting experiments and mutation checks,
+and reconstructs the project in two fresh directories. The checker records
+commands, exit codes, timestamps, standard output/error and their hashes.
+The resulting report is fidelity/runs/<new-run-id>/report.json.
+
+An explicitly named new run may instead be requested as follows; choose a
+name that has never been used in the receiving checkout:
+
+  python3 scripts/check_fidelity.py --run-id receiver-check-001
+
+The default per-command timeout is 3600 seconds. It can be changed using
+--command-timeout SECONDS. A missing tool, unavailable dependency, timeout,
+stale input or unresolved evidence gives a nonzero result. --static-only and
+--skip-build cannot report full overall acceptance or fresh reconstruction.
+Old pass labels and submitted logs are not substituted for new build evidence.
+
+The following receiver procedure starts from the two files delivered under
+formalization/ in the outer bundle. Commands are shown for a POSIX shell with
+Python 3, Git, unzip, Elan and the required build tools available. The frozen
+README.md also documents platform setup. On macOS, "shasum -a 256" may replace
+"sha256sum" for manual hash calculations.
+
+  sha256sum formalization/affine-dual-jt-fidelity-20261031.zip
+  sha256sum formalization/affine-dual-jt-fidelity-verification-20261031.zip
+
+Compare the outputs with the two hashes in Section 9, then extract into a new
+directory (the name receiver-check is an example):
+
+  unzip formalization/affine-dual-jt-fidelity-20261031.zip -d receiver-check
+  unzip formalization/affine-dual-jt-fidelity-verification-20261031.zip -d receiver-check
+  cd receiver-check/affine_dual_jt_complete
+  sha256sum -c DELIVERY_MANIFEST.sha256
+  sha256sum -c VERIFICATION_MANIFEST.sha256
+  elan toolchain install leanprover/lean4:v4.35.0-rc3
+  lean --version
+  lake --version
+  lake exe cache get
+  python3 scripts/check_fidelity.py
+
+The verification ZIP is an additive historical evidence bundle; the source
+ZIP provides the runnable project. Both use the same top-level directory
+affine_dual_jt_complete/. Hash verification establishes received byte identity,
+not proof correctness. Toolchain and dependency restoration may require network
+access and several gigabytes of disk space. "lake exe cache get" prepares
+the pinned dependency checkouts and mathlib compiled cache. Do not run
+"lake update" or the legacy scripts/build_rc3.sh: they are not the frozen
+reproduction entrypoint and can rewrite the pinned configuration.
+
+For the optional excerpt check, after the full checker has made the Fidelity
+modules available, copy the supplied ListingCheck.lean into a separate working
+location in that project, for example publication-example/ListingCheck.lean,
+and run from the project root:
+
+  lake env lean -o /tmp/affine-dual-jt-listing.olean publication-example/ListingCheck.lean
+
+This optional command checks only the interface example. It does not replace
+the full checker command. No excerpt compilation is claimed for the present
+edition.
+
+8. LOCAL RECONSTRUCTION VERSUS EXTERNAL INDEPENDENT REPRODUCTION
+
+The acceptance-final-20261031 run rebuilt the project from a source copy and
+from a newly created ZIP in two fresh temporary project directories. It copied
+no project .olean artifacts. It shared only checked dependency checkouts and
+their pinned dependency caches. These are fresh-project reconstructions on
+the origin host, not runs on a separately administered machine.
+
+fidelity/DELIVERY_VERIFICATION.json records an additional origin-host extraction
+of the final frozen source ZIP and a complete checker run named
+final-delivery-zip-20261031 on 2026-10-31. The project build directory was
+initially absent, and only the checked pinned dependency checkout cache was
+shared. The run returned exit code 0 with all five dimensions passing and
+the same mathematical inputs, checker tools and compiled declarations.
+
+  Report: fidelity/runs/final-delivery-zip-20261031/report.json
+  Report SHA-256:
+    0ee821c2f22dc4c8c7e1921da9c95c1191977d9d504784b4e9b82bef99a7e58c
+
+The verification receipt and logs were kept outside the source ZIP being
+verified, so writing the receipt did not change that ZIP. They are supplied
+in the separate verification ZIP. The outer publication bundle also supplies
+an unchanged copy of the frozen receipt as
+provenance/DELIVERY_VERIFICATION.json.
+
+No external receiver's independent run on another machine is established by
+these origin-host records. The receiver procedure above is intended to enable
+such a run. A future external reproduction claim will need its own environment,
+command outputs, content bindings and result; it must not reuse the origin
+host's pass receipt as if it were newly observed evidence.
+
+9. RELEASE FILES AND FUTURE PUBLIC LINK
+
+Source archive:
+  affine-dual-jt-fidelity-20261031.zip
+  19,053,813 bytes
+  SHA-256 0a40289c30aa7fbabf19b8c08b567948f1c94ee93982acea939892912d5823dd
+
+Verification archive:
+  affine-dual-jt-fidelity-verification-20261031.zip
+  3,643,112 bytes
+  SHA-256 06e62ccd4320c5be9e130c81d250ac33dbac261391678a04a2eaf62522be5216
+
+In the local working project these files are under dist/. In the outer
+publication bundle they are under formalization/. INDEX.txt in this edition
+provides the full local-to-bundle mapping and identifies the publication
+validation reports. The single-file paper source is main.tex, and its bundle
+PDF is paper.pdf. From the directory containing main.tex, the paper is compiled
+with two runs of:
+
+  pdflatex -interaction=nonstopmode -halt-on-error main.tex
+
+Only a standard LaTeX installation with the packages named in the preamble is
+needed. Compilation does not require Lean, the original manuscript source,
+this supplement or any other external source file. The local build_edition.py
+and check_edition.py depend on the original workspace, serve only the local
+publication workflow, and are not included in the outer ZIP.
+
+The outer ZIP includes validation/edition-validation.json and
+validation/visual-review.json. Its own bundle verification receipt remains
+outside the ZIP being checked: the local edition copy is
+validation/bundle-verification.json, and the delivered project-root copy is
+dist/paper-and-formalization-minimal-20261101.verification.json, alongside
+dist/paper-and-formalization-minimal-20261101.zip. That external receipt checks
+the new publication bundle; it is distinct from the two unchanged frozen
+Lean-related records provided under provenance/ in the outer ZIP.
+
+GitHub URL pending. No public repository or DOI has been created for this
+edition. The source and associated verification material will be made available
+at a future repository URL. Any final repository link in the paper or release
+metadata will point to a fixed commit corresponding to the disclosed release
+bytes, rather than an unspecified moving branch. No project publication commit
+identifier or DOI is invented here; the snapshot and archive hashes above are
+the presently available fixed identifiers.

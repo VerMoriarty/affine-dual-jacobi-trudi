@@ -1,0 +1,971 @@
+{
+  "schema_version": 1,
+  "archive": "artifacts/affine-dual-jt-fidelity-20261031.zip",
+  "archive_sha256": "0a40289c30aa7fbabf19b8c08b567948f1c94ee93982acea939892912d5823dd",
+  "original_root": "affine_dual_jt_complete",
+  "view_root": "formalization",
+  "files": {
+    ".gitignore": {
+      "sha256": "74bbeb6c2bde8d2213d718aea13e9946f8a69df1638a604ee18299930450095a",
+      "bytes": 296
+    },
+    "AffineDualJT.lean": {
+      "sha256": "5b1408960740447c211f22a5450cb56f70fc9150b0cc6ab3c18b18ac0032a130",
+      "bytes": 956
+    },
+    "AffineDualJT/AdjacentColumns.lean": {
+      "sha256": "5621d9360c53fecf5211f378ca55a50c926e609dc3207f34fd382c924904604e",
+      "bytes": 3411
+    },
+    "AffineDualJT/AffineDetSum.lean": {
+      "sha256": "2fdc21180ea892351125012091d5bc07d6cc5dbd195727dc02d597e9697b30c0",
+      "bytes": 3271
+    },
+    "AffineDualJT/AffineParity.lean": {
+      "sha256": "7511196d52d2d4d5ecc557ec7c5fe406fdc680d3d353af0b1f5f9c6c06396ec0",
+      "bytes": 2414
+    },
+    "AffineDualJT/AlternantFactorization.lean": {
+      "sha256": "278075670deb7279b9e498423ca3872ace4077b6e8213da0d8709baa6124cacc",
+      "bytes": 2375
+    },
+    "AffineDualJT/AlternantMatrices.lean": {
+      "sha256": "e644fe7d8354764fb5f196d3138eae972101eb6496a79ead5ca6b3a4c5859f9e",
+      "bytes": 1378
+    },
+    "AffineDualJT/AlternantPaperRoute.lean": {
+      "sha256": "749cc1206049a2c4f04e64874cbac9dca14e5c20cffc1bba759ad1e1988c2638",
+      "bytes": 5974
+    },
+    "AffineDualJT/AlternantPolynomials.lean": {
+      "sha256": "5cd9318d44be93b024ffa6ebb70ca3e777031293d237b267396dcc69dc639505",
+      "bytes": 5177
+    },
+    "AffineDualJT/Audit.lean": {
+      "sha256": "c988f65c04038e9052305aa286e459af3ede9d1e43542b8b854fb4c17e0294c8",
+      "bytes": 9030
+    },
+    "AffineDualJT/Basic.lean": {
+      "sha256": "c611c941e5a468df37b0d3595d85d26c58683b05935860fda469a7584c7d442a",
+      "bytes": 6992
+    },
+    "AffineDualJT/BracketEvaluation.lean": {
+      "sha256": "b0250444aa3ae2c152f2fdd2f656f2fd4b3d56a921fa9207b9133a5790ec634a",
+      "bytes": 6750
+    },
+    "AffineDualJT/ClassicalColumns.lean": {
+      "sha256": "cfe887885b759562a1a0851f48adfafaca4079cc2275b36cb9b5ef0d959af293",
+      "bytes": 4278
+    },
+    "AffineDualJT/ClassicalCorollary.lean": {
+      "sha256": "5ea4da952c574ffcb8b19e62afd3dd74b30dbbb344d022f216dad452e825ccbc",
+      "bytes": 12358
+    },
+    "AffineDualJT/ClassicalSpecialization.lean": {
+      "sha256": "6025ecd957e7d5c45fcab98351967d066b52863b91a6b3330ab3b406fcf75b73",
+      "bytes": 782
+    },
+    "AffineDualJT/ClassicalTransfer.lean": {
+      "sha256": "418da5bfb7721275ede86ccb573829329ce45901087f5e26c298a9528133ab06",
+      "bytes": 816
+    },
+    "AffineDualJT/CoefficientMatrices.lean": {
+      "sha256": "20ea5cceddec1ecc71d2760982f2b090df6d41961ff509a61b8575e799d538c5",
+      "bytes": 1048
+    },
+    "AffineDualJT/CoefficientMinors.lean": {
+      "sha256": "754bf359f48cd7af933b5146d52a7eb01c0981ffb47846cae686b63fb38ccecd",
+      "bytes": 6026
+    },
+    "AffineDualJT/Coefficients.lean": {
+      "sha256": "05d8569e9af4a58cc3a7de5afe787c0cef82c788b24a2b3b49416578a41c79ab",
+      "bytes": 8988
+    },
+    "AffineDualJT/ComplementaryMinors.lean": {
+      "sha256": "9b2b8137cb8b76ea5f37fa1a1980619ca53c9e903ff0b2e78dcbe4c2cf60b8b8",
+      "bytes": 8546
+    },
+    "AffineDualJT/DeterminantFinsum.lean": {
+      "sha256": "39b8b307e2c5705dfb048fdfabeb89eaf5ae5c619fe31765b1072b64ca0792fe",
+      "bytes": 4059
+    },
+    "AffineDualJT/ExceptionalBplusIdentity.lean": {
+      "sha256": "0b81a1cc52c58a4212d3f784b0f057a5ae55a282dd6b3f9081374a8c0f1aa91c",
+      "bytes": 4378
+    },
+    "AffineDualJT/ExceptionalBplusKernels.lean": {
+      "sha256": "17ace594e022652749cab298f70ab01f82ddb0818b36645c08dec611b5f2c566",
+      "bytes": 4906
+    },
+    "AffineDualJT/ExceptionalBtIdentity.lean": {
+      "sha256": "174ebc13d8e342cc8cced8b9b3da3f2faeb1269e5d1feafb0adbf68726119471",
+      "bytes": 5303
+    },
+    "AffineDualJT/ExceptionalBtKernels.lean": {
+      "sha256": "f5de34b69f88aeec8c60437d6481de5310033bd3aceebe635f738883663c5166",
+      "bytes": 4793
+    },
+    "AffineDualJT/ExceptionalCtIdentity.lean": {
+      "sha256": "7d1e4e40b8bfad8d7a74da51c344af4cd1256fbfab6ca533360f7b3e2e54e805",
+      "bytes": 7535
+    },
+    "AffineDualJT/ExceptionalCtKernels.lean": {
+      "sha256": "656fcc1a43f9a5dbe342bed7d48e7f668eb2d3c50f6efef81785eb130ec51fd7",
+      "bytes": 6386
+    },
+    "AffineDualJT/ExceptionalSequences.lean": {
+      "sha256": "6a323279240109cf9a38b9369229c719bba3c2f08f576c901866b494eeaf0d6f",
+      "bytes": 6801
+    },
+    "AffineDualJT/ExternalHallLittlewood.lean": {
+      "sha256": "84e8cd07b0619713f5a74d2d96ef723d7808eae90798877c37356f2881c83dbc",
+      "bytes": 1694
+    },
+    "AffineDualJT/FieldEmbedding.lean": {
+      "sha256": "5a440b756ac9ab3ad3de88c55d98679220d932f8d1af552b00ede91252ae2629",
+      "bytes": 3896
+    },
+    "AffineDualJT/FiniteBplus.lean": {
+      "sha256": "a430a28426af50b3e85e4145873a1774122d05ab94786c3da6e3c9d9733cf65a",
+      "bytes": 2000
+    },
+    "AffineDualJT/FiniteCB.lean": {
+      "sha256": "761c46d59f944acc2c61bf606979d77930c19e741025bc9f862712d47e3d757b",
+      "bytes": 5167
+    },
+    "AffineDualJT/FiniteColumnData.lean": {
+      "sha256": "532fa9a30b96dea5511b2587f730b04f66f4405be9d9ac5c4dcdd6ffa3965cd9",
+      "bytes": 5120
+    },
+    "AffineDualJT/FiniteColumnEvaluation.lean": {
+      "sha256": "b7cbed41be9dd0b928e291302155bd11053c3bb71ef7de2173f566246b4d9bc6",
+      "bytes": 10585
+    },
+    "AffineDualJT/FiniteColumnMinors.lean": {
+      "sha256": "1e25f6825ff2760b696ff94788f716b9efad8ae4e116a82f8c48c215c248baae",
+      "bytes": 6108
+    },
+    "AffineDualJT/FiniteColumns.lean": {
+      "sha256": "dfddbbe964fb8694eb36a6068fe6fe51952d9db19272e25c768cbf404dedbd84",
+      "bytes": 2430
+    },
+    "AffineDualJT/FiniteDeterminantTransfer.lean": {
+      "sha256": "f42fabd1f3c034290b50b6e874f14d1b0ae5f8d71daf4a04dac3742d5e62f7e3",
+      "bytes": 5549
+    },
+    "AffineDualJT/FiniteFolding.lean": {
+      "sha256": "4a9331b9a393dfa607654f4573c0f4abeb0c137e846b93296bf55943a182d5a3",
+      "bytes": 2505
+    },
+    "AffineDualJT/FiniteRowFunctions.lean": {
+      "sha256": "c49f6a7ec76c2adc714709f944ef60ae2b6c22711095c390d59d33c1e55d97b7",
+      "bytes": 12911
+    },
+    "AffineDualJT/FiniteUnfolding.lean": {
+      "sha256": "0f092458850b3be234423b730f7f2cac23841c079575e5ce30fbc6d9eb8161d2",
+      "bytes": 7469
+    },
+    "AffineDualJT/FiniteWeyl.lean": {
+      "sha256": "3615ff1e84166bf50aabee08b318a624ea4782f426b477c035964316fc4b5ea9",
+      "bytes": 4803
+    },
+    "AffineDualJT/Folding.lean": {
+      "sha256": "042da8d467f8aec3bb94fb3d0548bae8e60626564200a85958bd4e7d80ae25e6",
+      "bytes": 5536
+    },
+    "AffineDualJT/FoundationAudit.lean": {
+      "sha256": "285cc51bf52ab6ce63f67b2cd24db40eddd893b342a95ce534f09839ac6d84e5",
+      "bytes": 23904
+    },
+    "AffineDualJT/GeneratingFunctions.lean": {
+      "sha256": "8426471cb8b715df98cedc490e61cc9ce45697ac6e82792c61be9377ef209214",
+      "bytes": 5476
+    },
+    "AffineDualJT/HallLittlewoodAffine.lean": {
+      "sha256": "c95e003cb8a6d383d7bfd497be3a49b56f35653a1a5d47934d23f67baa3994d1",
+      "bytes": 3713
+    },
+    "AffineDualJT/HallLittlewoodClassical.lean": {
+      "sha256": "538483b2de646a1265f768b3c033c65be1daf063e546b99ed7afc78922a19ba8",
+      "bytes": 5673
+    },
+    "AffineDualJT/HallLittlewoodFinite.lean": {
+      "sha256": "b706c9ba9db650a11a3062ae34a0733d979ff6c55153e5de84c5535377d03cdc",
+      "bytes": 3073
+    },
+    "AffineDualJT/HallLittlewoodWeyl.lean": {
+      "sha256": "1f76e60779eb95a0c02b430d7c49d40c35ca4fe7bdab41a0c166908a862b67bd",
+      "bytes": 2494
+    },
+    "AffineDualJT/Kernels.lean": {
+      "sha256": "264310b6d8b6bf0f97597bcb969c70ca29ee277170749d17824e8b5506de9395",
+      "bytes": 4125
+    },
+    "AffineDualJT/MainIdentities.lean": {
+      "sha256": "105c7262e6d4d8efcb2da9e3ea065763599f393280604baeb1495e77dbb2958c",
+      "bytes": 7434
+    },
+    "AffineDualJT/MatrixBlocks.lean": {
+      "sha256": "0d779d7d92a7241e5e8b67ffc88dc9b92774b0a3ba0c5a7428c23469653a4091",
+      "bytes": 708
+    },
+    "AffineDualJT/NormalizedAlternants.lean": {
+      "sha256": "f8d1e59cc3ea67ec41112bd2b1deba5f5210dd6acb702791f17909cd6f948bad",
+      "bytes": 2337
+    },
+    "AffineDualJT/OrdinaryBCColumnKernels.lean": {
+      "sha256": "75e24aec1e8ad56e521c6b66eed3d3333c2c60eb86ca527c2964e64e6c059311",
+      "bytes": 3982
+    },
+    "AffineDualJT/OrdinaryBCIdentity.lean": {
+      "sha256": "e52671f93f15d880841dceb2f788ad54804854152a574b2059b1f01a2fd21125",
+      "bytes": 7308
+    },
+    "AffineDualJT/OrdinaryBColumnKernels.lean": {
+      "sha256": "5fa428632e12aed32299f64b4ce2cb77a27965af3fbefe1357b463ff2a3b841c",
+      "bytes": 7914
+    },
+    "AffineDualJT/OrdinaryBIdentities.lean": {
+      "sha256": "f87c334e66bd8d52e67974d583c3eddf88d7b37986430175290208fa850e952c",
+      "bytes": 8601
+    },
+    "AffineDualJT/OrdinaryC0Identity.lean": {
+      "sha256": "a703158d142b3b1c92c1c4325714f14bd84a381109f15d2e59636d986f06c743",
+      "bytes": 5531
+    },
+    "AffineDualJT/OrdinaryColumnKernels.lean": {
+      "sha256": "5ad42308e06a63418e10473e06b5d401a898affeeaa62f8391d1852f924ffb58",
+      "bytes": 3899
+    },
+    "AffineDualJT/OrdinaryIdentityTransfer.lean": {
+      "sha256": "f948d22d1e7328285831147b738ca63b936933cfa02d96314d4d0c7a511d21bd",
+      "bytes": 2279
+    },
+    "AffineDualJT/OrdinarySequences.lean": {
+      "sha256": "6fb5813dda8f7b71e696430f490342ac2d24cb3f21cbf2e420523bf8cde37b3f",
+      "bytes": 8766
+    },
+    "AffineDualJT/PaperAlternantDivisibility.lean": {
+      "sha256": "b2014354700731115495b0577239c212a75637232d4e4b593b2ea08ca5c5a6a2",
+      "bytes": 121429
+    },
+    "AffineDualJT/PaperAlternantNormalization.lean": {
+      "sha256": "36eecc66f5ebf64515623a6b8f9085f25d284b6d2ec16e372d847cb972d8e29d",
+      "bytes": 30880
+    },
+    "AffineDualJT/PaperCauchyBinet.lean": {
+      "sha256": "d65165e48c75964388a4779443f9fcf42a3bde90e1f49b29f51e892c3d19e876",
+      "bytes": 16037
+    },
+    "AffineDualJT/PaperField.lean": {
+      "sha256": "05226f4e9452ef2c488453cd3a1679b65fb5a4c5e93b65d69d72b1f09600436e",
+      "bytes": 2694
+    },
+    "AffineDualJT/PaperIdentities.lean": {
+      "sha256": "4802b7bb79b03e821e86369b761ecd4cc1c59192135762db862ce6761cb9eef8",
+      "bytes": 4484
+    },
+    "AffineDualJT/PaperNormalizations.lean": {
+      "sha256": "a821cb1e63ea99ccb7c709317e87400306524651f899d1729fb26f3cee0d7cc1",
+      "bytes": 4411
+    },
+    "AffineDualJT/PaperPropositions.lean": {
+      "sha256": "4009be12a8415832f72265a87073f558e2fe99f5922e47858b5c079ced6df701",
+      "bytes": 8766
+    },
+    "AffineDualJT/PaperRegularity.lean": {
+      "sha256": "81df41c0871ba00c905ca64c4bc1bb1c677a56aed31a7a398c1d155e1ad3f521",
+      "bytes": 4492
+    },
+    "AffineDualJT/PaperSpecializations.lean": {
+      "sha256": "4876dd716e93eae1985dcf958767d85bf4d700adb4b12352f1b149fb2ac6668b",
+      "bytes": 9140
+    },
+    "AffineDualJT/PaperTopForms.lean": {
+      "sha256": "c3ae6263543fc36c7c4bad350849254b908ad3a028c7c4b0e1e914aca9c593fa",
+      "bytes": 55328
+    },
+    "AffineDualJT/PaperWeylRegularity.lean": {
+      "sha256": "d086ac9e900bb2a65a135f724707ed85a81841be0b8636621a2476e22ba2e985",
+      "bytes": 1790
+    },
+    "AffineDualJT/ParameterPolynomials.lean": {
+      "sha256": "0fe29f1325910c383ecce70063ac189b7af59082fc5e294a29242c646d186244",
+      "bytes": 5846
+    },
+    "AffineDualJT/PermutationSigns.lean": {
+      "sha256": "71c11c4f0707409d7cf53772235fe2fc47c1bd8a67f694f3c7eab4bfb33079ca",
+      "bytes": 2572
+    },
+    "AffineDualJT/PlusFoldEvaluation.lean": {
+      "sha256": "21d7e6ff97d81de5eea9f7f5b32a638f699e7547ec7e769c12f84dd1f51c610e",
+      "bytes": 1255
+    },
+    "AffineDualJT/ReducedNumerators.lean": {
+      "sha256": "408f7a7efe1a8f1666de742a9719572b00024b106e743d4aa3f8a16be7ab496c",
+      "bytes": 2400
+    },
+    "AffineDualJT/ResidueSequences.lean": {
+      "sha256": "6a6cb5082feaf44b00eed909bd35bf592fff71ac34c330a6496d9997d5a0a349",
+      "bytes": 7321
+    },
+    "AffineDualJT/Section4Ordinary.lean": {
+      "sha256": "53196fd90cc6ad450bcab3742b7f44fa85b1bd24098f44f0ac5fa9e9c69b89f1",
+      "bytes": 1999
+    },
+    "AffineDualJT/Section5Exceptional.lean": {
+      "sha256": "96d06a5feafe863a145f5e9f91b6eeb116cf043f57b63201e75d8db74573e172",
+      "bytes": 1613
+    },
+    "AffineDualJT/SignedDeterminants.lean": {
+      "sha256": "8aac1590a89dffcbbcfeb6c1bf4aeb0a344664e992c74d854b9526b7f4252e44",
+      "bytes": 4065
+    },
+    "AffineDualJT/SymmetricPairProducts.lean": {
+      "sha256": "bb51eb8076b3200b125c8ab4e8500280609ede1e1e26d5000fc9f74e3d6976df",
+      "bytes": 2045
+    },
+    "AffineDualJT/WeightExponents.lean": {
+      "sha256": "061f315fe7c1a85159aa69fdcd6d1d3c3862d7385c543bd45c5474b58d277102",
+      "bytes": 8245
+    },
+    "AffineDualJT/WeylAdmissibility.lean": {
+      "sha256": "ef0eb4382cd1400b10efff9c4f0d09688de806c904cb6c3e4cd2165ca1897910",
+      "bytes": 2373
+    },
+    "AffineDualJT/WeylDenominators.lean": {
+      "sha256": "0e534aa769b79e22be0be2c93c7c3c712a622e190e3d81f47ddeb5d8eef3b855",
+      "bytes": 6171
+    },
+    "AffineDualJT/WeylMatrices.lean": {
+      "sha256": "9adaaa81430c3a8145e051ec56f053094bf3386f2a7b16040b86ba4e9dcb9bde",
+      "bytes": 1640
+    },
+    "AffineDualJT/WeylPolynomials.lean": {
+      "sha256": "286bcc91c3b411dc3ec5cf0b2961a88b847de60d8aac4144562a13a14a9c9a2c",
+      "bytes": 6451
+    },
+    "AffineDualJT/WeylReduction.lean": {
+      "sha256": "c0aa9b969a972152b5202cfee21bc1e26adcd7c5d96d91ea84f0f2de7b5eb442",
+      "bytes": 2955
+    },
+    "AffineDualJT/WeylSymmetrizer.lean": {
+      "sha256": "a5c6bf03d17a9c146c774d0eac0aaf532dfd602820a4a82ac03270c9ca89aee3",
+      "bytes": 59224
+    },
+    "AffineDualJT/WidthZero.lean": {
+      "sha256": "5385333cd53b046e3815406dbf1325eaead787a81824c1fcd5f6ca27684d579f",
+      "bytes": 3862
+    },
+    "AffineDualJT/WidthZeroColumns.lean": {
+      "sha256": "5a063a9357a8a1ce54f2ce268409652f435e7951b1fb4db80cf4e5a83f17c15c",
+      "bytes": 6522
+    },
+    "AffineDualJT/WidthZeroReduced.lean": {
+      "sha256": "022cae02258dc05e1073a450dcd994d8aacbdb73dfe43dc3915a02bdf2ceab4a",
+      "bytes": 2746
+    },
+    "FidelityLean/Certificates.lean": {
+      "sha256": "9af59152087bfa35d69827c8962d6fc8cb86ff33077fc36cf9f73416f5dd1f56",
+      "bytes": 1871
+    },
+    "FidelityLean/CoefficientBridge.lean": {
+      "sha256": "eed7588650f36cda5e675e151468111b5a185ff481ccb4fcd19a3c50e6d254df",
+      "bytes": 6220
+    },
+    "FidelityLean/DerivedChecks.lean": {
+      "sha256": "a1831d78e55fbdeac7c43c832d1e3a1a302814f466061c967690da8597eeef56",
+      "bytes": 8973
+    },
+    "FidelityLean/Export.lean": {
+      "sha256": "6a4a9d9f40b15901672c7d5ae565780aad4dfd1efe026dedc6eca255f3948dd7",
+      "bytes": 3962
+    },
+    "FidelityLean/FiniteCertificates.lean": {
+      "sha256": "0c0022015d6aa5c4e767f5dec517bd08507d7b4120189ceea0c3bac8c1ac1961",
+      "bytes": 10313
+    },
+    "FidelityLean/FoldingCertificates.lean": {
+      "sha256": "6ffe15d6a834708988d298a73a3d4e562678ce21d1057c320b1b90903cbd7099",
+      "bytes": 4554
+    },
+    "FidelityLean/MainCertificates.lean": {
+      "sha256": "9804cd216b2af022de6564b7bb9241037a26a9a2173a930dfce5c7fe9f1ffdf4",
+      "bytes": 10410
+    },
+    "FidelityLean/SequenceCertificates.lean": {
+      "sha256": "727ada23abc6245c6fb4614f2dd42767458a42241c1b4f27beb6b02d17332a23",
+      "bytes": 7200
+    },
+    "FidelityLean/Spec.lean": {
+      "sha256": "bf7dd88c9eb9537256f8290844e882dbd968652769c7b642663b5ef043ba66d0",
+      "bytes": 27197
+    },
+    "FidelityLean/WeylBridge.lean": {
+      "sha256": "6f9091990b26d5181a6b4b0e207be6d090a6301d6ce48b6401b3fecf0e0866ea",
+      "bytes": 7673
+    },
+    "FidelityLean/ZeroParameterCertificates.lean": {
+      "sha256": "18642eae3a850a70f271692d40df4eb2b5092e9f353b08e1d185f0184994b0db",
+      "bytes": 2873
+    },
+    "FidelityLean/ZeroParameterSpec.lean": {
+      "sha256": "b923dda633d8dd631c150fa90826a0e5191f29fcd77bea815ac4256de889b61d",
+      "bytes": 1673
+    },
+    "README.md": {
+      "sha256": "e3ea3cfefc7a1b069d82337b954ed021b0d438e6decd8212c3db2a928a9f4375",
+      "bytes": 10349
+    },
+    "STATIC_CHECK.json": {
+      "sha256": "5ca7edc20c508a6e3fc9d068a28cf33003cb0f6735600ff7c837d61aa27cf1e4",
+      "bytes": 4350
+    },
+    "fidelity/README.md": {
+      "sha256": "050a6eedfeda3473912dce1a9048c18336f64fb15822804e20af42365f1975bc",
+      "bytes": 4367
+    },
+    "fidelity/REPORT.zh-CN.md": {
+      "sha256": "c34ffdbddca8df9f332c8ae043a86a14d5818f60801bf74bc43032378a886504",
+      "bytes": 6402
+    },
+    "fidelity/baseline.json": {
+      "sha256": "e21e900d92f43923a06221ecf54fd6d410f1fb2307ec993c2f8bda393aba7fc7",
+      "bytes": 1998
+    },
+    "fidelity/canonical_claims.json": {
+      "sha256": "e272bc7e27e26b16938b8331052b71f7d959fd1556f1c519ec07d3bacdab3407",
+      "bytes": 744341
+    },
+    "fidelity/certificates.json": {
+      "sha256": "b48a4f6f2cf539d7d96fa0b8b40d016c2cad7fc24c0aee125f45aad6b29be17d",
+      "bytes": 12329
+    },
+    "fidelity/checker_tests.json": {
+      "sha256": "8b47db1a9a9b517836442a60e86edd4a945645c2abf404c87a56bcb8b62a0fc1",
+      "bytes": 2510
+    },
+    "fidelity/checker_tests.log": {
+      "sha256": "ad858b6549d10c1f39c70d1d487822515fd1c296a277dff56be2f7e39946f735",
+      "bytes": 14364
+    },
+    "fidelity/experiments.json": {
+      "sha256": "de3139bfc6036eb7e1e662584d1856c264126efe0fc1945534326d81d0c8e0d8",
+      "bytes": 26578
+    },
+    "fidelity/inputs/authoritative.pdf": {
+      "sha256": "b13eaa9ed2a2dc2919980a702965a2d138ee634b49d9a32125ddeaa67fece7ab",
+      "bytes": 386563
+    },
+    "fidelity/inputs/authoritative.txt": {
+      "sha256": "0cd074228dab999ce8217978668d5284f99f7fc610805a6e05e25ff94bc24a2f",
+      "bytes": 32623
+    },
+    "fidelity/inputs/original-source.zip": {
+      "sha256": "b980f92c8556917056b351e66789bd9da86f62f4dfdb2dbd77566afc8dfd271c",
+      "bytes": 586089
+    },
+    "fidelity/inputs/packaged.pdf": {
+      "sha256": "5b78cce542772dd63ea579fa88cb8f412f1b2a80f2eba39fe94118c12f74473a",
+      "bytes": 386290
+    },
+    "fidelity/inputs/packaged.txt": {
+      "sha256": "9b1e577767354c955a373458863a899eef28f8674eb09383ff82c6ec6b6fb4eb",
+      "bytes": 32399
+    },
+    "fidelity/inputs/pdf_difference.txt": {
+      "sha256": "b569869244f152445c0882ab092b252014bb722be032c5bf74e3c962c30e4434",
+      "bytes": 549
+    },
+    "fidelity/inputs/reference.tex": {
+      "sha256": "4141e8fa7c8fc8d7499b1d10bb77fcc1440d229169f44610709ebaf8968a5a19",
+      "bytes": 38726
+    },
+    "fidelity/issues/registry.json": {
+      "sha256": "311a5c3c76904a4baf521b4ab489fdf4536b6413e50a9d9c5686290d67530fe2",
+      "bytes": 10501
+    },
+    "fidelity/lean_release_receipt.json": {
+      "sha256": "72574801ea6b4f96e9f22a32a459a114d63c4fc17bac2c1bb155b4f093884ed8",
+      "bytes": 1395
+    },
+    "fidelity/original_manifest.json": {
+      "sha256": "055a3ded3be57064c187203e910a8a81a0013327bfb4e0d919abf554812ed42a",
+      "bytes": 12110
+    },
+    "fidelity/original_preservation.json": {
+      "sha256": "2b8f95ad9c2ba9f56c99973f09d4d6b952092950e8e711e345c2bc72c26f567c",
+      "bytes": 17268
+    },
+    "fidelity/proof_route.mmd": {
+      "sha256": "5b9a0e83b12144ccb1ba42e0d3ee5c28fdec2ed11ecd39328ddc764f52e36c06",
+      "bytes": 540
+    },
+    "fidelity/proof_route_paths.json": {
+      "sha256": "d66bca58be9943daf3525f295991a98ad37f419ae5fbec78c67a9135b73b3bb4",
+      "bytes": 17186
+    },
+    "fidelity/protocol.json": {
+      "sha256": "53fb330785ca76709bf22e4cb9557972a62e37db1489da2b73e83612ea960f9b",
+      "bytes": 17368
+    },
+    "fidelity/repair_history.json": {
+      "sha256": "68cfcbd38f74799b5265fbafeb26fdad66ac8224a3b2c8e00958b4b296695cfc",
+      "bytes": 10720
+    },
+    "fidelity/route_requirements.json": {
+      "sha256": "7233bf7321c4dd70ed77660ea6026d69011817a8a465980d35fa7352889aad16",
+      "bytes": 6048
+    },
+    "fidelity/specs/canonical_math.json": {
+      "sha256": "a4c231b77eb70d75157c9855cb13fe5e6f97f1716fdc68dc8bcf89069ff3f414",
+      "bytes": 688345
+    },
+    "fidelity/specs/paper_a.json": {
+      "sha256": "d68b0e5bba18573eddded78055b2d65121cf8c9c739453e49a7ce09511bc080f",
+      "bytes": 229243
+    },
+    "fidelity/specs/paper_a.md": {
+      "sha256": "fc8b0387b0ca5cbe56920e1f363d5614c30d31708fc31e8e6b181e557ab8adcf",
+      "bytes": 154640
+    },
+    "fidelity/specs/paper_b.json": {
+      "sha256": "b7e38418a565769fd090102f5a3b79411f1d55c9b3c41fe5a95217f100cef4e1",
+      "bytes": 242637
+    },
+    "fidelity/specs/paper_b.md": {
+      "sha256": "60e9d5a8ad5a8dd72796d30e2f7a3b1c86e63def24deced452de24d4ff567282",
+      "bytes": 177838
+    },
+    "fidelity/specs/zero_parameter_addendum.json": {
+      "sha256": "c31a6f43be890fc0427967b0cf06d063f93b095cb735b145e62a2b3252763377",
+      "bytes": 16141
+    },
+    "fidelity/specs/zero_parameter_addendum.md": {
+      "sha256": "ee91198e1b9ac45b5b143f525aba48b558a449f1d9f29c953b2adc4a87694d5b",
+      "bytes": 3469
+    },
+    "lake-manifest.json": {
+      "sha256": "1e5951b8a2ce6c33a475127ca6a8e3b97ee62c04bf4f4883f30d248841027ca5",
+      "bytes": 3140
+    },
+    "lakefile.rc3.toml": {
+      "sha256": "0570d408ed3d71c5684a6bb774f18427102938d54a04ebf6ccbfbeeac2cf4786",
+      "bytes": 227
+    },
+    "lakefile.toml": {
+      "sha256": "0570d408ed3d71c5684a6bb774f18427102938d54a04ebf6ccbfbeeac2cf4786",
+      "bytes": 227
+    },
+    "lean-toolchain": {
+      "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47",
+      "bytes": 29
+    },
+    "lean-toolchain.rc3": {
+      "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47",
+      "bytes": 29
+    },
+    "scripts/build_rc3.sh": {
+      "sha256": "5367cd1a3a11e6a507e9a5c162451883ac0118f0467c42b49b6f2b647d3e2642",
+      "bytes": 152
+    },
+    "scripts/check_fidelity.py": {
+      "sha256": "9aa848bd3121d97e2b9a60022102889d33ec1930a3f7dd5bab7645c01809744a",
+      "bytes": 2210
+    },
+    "scripts/check_formalization.sh": {
+      "sha256": "f582a0f8da58c4fd422ee801e6cb2ea52c9df64b9040ebe33fc7ed7ed5dab28b",
+      "bytes": 488
+    },
+    "scripts/check_foundation.sh": {
+      "sha256": "a9f85b44f361f68b6d94fa848152e972aafab15588729eef08adc63ddfde5c27",
+      "bytes": 482
+    },
+    "scripts/check_sorries.sh": {
+      "sha256": "d69aba48ea135816ef85f3a950f37d464ee9490763396ca8b1d22ebaa8f2d041",
+      "bytes": 131
+    },
+    "scripts/deliver.sh": {
+      "sha256": "7e785994bc465dcb51d86e7ec2312b276f6bbb3734331326b6d54d7ed359039f",
+      "bytes": 3695
+    },
+    "scripts/fidelity/__init__.py": {
+      "sha256": "31416b44d5c7bdf163c9bef12e8d0a992d7275e9aefc97eb4f1310e4f3200a2e",
+      "bytes": 75
+    },
+    "scripts/fidelity/archive.py": {
+      "sha256": "286405f693109ae9184c39c836921249167861b342dd5eb8b26d7d64fcdd0632",
+      "bytes": 12882
+    },
+    "scripts/fidelity/checks.py": {
+      "sha256": "ba6c88cc6a120a0aee22dae6552cad9e9ef0142951eb8396a6a029216aa55f05",
+      "bytes": 38369
+    },
+    "scripts/fidelity/common.py": {
+      "sha256": "e9c74b8bb2d4f994d048156ee4c9c83d182d20a5fd8d9e5977a177ada907b659",
+      "bytes": 8453
+    },
+    "scripts/fidelity/exact_experiments.py": {
+      "sha256": "e7843416e147b459c85b870ee6f52dd895165b42a57ab5ce3ec7f0890bcd5b2d",
+      "bytes": 26911
+    },
+    "scripts/fidelity/experiments.py": {
+      "sha256": "19fe25fe2b2f45cd23b318570cdadb0ea24a280afdcddaa34044a778b1257a77",
+      "bytes": 1942
+    },
+    "scripts/fidelity/inspection.py": {
+      "sha256": "29ea8272fb40e87f324a24cfac480fdfe0c8bd52bf74b7f0b44fbf02c5d1a0a9",
+      "bytes": 5031
+    },
+    "scripts/fidelity/metadata.py": {
+      "sha256": "51cb0b6fcd0b8d79bf35572f467feb368fa3c7fdebba9c0125e5a13507bbcc28",
+      "bytes": 11387
+    },
+    "scripts/fidelity/prepare_review.py": {
+      "sha256": "4bca95d95f84135f296b6d0cab3f9974ced09543620bfe450864c0b683650e42",
+      "bytes": 9292
+    },
+    "scripts/fidelity/route_dependencies.py": {
+      "sha256": "d613fe9a7fb2ca81ea352fa2f452ba723683b479a74a6ab33ea207854c85c730",
+      "bytes": 1937
+    },
+    "scripts/fidelity/runner.py": {
+      "sha256": "cbe8b498ee34be3779279a1e2989b0117457f097b2a3c1aa65e85e4b22e9e115",
+      "bytes": 35005
+    },
+    "scripts/fidelity/semantic_mutations.py": {
+      "sha256": "d311a0c3511c5bbefff53f6b1bbaf35191f479c9b9bc5dc4d348a5354972b82c",
+      "bytes": 4546
+    },
+    "scripts/package_delivery.py": {
+      "sha256": "d879bf137198c86be0b05bb12b3561d7daa918944666257cf2ce462a753ec4aa",
+      "bytes": 4009
+    },
+    "scripts/proof_status.py": {
+      "sha256": "334ca55590fdfa9bb59d5751e504dc82f1628621b48d30dfa655b996128c909a",
+      "bytes": 4384
+    },
+    "source.pdf": {
+      "sha256": "5b78cce542772dd63ea579fa88cb8f412f1b2a80f2eba39fe94118c12f74473a",
+      "bytes": 386290
+    },
+    "source.tex": {
+      "sha256": "4141e8fa7c8fc8d7499b1d10bb77fcc1440d229169f44610709ebaf8968a5a19",
+      "bytes": 38726
+    },
+    "tests/test_archive.py": {
+      "sha256": "31483a511c0c666f6c090c26319e87e06b5aa8a75bb806b21a05e666a758f428",
+      "bytes": 14377
+    },
+    "tests/test_exact_experiments.py": {
+      "sha256": "87948de8fac18b2faa62adea5a976c87439b78b8a6f1753d41c20d2263cb41ab",
+      "bytes": 5325
+    },
+    "tests/test_fidelity.py": {
+      "sha256": "ab0cf537f64f177ace07920b9dc77a22b97c4745042ce844a952b2b1724cbad2",
+      "bytes": 49673
+    },
+    "tests/test_review_packets.py": {
+      "sha256": "4fb42bdaf084fd930e85073578fc02ab9920fb7709a4dfd31a76f05ceb58426e",
+      "bytes": 3502
+    },
+    "DELIVERY_RUNS.json": {
+      "sha256": "62b493a2d54bab77fa8ccf6414166404271bb8c836b19aa5e9ae5fe5a99f0504",
+      "bytes": 1332
+    }
+  },
+  "omitted_paths": [
+    "DELIVERY_MANIFEST.sha256",
+    "fidelity/packets/lean_reverse-20261030T172606Z-c8fef66f/PROMPT.txt",
+    "fidelity/packets/lean_reverse-20261030T172606Z-c8fef66f/implementation_environment.json",
+    "fidelity/packets/lean_reverse-20261030T172606Z-c8fef66f/manifest.json",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/PROMPT.txt",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/environment.json",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/AdjacentColumns.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/AffineDetSum.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/AffineParity.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/AlternantFactorization.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/AlternantMatrices.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/AlternantPaperRoute.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/AlternantPolynomials.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/Audit.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/Basic.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/BracketEvaluation.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/ClassicalColumns.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/ClassicalCorollary.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/ClassicalSpecialization.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/ClassicalTransfer.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/CoefficientMatrices.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/CoefficientMinors.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/Coefficients.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/ComplementaryMinors.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/DeterminantFinsum.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/ExceptionalBplusIdentity.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/ExceptionalBplusKernels.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/ExceptionalBtIdentity.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/ExceptionalBtKernels.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/ExceptionalCtIdentity.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/ExceptionalCtKernels.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/ExceptionalSequences.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/ExternalHallLittlewood.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/FieldEmbedding.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/FiniteBplus.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/FiniteCB.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/FiniteColumnData.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/FiniteColumnEvaluation.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/FiniteColumnMinors.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/FiniteColumns.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/FiniteDeterminantTransfer.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/FiniteFolding.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/FiniteRowFunctions.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/FiniteUnfolding.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/FiniteWeyl.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/Folding.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/FoundationAudit.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/GeneratingFunctions.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/HallLittlewoodAffine.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/HallLittlewoodClassical.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/HallLittlewoodFinite.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/HallLittlewoodWeyl.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/Kernels.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/MainIdentities.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/MatrixBlocks.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/NormalizedAlternants.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/OrdinaryBCColumnKernels.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/OrdinaryBCIdentity.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/OrdinaryBColumnKernels.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/OrdinaryBIdentities.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/OrdinaryC0Identity.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/OrdinaryColumnKernels.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/OrdinaryIdentityTransfer.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/OrdinarySequences.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/PaperAlternantDivisibility.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/PaperAlternantNormalization.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/PaperCauchyBinet.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/PaperField.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/PaperIdentities.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/PaperNormalizations.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/PaperPropositions.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/PaperRegularity.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/PaperSpecializations.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/PaperTopForms.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/PaperWeylRegularity.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/ParameterPolynomials.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/PermutationSigns.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/PlusFoldEvaluation.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/ReducedNumerators.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/ResidueSequences.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/Section4Ordinary.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/Section5Exceptional.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/SignedDeterminants.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/SymmetricPairProducts.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/WeightExponents.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/WeylAdmissibility.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/WeylDenominators.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/WeylMatrices.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/WeylPolynomials.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/WeylReduction.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/WeylSymmetrizer.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/WidthZero.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/WidthZeroColumns.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/AffineDualJT/WidthZeroReduced.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/FidelityLean/Certificates.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/FidelityLean/CoefficientBridge.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/FidelityLean/DerivedChecks.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/FidelityLean/FiniteCertificates.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/FidelityLean/FoldingCertificates.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/FidelityLean/MainCertificates.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/FidelityLean/SequenceCertificates.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/FidelityLean/Spec.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/FidelityLean/WeylBridge.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/FidelityLean/ZeroParameterCertificates.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/FidelityLean/ZeroParameterSpec.lean",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/fidelity/canonical_claims.json",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/fidelity/certificates.json",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/fidelity/inputs/authoritative.pdf",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/fidelity/inputs/authoritative.txt",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/fidelity/protocol.json",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/fidelity/reviews/lean_reverse.json",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/fidelity/reviews/lean_reverse.md",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/fidelity/specs/canonical_math.json",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/fidelity/specs/paper_a.json",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/fidelity/specs/paper_b.json",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/fidelity/specs/zero_parameter_addendum.json",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/inputs/fidelity/specs/zero_parameter_addendum.md",
+    "fidelity/packets/route-20261031T013834Z-040ddef2/manifest.json",
+    "fidelity/packets/semantic_1-20261031T013834Z-c93b8281/PROMPT.txt",
+    "fidelity/packets/semantic_1-20261031T013834Z-c93b8281/environment.json",
+    "fidelity/packets/semantic_1-20261031T013834Z-c93b8281/inputs/fidelity/canonical_claims.json",
+    "fidelity/packets/semantic_1-20261031T013834Z-c93b8281/inputs/fidelity/certificates.json",
+    "fidelity/packets/semantic_1-20261031T013834Z-c93b8281/inputs/fidelity/inputs/authoritative.pdf",
+    "fidelity/packets/semantic_1-20261031T013834Z-c93b8281/inputs/fidelity/inputs/authoritative.txt",
+    "fidelity/packets/semantic_1-20261031T013834Z-c93b8281/inputs/fidelity/protocol.json",
+    "fidelity/packets/semantic_1-20261031T013834Z-c93b8281/inputs/fidelity/reviews/lean_reverse.json",
+    "fidelity/packets/semantic_1-20261031T013834Z-c93b8281/inputs/fidelity/reviews/lean_reverse.md",
+    "fidelity/packets/semantic_1-20261031T013834Z-c93b8281/inputs/fidelity/specs/canonical_math.json",
+    "fidelity/packets/semantic_1-20261031T013834Z-c93b8281/inputs/fidelity/specs/paper_a.json",
+    "fidelity/packets/semantic_1-20261031T013834Z-c93b8281/inputs/fidelity/specs/paper_b.json",
+    "fidelity/packets/semantic_1-20261031T013834Z-c93b8281/inputs/fidelity/specs/zero_parameter_addendum.json",
+    "fidelity/packets/semantic_1-20261031T013834Z-c93b8281/inputs/fidelity/specs/zero_parameter_addendum.md",
+    "fidelity/packets/semantic_1-20261031T013834Z-c93b8281/manifest.json",
+    "fidelity/packets/semantic_2-20261031T013834Z-5aa670ab/PROMPT.txt",
+    "fidelity/packets/semantic_2-20261031T013834Z-5aa670ab/environment.json",
+    "fidelity/packets/semantic_2-20261031T013834Z-5aa670ab/inputs/fidelity/canonical_claims.json",
+    "fidelity/packets/semantic_2-20261031T013834Z-5aa670ab/inputs/fidelity/certificates.json",
+    "fidelity/packets/semantic_2-20261031T013834Z-5aa670ab/inputs/fidelity/inputs/authoritative.pdf",
+    "fidelity/packets/semantic_2-20261031T013834Z-5aa670ab/inputs/fidelity/inputs/authoritative.txt",
+    "fidelity/packets/semantic_2-20261031T013834Z-5aa670ab/inputs/fidelity/protocol.json",
+    "fidelity/packets/semantic_2-20261031T013834Z-5aa670ab/inputs/fidelity/reviews/lean_reverse.json",
+    "fidelity/packets/semantic_2-20261031T013834Z-5aa670ab/inputs/fidelity/reviews/lean_reverse.md",
+    "fidelity/packets/semantic_2-20261031T013834Z-5aa670ab/inputs/fidelity/specs/canonical_math.json",
+    "fidelity/packets/semantic_2-20261031T013834Z-5aa670ab/inputs/fidelity/specs/paper_a.json",
+    "fidelity/packets/semantic_2-20261031T013834Z-5aa670ab/inputs/fidelity/specs/paper_b.json",
+    "fidelity/packets/semantic_2-20261031T013834Z-5aa670ab/inputs/fidelity/specs/zero_parameter_addendum.json",
+    "fidelity/packets/semantic_2-20261031T013834Z-5aa670ab/inputs/fidelity/specs/zero_parameter_addendum.md",
+    "fidelity/packets/semantic_2-20261031T013834Z-5aa670ab/manifest.json",
+    "fidelity/reviews/lean_reverse.json",
+    "fidelity/reviews/lean_reverse.md",
+    "fidelity/reviews/route.json",
+    "fidelity/reviews/route.md",
+    "fidelity/reviews/semantic_1.json",
+    "fidelity/reviews/semantic_1.md",
+    "fidelity/reviews/semantic_2.json",
+    "fidelity/reviews/semantic_2.md",
+    "fidelity/reviews/spec_reconciliation.json",
+    "fidelity/reviews/spec_reconciliation.md",
+    "fidelity/runs/acceptance-final-20261031/000-lean-version.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/000-lean-version.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/001-compiled-semantic-mutations.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/001-compiled-semantic-mutations.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/002-dependency-mathlib.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/002-dependency-mathlib.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/003-dependency-clean-mathlib.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/003-dependency-clean-mathlib.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/004-dependency-plausible.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/004-dependency-plausible.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/005-dependency-clean-plausible.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/005-dependency-clean-plausible.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/006-dependency-LeanSearchClient.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/006-dependency-LeanSearchClient.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/007-dependency-clean-LeanSearchClient.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/007-dependency-clean-LeanSearchClient.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/008-dependency-importGraph.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/008-dependency-importGraph.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/009-dependency-clean-importGraph.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/009-dependency-clean-importGraph.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/010-dependency-proofwidgets.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/010-dependency-proofwidgets.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/011-dependency-clean-proofwidgets.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/011-dependency-clean-proofwidgets.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/012-dependency-aesop.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/012-dependency-aesop.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/013-dependency-clean-aesop.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/013-dependency-clean-aesop.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/014-dependency-Qq.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/014-dependency-Qq.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/015-dependency-clean-Qq.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/015-dependency-clean-Qq.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/016-dependency-batteries.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/016-dependency-batteries.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/017-dependency-clean-batteries.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/017-dependency-clean-batteries.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/018-dependency-Cli.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/018-dependency-Cli.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/019-dependency-clean-Cli.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/019-dependency-clean-Cli.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/020-math-build.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/020-math-build.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/021-fidelity-Spec.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/021-fidelity-Spec.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/022-fidelity-CoefficientBridge.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/022-fidelity-CoefficientBridge.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/023-fidelity-WeylBridge.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/023-fidelity-WeylBridge.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/024-fidelity-MainCertificates.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/024-fidelity-MainCertificates.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/025-fidelity-FiniteCertificates.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/025-fidelity-FiniteCertificates.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/026-fidelity-FoldingCertificates.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/026-fidelity-FoldingCertificates.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/027-fidelity-SequenceCertificates.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/027-fidelity-SequenceCertificates.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/028-fidelity-ZeroParameterSpec.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/028-fidelity-ZeroParameterSpec.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/029-fidelity-ZeroParameterCertificates.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/029-fidelity-ZeroParameterCertificates.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/030-fidelity-DerivedChecks.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/030-fidelity-DerivedChecks.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/031-fidelity-Certificates.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/031-fidelity-Certificates.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/032-fidelity-Export.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/032-fidelity-Export.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/033-environment-export.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/033-environment-export.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/034-exact-experiments.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/034-exact-experiments.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/035-clean-math.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/035-clean-math.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/036-clean-Spec.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/036-clean-Spec.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/037-clean-CoefficientBridge.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/037-clean-CoefficientBridge.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/038-clean-WeylBridge.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/038-clean-WeylBridge.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/039-clean-MainCertificates.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/039-clean-MainCertificates.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/040-clean-FiniteCertificates.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/040-clean-FiniteCertificates.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/041-clean-FoldingCertificates.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/041-clean-FoldingCertificates.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/042-clean-SequenceCertificates.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/042-clean-SequenceCertificates.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/043-clean-ZeroParameterSpec.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/043-clean-ZeroParameterSpec.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/044-clean-ZeroParameterCertificates.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/044-clean-ZeroParameterCertificates.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/045-clean-DerivedChecks.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/045-clean-DerivedChecks.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/046-clean-Certificates.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/046-clean-Certificates.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/047-clean-Export.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/047-clean-Export.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/048-archive-math.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/048-archive-math.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/049-archive-Spec.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/049-archive-Spec.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/050-archive-CoefficientBridge.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/050-archive-CoefficientBridge.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/051-archive-WeylBridge.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/051-archive-WeylBridge.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/052-archive-MainCertificates.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/052-archive-MainCertificates.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/053-archive-FiniteCertificates.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/053-archive-FiniteCertificates.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/054-archive-FoldingCertificates.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/054-archive-FoldingCertificates.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/055-archive-SequenceCertificates.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/055-archive-SequenceCertificates.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/056-archive-ZeroParameterSpec.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/056-archive-ZeroParameterSpec.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/057-archive-ZeroParameterCertificates.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/057-archive-ZeroParameterCertificates.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/058-archive-DerivedChecks.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/058-archive-DerivedChecks.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/059-archive-Certificates.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/059-archive-Certificates.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/060-archive-Export.stderr.log",
+    "fidelity/runs/acceptance-final-20261031/060-archive-Export.stdout.log",
+    "fidelity/runs/acceptance-final-20261031/environment.json",
+    "fidelity/runs/acceptance-final-20261031/environment.raw.json",
+    "fidelity/runs/acceptance-final-20261031/experiments.json",
+    "fidelity/runs/acceptance-final-20261031/inputs.json",
+    "fidelity/runs/acceptance-final-20261031/report.json",
+    "fidelity/runs/acceptance-final-20261031/reproduction-archive-manifest.json",
+    "fidelity/runs/acceptance-final-20261031/reproduction-clean-manifest.json",
+    "fidelity/runs/acceptance-final-20261031/semantic_mutations.json",
+    "fidelity/runs/full-environment-review/environment.json",
+    "fidelity/runs/implementation-export/environment.json"
+  ],
+  "note": "The view is for source browsing. The full checker must run from the complete archive extracted by tools/verify.py; omitted evidence remains unchanged in the archive."
+}

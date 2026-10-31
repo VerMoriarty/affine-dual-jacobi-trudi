@@ -1,0 +1,21 @@
+# Downloaded Lean dependencies and build outputs
+/.lake/
+/.tooling/
+
+# Delivery archives and local verification records
+/dist/
+/delivery_logs/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Machine-specific tool and editor configuration
+/.agents/
+/.codex/
+/.aws/
+/.vscode/
+/.idea/
+.DS_Store
+*~
+*.swp

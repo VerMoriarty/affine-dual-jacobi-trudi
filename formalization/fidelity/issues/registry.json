@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "issues": [
+    {
+      "id": "F-001-independent-spec",
+      "status": "resolved",
+      "category": "missing audit witness",
+      "problem": "Original project has no independently paper-derived typed specification or bridge certificates.",
+      "mechanism": "Original project has no independently paper-derived typed specification or bridge certificates.",
+      "affected_claims": [
+        "all canonical claims"
+      ],
+      "repair": "Added pure Fidelity.Spec and closed exact acceptance types, retaining all original 89 Lean sources.",
+      "source_authority": "fidelity/inputs/authoritative.pdf",
+      "implementation_changes": "No original Lean source changed. Added independent specification, bridge, or auxiliary theorem only.",
+      "revalidation": "Fresh fixed-toolchain compilation and subsequent independent semantic/route reviews are separate mandatory gates; this registry resolution is not their verdict.",
+      "evidence": [
+        {
+          "path": "FidelityLean/Spec.lean",
+          "sha256": "bf7dd88c9eb9537256f8290844e882dbd968652769c7b642663b5ef043ba66d0",
+          "locator": "Added pure Fidelity.Spec and closed exact acceptance types, retaining all original 89 Lean sources."
+        },
+        {
+          "path": "FidelityLean/Certificates.lean",
+          "sha256": "9af59152087bfa35d69827c8962d6fc8cb86ff33077fc36cf9f73416f5dd1f56",
+          "locator": "Added pure Fidelity.Spec and closed exact acceptance types, retaining all original 89 Lean sources."
+        }
+      ]
+    },
+    {
+      "id": "F-002-fixed-residue",
+      "status": "resolved",
+      "category": "missing audit witness",
+      "problem": "P5.1 fixed residue formula was not present as an explicitly mapped theorem.",
+      "mechanism": "P5.1 fixed residue formula was not present as an explicitly mapped theorem.",
+      "affected_claims": [
+        "P5.1.fixed.residue"
+      ],
+      "repair": "Added arbitrary-field Ct_fixed_residue, with k>0 and all integer q.",
+      "source_authority": "fidelity/inputs/authoritative.pdf",
+      "implementation_changes": "No original Lean source changed. Added independent specification, bridge, or auxiliary theorem only.",
+      "revalidation": "Fresh fixed-toolchain compilation and subsequent independent semantic/route reviews are separate mandatory gates; this registry resolution is not their verdict.",
+      "evidence": [
+        {
+          "path": "FidelityLean/DerivedChecks.lean",
+          "sha256": "a1831d78e55fbdeac7c43c832d1e3a1a302814f466061c967690da8597eeef56",
+          "locator": "Added arbitrary-field Ct_fixed_residue, with k>0 and all integer q."
+        }
+      ]
+    },
+    {
+      "id": "F-003-adjacent-support",
+      "status": "resolved",
+      "category": "missing audit witness",
+      "problem": "L5.4 adjacent residue support needed a direct theorem.",
+      "mechanism": "L5.4 adjacent residue support needed a direct theorem.",
+      "affected_claims": [
+        "L5.4.a.support"
+      ],
+      "repair": "Proved aBt_support_adjacent without changing the sequence definition.",
+      "source_authority": "fidelity/inputs/authoritative.pdf",
+      "implementation_changes": "No original Lean source changed. Added independent specification, bridge, or auxiliary theorem only.",
+      "revalidation": "Fresh fixed-toolchain compilation and subsequent independent semantic/route reviews are separate mandatory gates; this registry resolution is not their verdict.",
+      "evidence": [
+        {
+          "path": "FidelityLean/DerivedChecks.lean",
+          "sha256": "a1831d78e55fbdeac7c43c832d1e3a1a302814f466061c967690da8597eeef56",
+          "locator": "Proved aBt_support_adjacent without changing the sequence definition."
+        }
+      ]
+    },
+    {
+      "id": "F-004-widthzero-columns",
+      "status": "resolved",
+      "category": "missing audit witness",
+      "problem": "P6.1 Bt and BC column formulas needed explicit entrywise witnesses.",
+      "mechanism": "P6.1 Bt and BC column formulas needed explicit entrywise witnesses.",
+      "affected_claims": [
+        "P6.1.Bt.firstcolumn",
+        "P6.1.Bt.restcolumns",
+        "P6.1.BC.firstcolumn",
+        "P6.1.BC.restcolumns"
+      ],
+      "repair": "Added first-column and remaining-column identities, retaining normalized width-zero value 1.",
+      "source_authority": "fidelity/inputs/authoritative.pdf",
+      "implementation_changes": "No original Lean source changed. Added independent specification, bridge, or auxiliary theorem only.",
+      "revalidation": "Fresh fixed-toolchain compilation and subsequent independent semantic/route reviews are separate mandatory gates; this registry resolution is not their verdict.",
+      "evidence": [
+        {
+          "path": "FidelityLean/DerivedChecks.lean",
+          "sha256": "a1831d78e55fbdeac7c43c832d1e3a1a302814f466061c967690da8597eeef56",
+          "locator": "Added first-column and remaining-column identities, retaining normalized width-zero value 1."
+        }
+      ]
+    },
+    {
+      "id": "F-005-zero-outlets",
+      "status": "resolved",
+      "category": "missing audit witness",
+      "problem": "C6.2 final seven zero specializations were not separate independent proposition types.",
+      "mechanism": "C6.2 final seven zero specializations were not separate independent proposition types.",
+      "affected_claims": [
+        "C6.2"
+      ],
+      "repair": "Paper-only spec author added a frozen pure-spec addendum; proved seven-case aggregate certificate.",
+      "source_authority": "fidelity/inputs/authoritative.pdf",
+      "implementation_changes": "No original Lean source changed. Added independent specification, bridge, or auxiliary theorem only.",
+      "revalidation": "Fresh fixed-toolchain compilation and subsequent independent semantic/route reviews are separate mandatory gates; this registry resolution is not their verdict.",
+      "evidence": [
+        {
+          "path": "FidelityLean/ZeroParameterSpec.lean",
+          "sha256": "b923dda633d8dd631c150fa90826a0e5191f29fcd77bea815ac4256de889b61d",
+          "locator": "Paper-only spec author added a frozen pure-spec addendum; proved seven-case aggregate certificate."
+        },
+        {
+          "path": "FidelityLean/ZeroParameterCertificates.lean",
+          "sha256": "18642eae3a850a70f271692d40df4eb2b5092e9f353b08e1d185f0184994b0db",
+          "locator": "Paper-only spec author added a frozen pure-spec addendum; proved seven-case aggregate certificate."
+        },
+        {
+          "path": "fidelity/specs/zero_parameter_addendum.json",
+          "sha256": "c31a6f43be890fc0427967b0cf06d063f93b095cb735b145e62a2b3252763377",
+          "locator": "Paper-only spec author added a frozen pure-spec addendum; proved seven-case aggregate certificate."
+        }
+      ]
+    },
+    {
+      "id": "F-006-input-variance",
+      "status": "resolved",
+      "category": "input provenance",
+      "problem": "Packaged PDF has an AI-use declaration differing from authoritative PDF.",
+      "mechanism": "Packaged PDF has an AI-use declaration differing from authoritative PDF.",
+      "affected_claims": [
+        "global provenance"
+      ],
+      "repair": "Authoritative supplied PDF remains the mathematical baseline; variant retained as provenance only.",
+      "source_authority": "fidelity/inputs/authoritative.pdf",
+      "implementation_changes": "No original Lean source changed. Added independent specification, bridge, or auxiliary theorem only.",
+      "revalidation": "Fresh fixed-toolchain compilation and subsequent independent semantic/route reviews are separate mandatory gates; this registry resolution is not their verdict.",
+      "evidence": [
+        {
+          "path": "fidelity/baseline.json",
+          "sha256": "e21e900d92f43923a06221ecf54fd6d410f1fb2307ec993c2f8bda393aba7fc7",
+          "locator": "Authoritative supplied PDF remains the mathematical baseline; variant retained as provenance only."
+        },
+        {
+          "path": "fidelity/inputs/pdf_difference.txt",
+          "sha256": "b569869244f152445c0882ab092b252014bb722be032c5bf74e3c962c30e4434",
+          "locator": "Authoritative supplied PDF remains the mathematical baseline; variant retained as provenance only."
+        }
+      ]
+    },
+    {
+      "id": "F-007-evidence-delivery",
+      "status": "resolved",
+      "category": "checker evidence delivery",
+      "problem": "Evidence ZIP omitted required environment references; completed-run bundles could overlook new findings, stale reconstruction inventories or failed experiment outputs. Generic evidence traversal also followed protocol schema example paths.",
+      "repair": "Collect and recheck the exact hashed evidence closure; bind the exact current review/issue set, compare reconstruction inventory with its verified ZIP, preserve failure artifacts, and treat protocol schema examples as documentation. Clear project build artifacts before fresh compilation.",
+      "affected_claims": [
+        "all via reproducibility gate"
+      ],
+      "revalidation": "90 regression tests pass; actual two-semantic-plus-route validation covers all424 claims. Full clean reconstruction remains a separate mandatory gate.",
+      "evidence": [
+        {
+          "path": "scripts/fidelity/archive.py",
+          "sha256": "286405f693109ae9184c39c836921249167861b342dd5eb8b26d7d64fcdd0632",
+          "locator": "Completed-run / evidence closure / clean-build regression boundary"
+        },
+        {
+          "path": "scripts/fidelity/runner.py",
+          "sha256": "cbe8b498ee34be3779279a1e2989b0117457f097b2a3c1aa65e85e4b22e9e115",
+          "locator": "Completed-run / evidence closure / clean-build regression boundary"
+        },
+        {
+          "path": "scripts/package_delivery.py",
+          "sha256": "d879bf137198c86be0b05bb12b3561d7daa918944666257cf2ce462a753ec4aa",
+          "locator": "Completed-run / evidence closure / clean-build regression boundary"
+        },
+        {
+          "path": "tests/test_archive.py",
+          "sha256": "31483a511c0c666f6c090c26319e87e06b5aa8a75bb806b21a05e666a758f428",
+          "locator": "Completed-run / evidence closure / clean-build regression boundary"
+        },
+        {
+          "path": "fidelity/checker_tests.json",
+          "sha256": "8b47db1a9a9b517836442a60e86edd4a945645c2abf404c87a56bcb8b62a0fc1",
+          "locator": "Completed-run / evidence closure / clean-build regression boundary"
+        }
+      ]
+    }
+  ]
+}

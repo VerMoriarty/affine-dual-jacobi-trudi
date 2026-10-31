@@ -1,0 +1,24 @@
+--- packaged page 15
++++ authoritative page 15
+@@ -6,6 +6,11 @@
+ iszero,sononzeroshiftsdonotdisappearentrywise.Thealreadyprovedparity
+ identityidentifiesitsspecializedeven-sublatticesumwiththesamesymplectic
+ determinant.
++
++AIusedeclaration.Artificialintelligencewasusedtoassistinexploringproof
++strategiesanddevelopingpreliminarycodefornumericalexperiments.Allresults
++wereindependentlyverifiedbytheauthors.Theauthorsassumeresponsibilityfor
++allcontent.
+ 
+ References
+ 
+@@ -42,9 +47,4 @@
+ 
+ 
+ 
+-
+-
+-
+-
+-
+                                          15

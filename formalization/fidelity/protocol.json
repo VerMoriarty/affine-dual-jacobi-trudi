@@ -1,0 +1,329 @@
+{
+  "schema_version": 1,
+  "axiom_allowlist": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "acceptance": {
+    "overall": "Every required validator and fresh command must pass. Missing, malformed, stale, unresolved, skipped, interrupted, or unavailable evidence never passes.",
+    "static_only": "Always nonzero; no overall acceptance or fresh reproduction acceptance.",
+    "skip_build": "Always nonzero; no fresh kernel compilation or reproduction acceptance.",
+    "run_directories": "New directory per invocation; old logs are never current command evidence.",
+    "source_stability": "All mathematical Lean sources, paper specifications, canonical claims, input copies, baseline and lock files are hashed before and after execution.",
+    "tools": "Python checker, protocol, exact experiment code and Fidelity Lean modules are inventoried separately and must remain unchanged during a run.",
+    "identity_scope": "Review identity and independence are recorded attestations. Content hashes establish what each reviewer inspected; they do not authenticate a human or model identity.",
+    "exporter_boundary": "FidelityLean/Export.lean is executable tooling hashed separately; mathematical sources may not import it, and it is excluded from dynamic mathematical imports. All other FidelityLean .lean files are mathematical inputs.",
+    "portable_sources": "Recorded specification bytes are preserved. A missing absolute path may resolve only to a unique same-name fidelity/inputs/authoritative.pdf or authoritative.txt with exactly the recorded hash. Existing stale absolute paths and arbitrary missing paths are rejected.",
+    "source_archive": "The baseline source_archive path is mandatory, must exist, and must match its SHA-256. Relative paths resolve against the project root, independently of the invoking working directory.",
+    "toolchain_location": "Use the project-local fixed toolchain when installed; otherwise preserve the receiver ELAN_HOME and PATH. The actual Lean version and dependency revisions must still equal the pins.",
+    "claim_status": "Retain claim-specific dimension judgments, hashed evidence, reviewer identity and missing evidence even when another claim or global step fails. Two distinct semantic reviewers are required per semantic dimension; at least one route reviewer is required. A claim with absent evidence never passes; all required claim dimensions must pass for overall acceptance.",
+    "review_packet_protocol_frozen": "Semantic/route review input and attestation schema frozen here. Archive and test implementation may change without changing mathematical inputs or these review fields."
+  },
+  "paths": {
+    "baseline": "fidelity/baseline.json",
+    "specifications": [
+      "fidelity/specs/paper_a.json",
+      "fidelity/specs/paper_b.json"
+    ],
+    "canonical_claims": "fidelity/canonical_claims.json",
+    "reviews": "fidelity/reviews/*.json",
+    "experiments": "fidelity/experiments.json",
+    "experiment_runner": "scripts/fidelity/exact_experiments.py",
+    "report": "fidelity/runs/<new-run-id>/report.json",
+    "current_issues": "fidelity/issues/registry.json",
+    "certificates": "fidelity/certificates.json",
+    "route_requirements": "fidelity/route_requirements.json",
+    "semantic_mutation_runner": "scripts/fidelity/semantic_mutations.py"
+  },
+  "specification_schema": {
+    "schema_version": 1,
+    "role": "paper_spec_a or paper_spec_b",
+    "inputs": [
+      {
+        "path": "absolute or project-relative source path",
+        "sha256": "64 lowercase hexadecimal characters"
+      }
+    ],
+    "claims": [
+      {
+        "id": "unique atom id",
+        "kind": "definition|convention|statement|proof_step",
+        "container": "paper container",
+        "page": "paper page",
+        "locator": "paper locator",
+        "statement": "actual mathematical specification",
+        "assumptions": [],
+        "objects": [],
+        "route": [],
+        "edge_cases": []
+      }
+    ]
+  },
+  "canonical_schema": {
+    "schema_version": 1,
+    "claims": [
+      {
+        "id": "unique canonical id",
+        "paper_a": [
+          "atom id"
+        ],
+        "paper_b": [
+          "atom id"
+        ],
+        "declarations": [
+          "fully qualified Lean declaration"
+        ],
+        "mapping_relation": "equivalent|component_of|source_only",
+        "source_evidence": [
+          {
+            "path": "fidelity/inputs/authoritative.pdf or authoritative.txt or reference.tex or source.tex",
+            "sha256": "current SHA-256",
+            "locator": "precise original-paper anchor"
+          }
+        ]
+      }
+    ],
+    "coverage": "Many-to-many mapping: every atom on each side must be covered by the unique referenced-ID set; omissions and unknown IDs are rejected. Reuse across canonical claims is allowed and reported separately. Repeated IDs inside one claim and side are rejected. Each mapping requires an explicit supported mapping_relation and nonempty hashed source_evidence that directly binds the original paper PDF/text/TeX. An empty side requires source_only; both sides empty is rejected. Independent semantic reviewers adjudicate mapping meaning. Every canonical claim must bind compiled declarations.",
+    "open_issues": [],
+    "frozen_mathematics": {
+      "path": "fidelity/specs/canonical_math.json",
+      "sha256": "a4c231b77eb70d75157c9855cb13fe5e6f97f1716fdc68dc8bcf89069ff3f414",
+      "rule": "If present, every claim field must equal this independent frozen mathematical copy, except declarations may be populated later. Claim IDs and mathematical statement, assumptions, route, source references and all other claim fields cannot be changed. Independent mapping provenance may be added only at top level."
+    }
+  },
+  "review_schema": {
+    "schema_version": 1,
+    "kind": "semantic or route",
+    "reviewer": {
+      "id": "actual independent reviewer identity",
+      "independent": true,
+      "fresh_context": true
+    },
+    "inputs": {
+      "project-relative path": "current SHA-256"
+    },
+    "input_requirement": "Every report.inputs entry plus an inspected environment.json must be present. The reviewed environment's normalized declaration content must equal the current fresh export, allowing different run_id metadata.",
+    "semantic_dimensions": [
+      "objects",
+      "statement",
+      "hypotheses",
+      "conclusion",
+      "nonvacuity"
+    ],
+    "judgment": {
+      "status": "pass|fail|blocked",
+      "rationale": "substantive reviewer explanation",
+      "evidence": [
+        {
+          "path": "project-relative path",
+          "sha256": "current SHA-256",
+          "locator": "precise page/claim/declaration/line anchor"
+        }
+      ]
+    },
+    "semantic_claim": {
+      "id": "canonical id",
+      "dimensions": "object with exactly the five dimension keys and judgment values",
+      "open_issues": []
+    },
+    "route_claim": {
+      "id": "canonical id",
+      "route": "judgment",
+      "dependency_anchors": [
+        "declarations in the actual transitive type/value dependency closure"
+      ],
+      "open_issues": []
+    },
+    "minimum_reviewers": "Two distinct independent semantic reviewers, plus at least one route review. Every artifact must cover every canonical claim; every judgment must pass with nonempty hashed evidence. Each semantic claim must reference specification and compiled environment evidence.",
+    "open_issues": [],
+    "packet_manifest": {
+      "path": "fidelity/packets/<this-review-packet>/manifest.json",
+      "sha256": "current SHA-256 of this packet manifest"
+    },
+    "inspected_inputs": [
+      {
+        "path": "project-relative path inside this same packet",
+        "sha256": "actual inspected file SHA-256",
+        "read": true,
+        "scope": "optional honest focused/partial inspection scope"
+      }
+    ],
+    "inspection_requirement": "The packet manifest and copied versions of every manifest.required_inspected_sources file must be listed as inspected with current hashes. Required sources are authoritative.txt, both raw JSON specifications, canonical_math.json, canonical_claims.json, protocol.json, lean_reverse.json, certificates.json, zero_parameter_addendum.json, and the current compiled environment. Actual implementation sources inspected by the route reviewer may be listed additionally. Do not claim exhaustive mathematical understanding merely because a file was indexed. Evidence may cite the original source paths represented by the inspected copies with matching hashes.",
+    "packet_role_boundary": "Semantic packets have role semantic_1 or semantic_2; route packets have role route. They contain the blind Lean reconstruction as independent evidence, certificate manifest, and zero-parameter specification addendum; no other semantic reviewer verdict is permitted. Declared inspected paths must remain inside this one packet and be listed among its copied files, manifest or prompt.",
+    "attestation_boundary": "fresh_context:true, independent:true, actual identity, read:true and optional inspection scope are reviewer attestations. The checker verifies structure, hashes, packet role isolation and required inspection records. It does not authenticate an agent/person identity, prove a model was started with a new context, or prove actual understanding."
+  },
+  "fresh_environment": {
+    "command": "lake env lean --run FidelityLean/Export.lean OUTPUT ALL_MATH_MODULES_EXCLUDING_EXPORT",
+    "raw_output": "environment.raw.json, retained unchanged and hashed",
+    "normalized_output": "environment.json",
+    "required_declaration_fields": [
+      "name",
+      "module",
+      "type",
+      "type_constants",
+      "value_constants",
+      "axioms",
+      "type_hash"
+    ],
+    "type_hash": "SHA-256 of precisely the exported type UTF-8 bytes, computed by the Python wrapper. Any native Lean hash is retained as native_type_hash.",
+    "coverage": "Every source module with declarations must occur. Every mapped declaration and every project constant referenced by an exported dependency must have an entry. The axiom allowlist applies to every exported declaration.",
+    "metadata": [
+      "run_id",
+      "snapshot_sha256",
+      "declarations_sha256"
+    ]
+  },
+  "exact_experiment_schema": {
+    "manifest": {
+      "schema_version": 1,
+      "required_cases": [
+        "unique case id"
+      ]
+    },
+    "runner_cli": "python3 scripts/fidelity/exact_experiments.py --output OUTPUT",
+    "output": {
+      "schema_version": 1,
+      "arithmetic": "exact",
+      "cases": [
+        {
+          "id": "case id",
+          "claims": [
+            "canonical id"
+          ],
+          "status": "pass|fail",
+          "comparisons": [
+            {
+              "left": "integer or fraction string",
+              "right": "integer or fraction string"
+            }
+          ]
+        }
+      ],
+      "open_issues": []
+    },
+    "validation": "The checker independently parses each side as Fraction and requires exact equality. Empty cases, floats, missing required cases, unknown claims, and open issues are rejected. Experiments are supporting evidence, not general proofs."
+  },
+  "reproduction": {
+    "clean_project": "Copy hashed project sources into a new temporary project with no project .olean artifacts; rebuild every mathematical module and FidelityLean certificate/export module.",
+    "archive": "Create and hash a new source ZIP, extract it into another empty temporary project, verify every extracted file against its inventory, and rebuild all modules.",
+    "dependency_cache": "Only pinned dependency checkouts may be shared. Every checkout must have its manifest commit as HEAD and no tracked changes. No project build cache is copied.",
+    "logs": "Record argv, working directory, input/tool snapshot digests, UTC start/end, duration, exit code and stdout/stderr hashes. Tool absence or timeout blocks acceptance."
+  },
+  "current_issue_schema": {
+    "schema_version": 1,
+    "issues": [
+      {
+        "id": "issue id",
+        "status": "open|resolved",
+        "evidence": [
+          {
+            "path": "project-relative path",
+            "sha256": "current SHA-256",
+            "locator": "precise resolution anchor"
+          }
+        ]
+      }
+    ],
+    "validation": "Every ID discovered in historical fidelity/issues JSON reports must occur in the current registry. Historical open status is retained as history; current entries must all be resolved with nonempty current hashed evidence. Missing registry blocks acceptance."
+  },
+  "metadata_roles": {
+    "required": [
+      "spec_reconciliation",
+      "lean_reverse"
+    ],
+    "rule": "Validate input hashes, role isolation and exact structural coverage independently. Explicitly exclude these validated roles from semantic/route verdict parsing; unknown roles or kinds are rejected. Neither metadata role supplies a semantic, route, kernel or reproduction verdict.",
+    "spec_reconciliation": "Bind exactly the two raw JSON/Markdown specifications and authoritative PDF/text; validate alignment and unique source coverage against the pinned canonical_math output, not a later mapping hash.",
+    "lean_reverse": "Bind exactly the original implementation environment and isolated implementation-only packet; the packet must equal the original environment filtered to AffineDualJT modules. Every reconstructed declaration type/hash, direct dependency, module, kind, axiom list, body availability and object body must match its exported evidence. Validate complete declaration/module inventories. Recorded inspections must remain inside the same isolated packet."
+  },
+  "certificates": {
+    "schema_version": 1,
+    "required_containers": [
+      "A",
+      "B",
+      "C6.2",
+      "L2.1",
+      "L3.2",
+      "L3.3",
+      "L5.2",
+      "L5.4",
+      "P2.2",
+      "P4.1",
+      "P4.2",
+      "P5.1",
+      "P5.3",
+      "P5.5",
+      "P6.1",
+      "T3.1"
+    ],
+    "entries": [
+      {
+        "id": "unique certificate entry",
+        "container": "one required source container",
+        "specification": "Fidelity.Spec independent proposition",
+        "certificate": "Fidelity.Certificate compiled theorem",
+        "claims": [
+          "canonical claim id"
+        ]
+      }
+    ],
+    "rule": "Require entries for all sixteen source containers. Each named specification must originate in FidelityLean.Spec or FidelityLean.ZeroParameterSpec; each certificate must be an exported theorem whose type constants include that specification. Claim references must exist and match the entry container. Type-constant checks support, but do not replace, exact Lean acceptance type certificates and independent semantic review."
+  },
+  "pure_spec_firewall": {
+    "source": {
+      "FidelityLean/Spec.lean": [
+        "Mathlib"
+      ],
+      "FidelityLean/ZeroParameterSpec.lean": [
+        "FidelityLean.Spec"
+      ]
+    },
+    "environment": "For both pure specification modules, direct type/value references to implementation, bridges or certificates are rejected, including references identified by exported module origin."
+  },
+  "semantic_mutations": {
+    "mandatory": true,
+    "command": "python3 scripts/fidelity/semantic_mutations.py --lean FIXED_LEAN --output FRESH_OUTPUT",
+    "required_cases": [
+      "object_redefined_as_rhs",
+      "goal_added_as_hypothesis",
+      "weakened_parameter_scope"
+    ],
+    "verification": "Independently verify fixed Lean version, exact fixture/certificate bytes and SHA-256, fixture compilation exit zero, actual no-axiom print evidence, certificate positive nonzero exit and type-mismatch diagnostics. A submitted pass label is insufficient. These are acceptance-boundary tests, not proofs of paper correspondence."
+  },
+  "route_dependencies": {
+    "mandatory": true,
+    "manifest": "fidelity/route_requirements.json",
+    "validator": "scripts/fidelity/route_dependencies.py",
+    "rule": "Source-backed checkpoints must be strict transitive dependencies of the actual theorem proof_entrypoint. Adding names to a canonical mapping list cannot satisfy the route. This mandatory step contributes to the route dimension."
+  },
+  "mandatory_steps": [
+    "snapshot",
+    "protocol",
+    "baseline",
+    "source_audit",
+    "pure_spec_sources",
+    "specifications",
+    "canonical_coverage",
+    "metadata_reviews",
+    "issues",
+    "tools",
+    "dependencies",
+    "build",
+    "fidelity_compile",
+    "environment_export",
+    "environment_validation",
+    "certificates",
+    "reviews",
+    "route_dependencies",
+    "semantic_mutations",
+    "exact_experiments",
+    "clean_rebuild",
+    "archive_rebuild",
+    "source_stability",
+    "claim_dimensions"
+  ],
+  "archive_delivery": {
+    "selection": "Base mathematical sources, checker/tools, README, tests, locks, authoritative inputs and frozen specifications plus the transitive closure of current review/metadata/issue hashed evidence. Include referenced normalized environments and isolated packet files; do not include unrelated historical runs or recursive reproduction archives.",
+    "verification": "Every referenced hashed file must exist and match its recorded SHA-256. Extraction must retain the paths required for independent metadata and review verification. .lake and .tooling remain excluded; clean compilation may share pinned dependency checkouts."
+  }
+}

@@ -1,0 +1,149 @@
+name: Verify frozen formalization
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - name: Initialize temporary paths
+        shell: bash
+        run: |
+          echo "ELAN_HOME=$RUNNER_TEMP/elan" >> "$GITHUB_ENV"
+          echo "MATHLIB_CACHE_DIR=$RUNNER_TEMP/mathlib-download-cache" >> "$GITHUB_ENV"
+          echo "CI_EVIDENCE_DIR=$RUNNER_TEMP/ci-evidence" >> "$GITHUB_ENV"
+          mkdir -p "$RUNNER_TEMP/ci-evidence"
+
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12.15'
+
+      - name: Reserve disk space for Lean and mathlib
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$CI_EVIDENCE_DIR"
+          # This disposable runner does not need the preinstalled Android SDK.
+          sudo rm -rf /usr/local/lib/android
+          df -h "$GITHUB_WORKSPACE"
+          available_kib=$(df -Pk "$GITHUB_WORKSPACE" | awk 'NR == 2 {print $4}')
+          if (( available_kib < 20 * 1024 * 1024 )); then
+            echo "::error::At least 20 GiB of free disk space is required before installing Lean."
+            exit 1
+          fi
+
+      - name: Verify bytes and prepare the frozen project
+        run: python3 tools/verify.py --prepare-only
+
+      - name: Install pinned Elan and Lean
+        working-directory: build/verification/affine_dual_jt_complete
+        shell: bash
+        run: |
+          set -euo pipefail
+          installer_dir="$RUNNER_TEMP/elan-installer"
+          mkdir -p "$installer_dir"
+          curl --fail --location --retry 3 \
+            --output "$installer_dir/elan.tar.gz" \
+            https://github.com/leanprover/elan/releases/download/v4.2.4/elan-x86_64-unknown-linux-gnu.tar.gz
+          echo "42b94d4244e8353142c456ec0e4ca6528fd898a6c604d4059f494e706e431f63  $installer_dir/elan.tar.gz" | sha256sum --check -
+          tar -xzf "$installer_dir/elan.tar.gz" -C "$installer_dir"
+          "$installer_dir/elan-init" -y --no-modify-path --default-toolchain none
+          test "$(cat lean-toolchain)" = 'leanprover/lean4:v4.35.0-rc3'
+          "$ELAN_HOME/bin/elan" toolchain install leanprover/lean4:v4.35.0-rc3
+          "$ELAN_HOME/bin/elan" --version
+          echo "$ELAN_HOME/bin" >> "$GITHUB_PATH"
+
+      - name: Restore locked dependency checkouts and their build cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: build/verification/affine_dual_jt_complete/.lake/packages
+          key: lean-dependencies-v1-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('build/verification/affine_dual_jt_complete/lean-toolchain', 'build/verification/affine_dual_jt_complete/lake-manifest.json') }}
+
+      - name: Prepare mathlib cache without updating dependency locks
+        working-directory: build/verification/affine_dual_jt_complete
+        shell: bash
+        run: |
+          set -euo pipefail
+          lean --version
+          lake --version
+          lake exe cache get
+          # Remove downloaded cache archives, retaining extracted dependency builds.
+          lake exe cache clean!
+          df -h "$GITHUB_WORKSPACE"
+
+      - name: Run checker regression tests
+        working-directory: build/verification/affine_dual_jt_complete
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m unittest discover -s tests -v 2>&1 | tee "$CI_EVIDENCE_DIR/checker-tests.log"
+
+      - name: Record preexisting evidence directories
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          runs = Path('build/verification/affine_dual_jt_complete/fidelity/runs')
+          baseline = sorted(path.name for path in runs.iterdir() if path.is_dir()) if runs.is_dir() else []
+          (Path(os.environ['RUNNER_TEMP']) / 'fidelity-preexisting-runs.json').write_text(json.dumps(baseline))
+          PY
+
+      - name: Run complete fresh fidelity verification
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/verify.py --run-id "ci-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" 2>&1 | tee "$CI_EVIDENCE_DIR/verification.log"
+
+      - name: Collect current reports and command logs
+        if: always()
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import shutil
+          from pathlib import Path
+          marker = Path(os.environ['RUNNER_TEMP']) / 'fidelity-preexisting-runs.json'
+          runs = Path('build/verification/affine_dual_jt_complete/fidelity/runs')
+          if marker.is_file() and runs.is_dir():
+              baseline = set(json.loads(marker.read_text()))
+              destination = Path(os.environ['CI_EVIDENCE_DIR']) / 'runs'
+              patterns = ('report.json', 'inputs.json', '*.stdout.log', '*.stderr.log',
+                          'semantic_mutations.json', 'experiments.json', 'reproduction-*-manifest.json')
+              for run in sorted(runs.iterdir()):
+                  if run.is_dir() and not run.is_symlink() and run.name not in baseline:
+                      target = destination / run.name
+                      target.mkdir(parents=True, exist_ok=True)
+                      for pattern in patterns:
+                          for source in run.glob(pattern):
+                              if source.is_file() and not source.is_symlink():
+                                  shutil.copyfile(source, target / source.name)
+          PY
+
+      - name: Upload diagnostic evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: fidelity-diagnostics-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/ci-evidence/
+          if-no-files-found: ignore
+          retention-days: 14

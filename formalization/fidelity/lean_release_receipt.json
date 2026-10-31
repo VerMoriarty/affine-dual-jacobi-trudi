@@ -1,0 +1,29 @@
+{
+  "asset": "lean-4.35.0-rc3-darwin_aarch64.tar.zst",
+  "bytes": 571824435,
+  "sha256": "967fb9ca8d0c0441c4a72e5d8140208260d0ab6ccf7e7dcf0cc63c54ffbff95c",
+  "source": "https://github.com/leanprover/lean4/releases/download/v4.35.0-rc3/lean-4.35.0-rc3-darwin_aarch64.tar.zst",
+  "observed_on_origin_host": {
+    "recorded_at": "2026-10-31T02:16:19.985+00:00",
+    "full_run": "acceptance-final-20261031",
+    "lean_version": "Lean (version 4.35.0-rc3, arm64-apple-darwin24.6.0, commit 470d5ce1400764999581fd26d5d72b00d990b0f4, Release)",
+    "executables": {
+      "git": {
+        "path": "/usr/bin/git",
+        "sha256": "179301dcb41ea78accc3fa0048a7e6f6710d891945a751a34addd622020c1818"
+      },
+      "lake": {
+        "path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/.tooling/elan/toolchains/leanprover--lean4---v4.35.0-rc3/bin/lake",
+        "sha256": "d2d63c80ca10bd2cc9557d11d59221b95c6eefb078c9652a11ef887ab8a068a5"
+      },
+      "lean": {
+        "path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/.tooling/elan/toolchains/leanprover--lean4---v4.35.0-rc3/bin/lean",
+        "sha256": "d1d9c26a539f54fe839d2aa7760bf1ac1dd76a30b26e2c9684bebf2900038fcf"
+      },
+      "python3": {
+        "path": "/opt/homebrew/bin/python3",
+        "sha256": "b502cb4c5b46b8d4192ec6bcb600ce8922f1afc396fcf646e8765c6eba74a0bf"
+      }
+    }
+  }
+}

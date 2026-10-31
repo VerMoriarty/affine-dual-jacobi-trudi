@@ -1,0 +1,472 @@
+{
+  "schema_version": 1,
+  "environments": [
+    {
+      "path": "fidelity/runs/implementation-export/environment.json",
+      "sha256": "bb40867d389b3c2f430e59596fafa479e085e4b396bf45c23949f81143cd6165"
+    },
+    {
+      "path": "fidelity/runs/full-environment-review/environment.json",
+      "sha256": "2fa31da691cd21e6352409184e690919df4e87c8abe9fbe46504729c63eacef4"
+    }
+  ],
+  "original_declarations": 2140,
+  "compared_fields": [
+    "type",
+    "type_constants",
+    "value_constants",
+    "axioms",
+    "definition",
+    "kind",
+    "module"
+  ],
+  "changed_declarations": [],
+  "original_lean_sources": [
+    {
+      "path": "AffineDualJT/AdjacentColumns.lean",
+      "sha256": "5621d9360c53fecf5211f378ca55a50c926e609dc3207f34fd382c924904604e",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/AffineDetSum.lean",
+      "sha256": "2fdc21180ea892351125012091d5bc07d6cc5dbd195727dc02d597e9697b30c0",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/AffineParity.lean",
+      "sha256": "7511196d52d2d4d5ecc557ec7c5fe406fdc680d3d353af0b1f5f9c6c06396ec0",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/AlternantFactorization.lean",
+      "sha256": "278075670deb7279b9e498423ca3872ace4077b6e8213da0d8709baa6124cacc",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/AlternantMatrices.lean",
+      "sha256": "e644fe7d8354764fb5f196d3138eae972101eb6496a79ead5ca6b3a4c5859f9e",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/AlternantPaperRoute.lean",
+      "sha256": "749cc1206049a2c4f04e64874cbac9dca14e5c20cffc1bba759ad1e1988c2638",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/AlternantPolynomials.lean",
+      "sha256": "5cd9318d44be93b024ffa6ebb70ca3e777031293d237b267396dcc69dc639505",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/Audit.lean",
+      "sha256": "c988f65c04038e9052305aa286e459af3ede9d1e43542b8b854fb4c17e0294c8",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/Basic.lean",
+      "sha256": "c611c941e5a468df37b0d3595d85d26c58683b05935860fda469a7584c7d442a",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/BracketEvaluation.lean",
+      "sha256": "b0250444aa3ae2c152f2fdd2f656f2fd4b3d56a921fa9207b9133a5790ec634a",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/ClassicalColumns.lean",
+      "sha256": "cfe887885b759562a1a0851f48adfafaca4079cc2275b36cb9b5ef0d959af293",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/ClassicalCorollary.lean",
+      "sha256": "5ea4da952c574ffcb8b19e62afd3dd74b30dbbb344d022f216dad452e825ccbc",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/ClassicalSpecialization.lean",
+      "sha256": "6025ecd957e7d5c45fcab98351967d066b52863b91a6b3330ab3b406fcf75b73",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/ClassicalTransfer.lean",
+      "sha256": "418da5bfb7721275ede86ccb573829329ce45901087f5e26c298a9528133ab06",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/CoefficientMatrices.lean",
+      "sha256": "20ea5cceddec1ecc71d2760982f2b090df6d41961ff509a61b8575e799d538c5",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/CoefficientMinors.lean",
+      "sha256": "754bf359f48cd7af933b5146d52a7eb01c0981ffb47846cae686b63fb38ccecd",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/Coefficients.lean",
+      "sha256": "05d8569e9af4a58cc3a7de5afe787c0cef82c788b24a2b3b49416578a41c79ab",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/ComplementaryMinors.lean",
+      "sha256": "9b2b8137cb8b76ea5f37fa1a1980619ca53c9e903ff0b2e78dcbe4c2cf60b8b8",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/DeterminantFinsum.lean",
+      "sha256": "39b8b307e2c5705dfb048fdfabeb89eaf5ae5c619fe31765b1072b64ca0792fe",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/ExceptionalBplusIdentity.lean",
+      "sha256": "0b81a1cc52c58a4212d3f784b0f057a5ae55a282dd6b3f9081374a8c0f1aa91c",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/ExceptionalBplusKernels.lean",
+      "sha256": "17ace594e022652749cab298f70ab01f82ddb0818b36645c08dec611b5f2c566",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/ExceptionalBtIdentity.lean",
+      "sha256": "174ebc13d8e342cc8cced8b9b3da3f2faeb1269e5d1feafb0adbf68726119471",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/ExceptionalBtKernels.lean",
+      "sha256": "f5de34b69f88aeec8c60437d6481de5310033bd3aceebe635f738883663c5166",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/ExceptionalCtIdentity.lean",
+      "sha256": "7d1e4e40b8bfad8d7a74da51c344af4cd1256fbfab6ca533360f7b3e2e54e805",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/ExceptionalCtKernels.lean",
+      "sha256": "656fcc1a43f9a5dbe342bed7d48e7f668eb2d3c50f6efef81785eb130ec51fd7",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/ExceptionalSequences.lean",
+      "sha256": "6a323279240109cf9a38b9369229c719bba3c2f08f576c901866b494eeaf0d6f",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/ExternalHallLittlewood.lean",
+      "sha256": "84e8cd07b0619713f5a74d2d96ef723d7808eae90798877c37356f2881c83dbc",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/FieldEmbedding.lean",
+      "sha256": "5a440b756ac9ab3ad3de88c55d98679220d932f8d1af552b00ede91252ae2629",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/FiniteBplus.lean",
+      "sha256": "a430a28426af50b3e85e4145873a1774122d05ab94786c3da6e3c9d9733cf65a",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/FiniteCB.lean",
+      "sha256": "761c46d59f944acc2c61bf606979d77930c19e741025bc9f862712d47e3d757b",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/FiniteColumnData.lean",
+      "sha256": "532fa9a30b96dea5511b2587f730b04f66f4405be9d9ac5c4dcdd6ffa3965cd9",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/FiniteColumnEvaluation.lean",
+      "sha256": "b7cbed41be9dd0b928e291302155bd11053c3bb71ef7de2173f566246b4d9bc6",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/FiniteColumnMinors.lean",
+      "sha256": "1e25f6825ff2760b696ff94788f716b9efad8ae4e116a82f8c48c215c248baae",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/FiniteColumns.lean",
+      "sha256": "dfddbbe964fb8694eb36a6068fe6fe51952d9db19272e25c768cbf404dedbd84",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/FiniteDeterminantTransfer.lean",
+      "sha256": "f42fabd1f3c034290b50b6e874f14d1b0ae5f8d71daf4a04dac3742d5e62f7e3",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/FiniteFolding.lean",
+      "sha256": "4a9331b9a393dfa607654f4573c0f4abeb0c137e846b93296bf55943a182d5a3",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/FiniteRowFunctions.lean",
+      "sha256": "c49f6a7ec76c2adc714709f944ef60ae2b6c22711095c390d59d33c1e55d97b7",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/FiniteUnfolding.lean",
+      "sha256": "0f092458850b3be234423b730f7f2cac23841c079575e5ce30fbc6d9eb8161d2",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/FiniteWeyl.lean",
+      "sha256": "3615ff1e84166bf50aabee08b318a624ea4782f426b477c035964316fc4b5ea9",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/Folding.lean",
+      "sha256": "042da8d467f8aec3bb94fb3d0548bae8e60626564200a85958bd4e7d80ae25e6",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/FoundationAudit.lean",
+      "sha256": "285cc51bf52ab6ce63f67b2cd24db40eddd893b342a95ce534f09839ac6d84e5",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/GeneratingFunctions.lean",
+      "sha256": "8426471cb8b715df98cedc490e61cc9ce45697ac6e82792c61be9377ef209214",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/HallLittlewoodAffine.lean",
+      "sha256": "c95e003cb8a6d383d7bfd497be3a49b56f35653a1a5d47934d23f67baa3994d1",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/HallLittlewoodClassical.lean",
+      "sha256": "538483b2de646a1265f768b3c033c65be1daf063e546b99ed7afc78922a19ba8",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/HallLittlewoodFinite.lean",
+      "sha256": "b706c9ba9db650a11a3062ae34a0733d979ff6c55153e5de84c5535377d03cdc",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/HallLittlewoodWeyl.lean",
+      "sha256": "1f76e60779eb95a0c02b430d7c49d40c35ca4fe7bdab41a0c166908a862b67bd",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/Kernels.lean",
+      "sha256": "264310b6d8b6bf0f97597bcb969c70ca29ee277170749d17824e8b5506de9395",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/MainIdentities.lean",
+      "sha256": "105c7262e6d4d8efcb2da9e3ea065763599f393280604baeb1495e77dbb2958c",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/MatrixBlocks.lean",
+      "sha256": "0d779d7d92a7241e5e8b67ffc88dc9b92774b0a3ba0c5a7428c23469653a4091",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/NormalizedAlternants.lean",
+      "sha256": "f8d1e59cc3ea67ec41112bd2b1deba5f5210dd6acb702791f17909cd6f948bad",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/OrdinaryBCColumnKernels.lean",
+      "sha256": "75e24aec1e8ad56e521c6b66eed3d3333c2c60eb86ca527c2964e64e6c059311",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/OrdinaryBCIdentity.lean",
+      "sha256": "e52671f93f15d880841dceb2f788ad54804854152a574b2059b1f01a2fd21125",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/OrdinaryBColumnKernels.lean",
+      "sha256": "5fa428632e12aed32299f64b4ce2cb77a27965af3fbefe1357b463ff2a3b841c",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/OrdinaryBIdentities.lean",
+      "sha256": "f87c334e66bd8d52e67974d583c3eddf88d7b37986430175290208fa850e952c",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/OrdinaryC0Identity.lean",
+      "sha256": "a703158d142b3b1c92c1c4325714f14bd84a381109f15d2e59636d986f06c743",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/OrdinaryColumnKernels.lean",
+      "sha256": "5ad42308e06a63418e10473e06b5d401a898affeeaa62f8391d1852f924ffb58",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/OrdinaryIdentityTransfer.lean",
+      "sha256": "f948d22d1e7328285831147b738ca63b936933cfa02d96314d4d0c7a511d21bd",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/OrdinarySequences.lean",
+      "sha256": "6fb5813dda8f7b71e696430f490342ac2d24cb3f21cbf2e420523bf8cde37b3f",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/PaperAlternantDivisibility.lean",
+      "sha256": "b2014354700731115495b0577239c212a75637232d4e4b593b2ea08ca5c5a6a2",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/PaperAlternantNormalization.lean",
+      "sha256": "36eecc66f5ebf64515623a6b8f9085f25d284b6d2ec16e372d847cb972d8e29d",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/PaperCauchyBinet.lean",
+      "sha256": "d65165e48c75964388a4779443f9fcf42a3bde90e1f49b29f51e892c3d19e876",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/PaperField.lean",
+      "sha256": "05226f4e9452ef2c488453cd3a1679b65fb5a4c5e93b65d69d72b1f09600436e",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/PaperIdentities.lean",
+      "sha256": "4802b7bb79b03e821e86369b761ecd4cc1c59192135762db862ce6761cb9eef8",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/PaperNormalizations.lean",
+      "sha256": "a821cb1e63ea99ccb7c709317e87400306524651f899d1729fb26f3cee0d7cc1",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/PaperPropositions.lean",
+      "sha256": "4009be12a8415832f72265a87073f558e2fe99f5922e47858b5c079ced6df701",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/PaperRegularity.lean",
+      "sha256": "81df41c0871ba00c905ca64c4bc1bb1c677a56aed31a7a398c1d155e1ad3f521",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/PaperSpecializations.lean",
+      "sha256": "4876dd716e93eae1985dcf958767d85bf4d700adb4b12352f1b149fb2ac6668b",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/PaperTopForms.lean",
+      "sha256": "c3ae6263543fc36c7c4bad350849254b908ad3a028c7c4b0e1e914aca9c593fa",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/PaperWeylRegularity.lean",
+      "sha256": "d086ac9e900bb2a65a135f724707ed85a81841be0b8636621a2476e22ba2e985",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/ParameterPolynomials.lean",
+      "sha256": "0fe29f1325910c383ecce70063ac189b7af59082fc5e294a29242c646d186244",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/PermutationSigns.lean",
+      "sha256": "71c11c4f0707409d7cf53772235fe2fc47c1bd8a67f694f3c7eab4bfb33079ca",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/PlusFoldEvaluation.lean",
+      "sha256": "21d7e6ff97d81de5eea9f7f5b32a638f699e7547ec7e769c12f84dd1f51c610e",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/ReducedNumerators.lean",
+      "sha256": "408f7a7efe1a8f1666de742a9719572b00024b106e743d4aa3f8a16be7ab496c",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/ResidueSequences.lean",
+      "sha256": "6a6cb5082feaf44b00eed909bd35bf592fff71ac34c330a6496d9997d5a0a349",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/Section4Ordinary.lean",
+      "sha256": "53196fd90cc6ad450bcab3742b7f44fa85b1bd24098f44f0ac5fa9e9c69b89f1",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/Section5Exceptional.lean",
+      "sha256": "96d06a5feafe863a145f5e9f91b6eeb116cf043f57b63201e75d8db74573e172",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/SignedDeterminants.lean",
+      "sha256": "8aac1590a89dffcbbcfeb6c1bf4aeb0a344664e992c74d854b9526b7f4252e44",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/SymmetricPairProducts.lean",
+      "sha256": "bb51eb8076b3200b125c8ab4e8500280609ede1e1e26d5000fc9f74e3d6976df",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/WeightExponents.lean",
+      "sha256": "061f315fe7c1a85159aa69fdcd6d1d3c3862d7385c543bd45c5474b58d277102",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/WeylAdmissibility.lean",
+      "sha256": "ef0eb4382cd1400b10efff9c4f0d09688de806c904cb6c3e4cd2165ca1897910",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/WeylDenominators.lean",
+      "sha256": "0e534aa769b79e22be0be2c93c7c3c712a622e190e3d81f47ddeb5d8eef3b855",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/WeylMatrices.lean",
+      "sha256": "9adaaa81430c3a8145e051ec56f053094bf3386f2a7b16040b86ba4e9dcb9bde",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/WeylPolynomials.lean",
+      "sha256": "286bcc91c3b411dc3ec5cf0b2961a88b847de60d8aac4144562a13a14a9c9a2c",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/WeylReduction.lean",
+      "sha256": "c0aa9b969a972152b5202cfee21bc1e26adcd7c5d96d91ea84f0f2de7b5eb442",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/WeylSymmetrizer.lean",
+      "sha256": "a5c6bf03d17a9c146c774d0eac0aaf532dfd602820a4a82ac03270c9ca89aee3",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/WidthZero.lean",
+      "sha256": "5385333cd53b046e3815406dbf1325eaead787a81824c1fcd5f6ca27684d579f",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/WidthZeroColumns.lean",
+      "sha256": "5a063a9357a8a1ce54f2ce268409652f435e7951b1fb4db80cf4e5a83f17c15c",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT/WidthZeroReduced.lean",
+      "sha256": "022cae02258dc05e1073a450dcd994d8aacbdb73dfe43dc3915a02bdf2ceab4a",
+      "equal_original_bytes": true
+    },
+    {
+      "path": "AffineDualJT.lean",
+      "sha256": "5b1408960740447c211f22a5450cb56f70fc9150b0cc6ab3c18b18ac0032a130",
+      "equal_original_bytes": true
+    }
+  ],
+  "conclusion": "All original 89 Lean source bytes and 2140 compiled declaration types, object bodies and dependencies remain unchanged. This is preservation evidence, not a paper-fidelity verdict."
+}

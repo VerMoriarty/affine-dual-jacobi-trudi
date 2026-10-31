@@ -1,0 +1,416 @@
+{
+  "schema_version": 1,
+  "role": "zero_parameter_spec_addendum",
+  "inputs": [
+    {
+      "path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/fidelity/inputs/authoritative.pdf",
+      "sha256": "b13eaa9ed2a2dc2919980a702965a2d138ee634b49d9a32125ddeaa67fece7ab",
+      "role": "authoritative_mathematical_source"
+    },
+    {
+      "path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/fidelity/inputs/authoritative.txt",
+      "sha256": "0cd074228dab999ce8217978668d5284f99f7fc610805a6e05e25ff94bc24a2f",
+      "role": "text_extraction"
+    },
+    {
+      "path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/FidelityLean/Spec.lean",
+      "sha256": "bf7dd88c9eb9537256f8290844e882dbd968652769c7b642663b5ef043ba66d0",
+      "role": "frozen_independent_lean_specification"
+    },
+    {
+      "path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/fidelity/specs/paper_a.json",
+      "sha256": "d68b0e5bba18573eddded78055b2d65121cf8c9c739453e49a7ce09511bc080f",
+      "role": "own_frozen_raw_claim_identifiers"
+    }
+  ],
+  "source_priority": "authoritative.pdf",
+  "source_scope": [
+    {
+      "page": 14,
+      "locator": "Corollary 6.2 final sentence"
+    },
+    {
+      "page": 15,
+      "locator": "Corollary 6.2 proof first two sentences"
+    }
+  ],
+  "purpose": "仅补充原 Corollary62Interface 已遗漏的七种零参数特化的独立类型出口；不修改原命题、原 paper_a 或原 Spec.lean。",
+  "independence": {
+    "read_implementation": false,
+    "read_other_specifications": false,
+    "read_reviews": false,
+    "read_readme": false,
+    "read_canonical": false,
+    "reference_policy": "仅引用自己已冻结 paper_a 中的 raw claim IDs，供上层对应；没有读取或猜造 canonical ID。"
+  },
+  "claims": [
+    {
+      "id": "C6.2.zero_parameter.C0",
+      "kind": "statement",
+      "container": "C6.2",
+      "page": 14,
+      "locator": "Corollary 6.2 最后一句，映射至 (6.1) 左侧；第15页证明首两句",
+      "statement": "P^{C_n}_{(k^n)}(x;0,0)=\\det[\\phi_{k+r}(x_a)]/\\Delta_C(x)。",
+      "assumptions": [
+        "n\\ge1",
+        "k\\ge1",
+        "t=0；两个平方根情形同时 \\tau=0",
+        "原文有理函数解释；x 为独立可逆变量"
+      ],
+      "case": "C0",
+      "source_folding": "C",
+      "displayed_equation_left_side": "6.1",
+      "obligation_references": {
+        "namespace": "paper_a.raw_claim_id",
+        "ids": [
+          "C6.2.specialization.C0",
+          "C6.2.columns.C0"
+        ]
+      },
+      "route": [
+        "使用独立 P 的原始 Weyl-sum 定义 (2.1)",
+        "Proposition 2.2 对应有限表示",
+        "第15页：零参数下每个有限列变为 [k+r]_diamond",
+        "得到 (6.1) 左侧有限比值"
+      ],
+      "edge_cases": [
+        "仅为正宽度；未改变原命题或补入 k=0",
+        "目标为显示等式左侧比值；不额外引入右侧行列式的半因子。"
+      ],
+      "lean": {
+        "path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/FidelityLean/ZeroParameterSpec.lean",
+        "namespace": "Fidelity.Spec",
+        "uniform_interface": "ZeroSpecialization",
+        "case_interface": "ZeroSpecializationC0",
+        "arguments": [
+          "n",
+          "k"
+        ],
+        "body": "0 < n → 0 < k → P .C0 k (symbolicX n) 0 0 = classicalNumerator (caseFolding .C0) k (symbolicX n) / Delta (caseFolding .C0) (symbolicX n)"
+      },
+      "status": "independent_prop_interface_only",
+      "paper_result_proved": false
+    },
+    {
+      "id": "C6.2.zero_parameter.Ct",
+      "kind": "statement",
+      "container": "C6.2",
+      "page": 14,
+      "locator": "Corollary 6.2 最后一句，映射至 (6.1) 左侧；第15页证明首两句",
+      "statement": "P^{C_n}_{(k^n)}(x;0,0)=\\det[\\phi_{k+r}(x_a)]/\\Delta_C(x)。",
+      "assumptions": [
+        "n\\ge1",
+        "k\\ge1",
+        "t=0；两个平方根情形同时 \\tau=0",
+        "原文有理函数解释；x 为独立可逆变量"
+      ],
+      "case": "Ct",
+      "source_folding": "C",
+      "displayed_equation_left_side": "6.1",
+      "obligation_references": {
+        "namespace": "paper_a.raw_claim_id",
+        "ids": [
+          "C6.2.specialization.Ct",
+          "C6.2.columns.Ct"
+        ]
+      },
+      "route": [
+        "使用独立 P 的原始 Weyl-sum 定义 (2.1)",
+        "Proposition 2.2 对应有限表示",
+        "第15页：零参数下每个有限列变为 [k+r]_diamond",
+        "得到 (6.1) 左侧有限比值"
+      ],
+      "edge_cases": [
+        "仅为正宽度；未改变原命题或补入 k=0",
+        "目标为显示等式左侧比值；不额外引入右侧行列式的半因子。"
+      ],
+      "lean": {
+        "path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/FidelityLean/ZeroParameterSpec.lean",
+        "namespace": "Fidelity.Spec",
+        "uniform_interface": "ZeroSpecialization",
+        "case_interface": "ZeroSpecializationCt",
+        "arguments": [
+          "n",
+          "k"
+        ],
+        "body": "0 < n → 0 < k → P .Ct k (symbolicX n) 0 0 = classicalNumerator (caseFolding .Ct) k (symbolicX n) / Delta (caseFolding .Ct) (symbolicX n)"
+      },
+      "status": "independent_prop_interface_only",
+      "paper_result_proved": false
+    },
+    {
+      "id": "C6.2.zero_parameter.BC",
+      "kind": "statement",
+      "container": "C6.2",
+      "page": 14,
+      "locator": "Corollary 6.2 最后一句，映射至 (6.1) 左侧；第15页证明首两句",
+      "statement": "P^{BC_n}_{(k^n)}(x;0,0,0)=\\det[\\phi_{k+r}(x_a)]/\\Delta_C(x)。",
+      "assumptions": [
+        "n\\ge1",
+        "k\\ge1",
+        "t=0；两个平方根情形同时 \\tau=0",
+        "原文有理函数解释；x 为独立可逆变量"
+      ],
+      "case": "BC",
+      "source_folding": "C",
+      "displayed_equation_left_side": "6.1",
+      "obligation_references": {
+        "namespace": "paper_a.raw_claim_id",
+        "ids": [
+          "C6.2.specialization.BC",
+          "C6.2.columns.BC"
+        ]
+      },
+      "route": [
+        "使用独立 P 的原始 Weyl-sum 定义 (2.1)",
+        "Proposition 2.2 对应有限表示",
+        "第15页：零参数下每个有限列变为 [k+r]_diamond",
+        "得到 (6.1) 左侧有限比值"
+      ],
+      "edge_cases": [
+        "仅为正宽度；未改变原命题或补入 k=0",
+        "目标为显示等式左侧比值；不额外引入右侧行列式的半因子。"
+      ],
+      "lean": {
+        "path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/FidelityLean/ZeroParameterSpec.lean",
+        "namespace": "Fidelity.Spec",
+        "uniform_interface": "ZeroSpecialization",
+        "case_interface": "ZeroSpecializationBC",
+        "arguments": [
+          "n",
+          "k"
+        ],
+        "body": "0 < n → 0 < k → P .BC k (symbolicX n) 0 0 = classicalNumerator (caseFolding .BC) k (symbolicX n) / Delta (caseFolding .BC) (symbolicX n)"
+      },
+      "status": "independent_prop_interface_only",
+      "paper_result_proved": false
+    },
+    {
+      "id": "C6.2.zero_parameter.B0",
+      "kind": "statement",
+      "container": "C6.2",
+      "page": 14,
+      "locator": "Corollary 6.2 最后一句，映射至 (6.2) 左侧；第15页证明首两句",
+      "statement": "P^{B_n}_{(k^n)}(x;0,0)=\\det[\\psi_{k+r}(x_a)]/\\Delta_B(x)。",
+      "assumptions": [
+        "n\\ge1",
+        "k\\ge1",
+        "t=0；两个平方根情形同时 \\tau=0",
+        "原文有理函数解释；x 为独立可逆变量"
+      ],
+      "case": "B0",
+      "source_folding": "B",
+      "displayed_equation_left_side": "6.2",
+      "obligation_references": {
+        "namespace": "paper_a.raw_claim_id",
+        "ids": [
+          "C6.2.specialization.B0",
+          "C6.2.columns.B0"
+        ]
+      },
+      "route": [
+        "使用独立 P 的原始 Weyl-sum 定义 (2.1)",
+        "Proposition 2.2 对应有限表示",
+        "第15页：零参数下每个有限列变为 [k+r]_diamond",
+        "得到 (6.2) 左侧有限比值"
+      ],
+      "edge_cases": [
+        "仅为正宽度；未改变原命题或补入 k=0",
+        "目标为显示等式左侧比值；不额外引入右侧行列式的半因子。"
+      ],
+      "lean": {
+        "path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/FidelityLean/ZeroParameterSpec.lean",
+        "namespace": "Fidelity.Spec",
+        "uniform_interface": "ZeroSpecialization",
+        "case_interface": "ZeroSpecializationB0",
+        "arguments": [
+          "n",
+          "k"
+        ],
+        "body": "0 < n → 0 < k → P .B0 k (symbolicX n) 0 0 = classicalNumerator (caseFolding .B0) k (symbolicX n) / Delta (caseFolding .B0) (symbolicX n)"
+      },
+      "status": "independent_prop_interface_only",
+      "paper_result_proved": false
+    },
+    {
+      "id": "C6.2.zero_parameter.Bminus",
+      "kind": "statement",
+      "container": "C6.2",
+      "page": 14,
+      "locator": "Corollary 6.2 最后一句，映射至 (6.2) 左侧；第15页证明首两句",
+      "statement": "P^{B_n}_{(k^n)}(x;0,0)=\\det[\\psi_{k+r}(x_a)]/\\Delta_B(x)。",
+      "assumptions": [
+        "n\\ge1",
+        "k\\ge1",
+        "t=0；两个平方根情形同时 \\tau=0",
+        "原文有理函数解释；x 为独立可逆变量"
+      ],
+      "case": "Bminus",
+      "source_folding": "B",
+      "displayed_equation_left_side": "6.2",
+      "obligation_references": {
+        "namespace": "paper_a.raw_claim_id",
+        "ids": [
+          "C6.2.specialization.Bminus",
+          "C6.2.columns.Bminus"
+        ]
+      },
+      "route": [
+        "使用独立 P 的原始 Weyl-sum 定义 (2.1)",
+        "Proposition 2.2 对应有限表示",
+        "第15页：零参数下每个有限列变为 [k+r]_diamond",
+        "得到 (6.2) 左侧有限比值"
+      ],
+      "edge_cases": [
+        "仅为正宽度；未改变原命题或补入 k=0",
+        "目标为显示等式左侧比值；不额外引入右侧行列式的半因子。"
+      ],
+      "lean": {
+        "path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/FidelityLean/ZeroParameterSpec.lean",
+        "namespace": "Fidelity.Spec",
+        "uniform_interface": "ZeroSpecialization",
+        "case_interface": "ZeroSpecializationBminus",
+        "arguments": [
+          "n",
+          "k"
+        ],
+        "body": "0 < n → 0 < k → P .Bminus k (symbolicX n) 0 0 = classicalNumerator (caseFolding .Bminus) k (symbolicX n) / Delta (caseFolding .Bminus) (symbolicX n)"
+      },
+      "status": "independent_prop_interface_only",
+      "paper_result_proved": false
+    },
+    {
+      "id": "C6.2.zero_parameter.Bplus",
+      "kind": "statement",
+      "container": "C6.2",
+      "page": 14,
+      "locator": "Corollary 6.2 最后一句，映射至 (6.3) 左侧；第15页证明首两句",
+      "statement": "P^{B_n}_{(k^n)}(x;0,1)=\\det[C_{k+r-1}(x_a)]/\\Delta_+(x)。",
+      "assumptions": [
+        "n\\ge1",
+        "k\\ge1",
+        "t=0；两个平方根情形同时 \\tau=0",
+        "原文有理函数解释；x 为独立可逆变量"
+      ],
+      "case": "Bplus",
+      "source_folding": "plus",
+      "displayed_equation_left_side": "6.3",
+      "obligation_references": {
+        "namespace": "paper_a.raw_claim_id",
+        "ids": [
+          "C6.2.specialization.Bplus",
+          "C6.2.columns.Bplus"
+        ]
+      },
+      "route": [
+        "使用独立 P 的原始 Weyl-sum 定义 (2.1)",
+        "Proposition 2.2 对应有限表示",
+        "第15页：零参数下每个有限列变为 [k+r]_diamond",
+        "得到 (6.3) 左侧有限比值"
+      ],
+      "edge_cases": [
+        "仅为正宽度；未改变原命题或补入 k=0",
+        "Bplus 标签的固定边界参数仍是 1；两个可变标量槽设零不改变它。",
+        "目标为 (6.3) 左侧有限比值，不额外乘 1/2。"
+      ],
+      "lean": {
+        "path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/FidelityLean/ZeroParameterSpec.lean",
+        "namespace": "Fidelity.Spec",
+        "uniform_interface": "ZeroSpecialization",
+        "case_interface": "ZeroSpecializationBplus",
+        "arguments": [
+          "n",
+          "k"
+        ],
+        "body": "0 < n → 0 < k → P .Bplus k (symbolicX n) 0 0 = classicalNumerator (caseFolding .Bplus) k (symbolicX n) / Delta (caseFolding .Bplus) (symbolicX n)"
+      },
+      "status": "independent_prop_interface_only",
+      "paper_result_proved": false
+    },
+    {
+      "id": "C6.2.zero_parameter.Bt",
+      "kind": "statement",
+      "container": "C6.2",
+      "page": 14,
+      "locator": "Corollary 6.2 最后一句，映射至 (6.2) 左侧；第15页证明首两句",
+      "statement": "P^{B_n}_{(k^n)}(x;0,0)=\\det[\\psi_{k+r}(x_a)]/\\Delta_B(x)。",
+      "assumptions": [
+        "n\\ge1",
+        "k\\ge1",
+        "t=0；两个平方根情形同时 \\tau=0",
+        "原文有理函数解释；x 为独立可逆变量"
+      ],
+      "case": "Bt",
+      "source_folding": "B",
+      "displayed_equation_left_side": "6.2",
+      "obligation_references": {
+        "namespace": "paper_a.raw_claim_id",
+        "ids": [
+          "C6.2.specialization.Bt",
+          "C6.2.columns.Bt"
+        ]
+      },
+      "route": [
+        "使用独立 P 的原始 Weyl-sum 定义 (2.1)",
+        "Proposition 2.2 对应有限表示",
+        "第15页：零参数下每个有限列变为 [k+r]_diamond",
+        "得到 (6.2) 左侧有限比值"
+      ],
+      "edge_cases": [
+        "仅为正宽度；未改变原命题或补入 k=0",
+        "目标为显示等式左侧比值；不额外引入右侧行列式的半因子。"
+      ],
+      "lean": {
+        "path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/FidelityLean/ZeroParameterSpec.lean",
+        "namespace": "Fidelity.Spec",
+        "uniform_interface": "ZeroSpecialization",
+        "case_interface": "ZeroSpecializationBt",
+        "arguments": [
+          "n",
+          "k"
+        ],
+        "body": "0 < n → 0 < k → P .Bt k (symbolicX n) 0 0 = classicalNumerator (caseFolding .Bt) k (symbolicX n) / Delta (caseFolding .Bt) (symbolicX n)"
+      },
+      "status": "independent_prop_interface_only",
+      "paper_result_proved": false
+    }
+  ],
+  "enumerable_interface": {
+    "namespace": "Fidelity.Spec",
+    "declaration": "Corollary62ZeroSpecializations",
+    "type": "(n k : ℕ) → Prop",
+    "body": "∀ c : PaperCase, ZeroSpecialization c n k"
+  },
+  "lean_source": {
+    "path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/FidelityLean/ZeroParameterSpec.lean",
+    "sha256": "b923dda633d8dd631c150fa90826a0e5191f29fcd77bea815ac4256de889b61d",
+    "imports": [
+      "FidelityLean.Spec"
+    ],
+    "defines_axioms": false,
+    "contains_sorry": false,
+    "proves_paper_results": false
+  },
+  "type_check": {
+    "compiler": "Lean 4.35.0-rc3",
+    "compiler_commit": "470d5ce1400764999581fd26d5d72b00d990b0f4",
+    "platform": "arm64-apple-darwin24.6.0",
+    "command": "PATH=<project>/.tooling/elan/toolchains/leanprover--lean4---v4.35.0-rc3/bin:$PATH ELAN_HOME=<project>/.tooling/elan lake env lean -o .lake/build/lib/lean/FidelityLean/ZeroParameterSpec.olean FidelityLean/ZeroParameterSpec.lean",
+    "exit_code": 0,
+    "diagnostics": []
+  },
+  "unchanged_frozen_files": [
+    {
+      "path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/FidelityLean/Spec.lean",
+      "sha256": "bf7dd88c9eb9537256f8290844e882dbd968652769c7b642663b5ef043ba66d0"
+    },
+    {
+      "path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/fidelity/specs/paper_a.json",
+      "sha256": "d68b0e5bba18573eddded78055b2d65121cf8c9c739453e49a7ce09511bc080f"
+    },
+    {
+      "path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/fidelity/specs/paper_a.md",
+      "sha256": "fc8b0387b0ca5cbe56920e1f363d5614c30d31708fc31e8e6b181e557ab8adcf"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "completed_runs": [
+    {
+      "run_id": "acceptance-final-20261031",
+      "overall": "pass",
+      "report_sha256": "c97d92673ed323de94082fb07c44301918f7153178ec39b27f1f6098fc07e1e7",
+      "omitted_reproduction_archives": [
+        {
+          "path": "fidelity/runs/acceptance-final-20261031/reproduction-clean-source.zip",
+          "sha256": "506592bca168ed709bbe75ea3029198afcbdb81985ecc744685ce7466bc0a4a9",
+          "source_manifest": {
+            "path": "fidelity/runs/acceptance-final-20261031/reproduction-clean-manifest.json",
+            "sha256": "7210a7064244654b659388c118628bfa0c3805f1ae4862370bc684f38c7d1b0c"
+          },
+          "reason": "Source inventory and build logs are included; recursive source ZIP omitted."
+        },
+        {
+          "path": "fidelity/runs/acceptance-final-20261031/reproduction-archive-source.zip",
+          "sha256": "506592bca168ed709bbe75ea3029198afcbdb81985ecc744685ce7466bc0a4a9",
+          "source_manifest": {
+            "path": "fidelity/runs/acceptance-final-20261031/reproduction-archive-manifest.json",
+            "sha256": "7210a7064244654b659388c118628bfa0c3805f1ae4862370bc684f38c7d1b0c"
+          },
+          "reason": "Source inventory and build logs are included; recursive source ZIP omitted."
+        }
+      ]
+    }
+  ]
+}

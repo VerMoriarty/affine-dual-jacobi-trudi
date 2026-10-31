@@ -1,0 +1,732 @@
+
+===== PAGE 1 =====
+            AffineDualJacobi–TrudiIdentities
+       forClassicalHall–LittlewoodPolynomials
+                   viaComplementaryMinors
+
+
+
+                                     Abstract
+         WeprovethesixaffinedualJacobi–Trudiidentitiesconjecturedby
+      WarnaarforrectangularHall–LittlewoodpolynomialsoftypesBn, Cn,and
+      BCn,togetherwithhisadditionaltype-Bnidentityat s = t. Wegivea
+      uniformproofbyadaptingthecomplementary-minormethodusedbyAitken
+      forsymmetric-functionduality.
+
+Keywords.Hall–Littlewoodpolynomials;Jacobi–Trudiidentities;Weylcharac-
+ters;complementaryminors;affinerootsystems.
+2020MathematicsSubjectClassification.05E05;05E10;15A15;17B67.
+
+1 Introductionandmainidentities
+
+ClassicaldualJacobi–TrudiidentitiesexpressrectangularWeylcharactersofrankn
+asdeterminantsoforderk,wherekisthewidthoftherectangle.Warnaarproposed
+affineanaloguesforclassicalHall–Littlewoodpolynomialsin[7,Conjectures1.2–
+1.4],andafurthertype-Bnidentityin[7,Section6]. Weprovetheseidentities,
+withonenecessarycorrectionatwidthzero.Warnaarestablishedthek = 1cases
+ofthesixnumberedconjecturesandthet = 1specializations(1.6a)and(1.8)[7,
+Lemmas4.1–4.4];histype-Aanalogueis[7,Theorem1.1]. Theapplicationsto
+affineandq,t-Rogers–Ramanujanidentitiesdevelopedthereusetheclassical-type
+formulasprovedhere.
+   Forx = (x1,...,xn),define
+
+                              n∏                         2n∑
+                     ˙E(u) =
+                             a=1(1+uxa)(1+ux−1a  ) =    r=0 ˙erur,              (1.1)
+                                             2n+1∑
+                     ¨E(u) = (1+u) ˙E(u) =
+                                             r=0 ¨erur.
+Bothcoefficientfamiliesareextendedbyzerotoallintegerindices.Thus
+
+                 ˙e2n−r = ˙er,       ¨e2n+1−r = ¨er,       ¨er = ˙er + ˙er−1.
+
+For 1≤i≤kandm∈Z,usetherowkernels:
+
+         Λi(m) = ˙en−i+m−˙en+i+m,      hi(m) = ˙en−i+m+ ˙en+i+m−1,
+        h+i (m) = ˙en−i+m+ ˙en+i+m−2,         ˆhi(m) = ¨en−i+m+¨en+i+m−1.
+
+                                          1
+
+===== PAGE 2 =====
+Forweightswj(y),kernelsFi(m),andL⊆Zk,put
+                                    ∑
+                JK[w,F;L] :=                 det
+                                 (y1,...,yk)∈L1≤i,j≤k[wj(yi)Fi(j−Kyi)].        (1.2)
+
+Inthisnotationanexpressioninj,yintheweightslotspecifieswj(y).Allsums
+belowarefinitebyzeroextension. WriteZkeven ={y∈Zk :y1 +···+yk∈2Z}.
+Theemptydeterminantandthesumindexedbytheemptyvectorbothhavevalue
+1.Whenk = 0,noentryorweightin(1.2)isevaluated.Thecoefficientfieldis
+Q(t,x1,...,xn),exceptinthetwosquare-rootcases,whereitisQ(τ,x1,...,xn)
+andtr/2 :=τrforr∈Z.
+TheoremA.Forn≥1,thefollowingidentitiesholdfork≥0,exceptthat(1.5)
+requiresk≥1:
+                     PBn(kn)(x;t,0) = J2k+1[(−1)yt(k+12)y2−(j−12)y,h;Zk],        (1.3)
+
+                  PBn(kn)(x;τ2,−τ) = J2k[τ2ky2−(2j−1)y,h;Zk],                (1.4)
+                     PBn(kn)(x;t,1) = 12J2k[(−1)ytky2−(j−1)y,h+;Zk],           (1.5)
+                     PCn(kn)(x;t,0) = J2k+2[t(k+1)y2−jy,Λ;Zk],                (1.6)
+                     PCn(kn)(x;t,t) = J2k[tky2−jy,Λ;Zkeven],                   (1.7)
+               PBCn(kn) (x;τ2,−τ,0) = J2k+1[(−1)yτ(2k+1)y2−2jy,Λ;Zk].         (1.8)
+Atwidthzerothenormalizedvaluein(1.5)isPBn∅  (x;t,1) = 1.
+    Theseare,inorder,Conjectures1.2(a)–(c),1.3(a)–(b),and1.4of[7]. The
+literalk = 0assertionofConjecture1.2(c)wouldgive 1/2ontherightof(1.5);its
+correctnormalizedendpointisthereforeseparatefromthepositive-widthidentity.
+TheoremB.Forn,k≥1,
+                     PBn(kn)(x;t,t) = 12J2k[(−1)ytky2−(j−1)y,ˆh;Zk].            (1.9)
+Thenormalizedwidth-zerovalueisPBn∅  (x;t,t) = 1.
+    TheoremBistheadditional,unnumberedidentityin[7,Section6]. Our
+Hall–Littlewoodconventionsarethoseof[7,(2.16)–(2.17)];forthetype-BCWeyl
+sumandpolynomiality,seealso[6,Definition2.4andTheorems2.5–2.6].
+    Theproofusescomplementaryminors,afamiliarsourceofdualsymmetric-
+functiondeterminants[1,4].Thecorrespondingproportionalityofcomplementary
+maximalminorsisalsothebasicGale-dualrelation;see[5,Lemma2.10]. We
+applyittothekernelpairs ΦD = 0andVTC = 0. Here det(ΦV)/∆ isafinite
+Weylrepresentation,whileDTCistheaffinematrix. ThecoefficientkernelsD
+comefrom(1.1);theaffinekernelsCcomefromreflectionsofweightedresidue
+classes.Explicitcomplementaryblocksfixallsignsandconstants.
+    Section2derivesthefiniteWeyldeterminants.Section3givesthenormalized
+transferandthethreecoefficientkernels.Section4treatsfourordinarycasesin
+twopairs.Section5treatsthefixedresidue,fixedcenter,andadjacentresidues
+responsibleforthethreehalf-determinantformulas.Widthzeroandtheclassical
+specializationsarecollectedinSection6.
+
+                                           2
+
+===== PAGE 3 =====
+2 FiniteWeyldeterminants
+
+WeabbreviatethesevenpolynomialsbyP⋆n,k,where⋆=C0,Ct,BC,B0,B−,B+,Bt
+denotesthetypeandboundaryparameterinTheoremsAandB.For (a;t)m =
+∏m−1r=0 (1−atr),set
+
+                                    n∏
+                          Vn(t) =                 +tr−1).
+                                   r=1(1+t+···
+TherectangularWeyl-sumdefinition,includingwidthzero,is
+                                                                        
+                         ∑        n∏           ∏  (txa−xb)(1−txaxb)
+     P⋆n,k =        1Vn(t)ν⋆(k)w                  (xa−xb)(1−xaxb)       ,   (2.1)
+                        w∈Wn     a=1x−kaρ⋆(xa) a<b
+whereWn =Sn⋉{±1}nactsbypermutationsandinversions,ν⋆(k) = 1fork≥1,
+andtheremainingdataareasfollows.IntheBCandB−rows,t =τ2.
+
+                       Case⋆ ρ⋆(z)          ν⋆(0)
+
+                       C0          (1−z2)−1               1
+                       Ct          (1−tz2)/(1−z2)   (−t;t)n
+                       BC        (1+τz)/(1−z2)    1
+                       B0          (1−z)−1                 1
+                       B−      (1+τz)/(1−z)     (τ;τ2)n
+                       B+         1                             (−1;t)n
+                       Bt          (1−tz)/(1−z)      (−t;t)n
+
+Indeed,thesymmetric-groupnormalizationofeither (kn),k> 0,or∅isVn(t);
+onlytheboundaryPochhammerfactorchangesatwidthzero.
+   Thestandardsymmetrizeridentity
+                            ∑   ∏  tzσ(a)−zσ(b)
+
+                           σ∈Sn a<b zσ(a)−zσ(b)  =Vn(t)
+
+followsbyalternationandcomparisonofdegrees;settingzn = 0givestherecurrence
+Vn = (1+t+···+tn−1)Vn−1.Sincetheotherfactorsin(2.1)aresymmetric,it
+reducesthatexpressionto
+                          ∑    ∏                 1−tuaub
+          P⋆n,k =    1ν⋆(k)                      1−uaub,   ua =xηaa.    (2.2)
+                        η∈{±1}n au−kaρ⋆(ua)∏a<b
+
+2.1 Alternantsandfinitefoldings
+WriteNt(z) =∏a<b(za−zb)(1−tzazb)andput
+
+            f1(z) =zn−1,   fr(z) =zn−r +tr−1zn+r−2   (2≤r≤n).
+
+Thefinitenumeratorcalculationsreducetothreealternants.
+
+                                         3
+
+===== PAGE 4 =====
+Lemma2.1.Withrowsindexedby 1≤a≤nandcolumnsby 1≤r≤n,
+                                 det[fr(za)] =Nt(z),                      (2.3)
+                                                ∏
+                         det[zn−ra −trzn+ra   ] =
+                                                ∏a (1−tz2a)Nt(z),             (2.4)
+                   det[zn−ra    +τ2r−1zn+r−1a       ] =
+                                                a (1+τza)Nτ2(z).           (2.5)
+Proof. Eachdeterminantisalternating. Onsettingzb = (tza)−1,rowsa,bare
+proportional,withmultiplierst1−nz2−2na  ,−t−nz−2na  ,andτ1−2nz1−2na  ,respectively;in
+thelastexpressiont =τ2.Thisgivesthefactors 1−tzazb.Theseconddeterminant
+hasrowfactor 1−tz2a,andthethirdvanishesatza =−τ−1. Divisibilitycan
+becheckedoverthefractionfieldintheremainingvariablesandreturnedtothe
+polynomialringbyGauss’slemma.Thefactorsarepairwisecoprimeand,together
+withza−zb,havetotaldegrees
+                        (n)               (n)              (n)
+                       3  2  ,       2n+3   2  ,   n+3       2  ,
+
+whicharetherespectiveupperboundsonthedeterminantdegrees.Ineachcasethe
+lowest-degreehomogeneouspartis det[zn−ra   ] =∏a<b(za−zb),fixingtheconstant
+at 1.
+   Setϕm(z) =zm−z−m,ψm(z) =zm−z1−m,andCm(z) =zm +z−m. For
+L =n+kandstandardbasis e1,...,eL,usethefoldings
+                                                 
+                         em   m> 0,                   em    m≥1,
+               [m]C =   0    m = 0,      [m]B =   −e1−m m≤0,
+                         −e−m m< 0,
+                        
+                         em   m≥2,
+               [m]+ =   2e1  m = 1,
+                         e2−m m≤0.
+Onlyindiceswhosefoldedrowsliein{1,...,L}willoccur.Theevaluationmatrices
+are                                ΦCa,p =ϕp(xa),       ΦBa,p =ψp(xa),
+
+                                     
+                             Φ+a,p =   1,      p = 1,
+                                     Cp−1(xa), p≥2.
+
+Thus ΦC[m]C =ϕm(x), ΦB[m]B =ψm(x),and Φ+[m]+ =Cm−1(x),withvector
+evaluationunderstood.Inparticular, [1]+ = 2e1isforcedbyC0 = 2.
+   ThethreeinitialminorsaretheWeyldenominators
+               ∆C(z) = det[ϕr(za)] = (−1)n∏
+                                               az−na  (1−z2a)N1(z),
+               ∆B(z) = det[ψr(za)] = (−1)n∏        a       (1−za)N1(z),        (2.6)
+                                        ∏      az−(n−1)
+               ∆ +(z) = det[χr(za)] =       a   N1(z),
+                                        az−(n−1)
+
+                                           4
+
+===== PAGE 5 =====
+whereχ1  = 1andχr  =Cr−1 forr≥2. Theseevaluationsareimmediate
+Vandermondedeterminantsinz+z−1:ϕr/(z−z−1),ψr/(z−1),andχraremonic
+polynomialsofdegreer−1.Inversionofarowmultipliesthethreedenominators
+by−1,−z−1,and 1,respectively.
+
+2.2 Thefinitecolumnmatrices
+For⋄∈{C,B,+},define
+
+                   u⋄1 = [k+1]⋄,      ˜u⋄1 = [k]⋄,
+                   u⋄r = [k+r]⋄+tr−1[k+2−r]⋄(r≥2),
+                   ˜u⋄r = [k+r−1]⋄+tr−1[k+1−r]⋄(r≥2).
+
+Thenotation ˜u⋄risusedonlyfor⋄=C,B. LetV⋆= (v⋆1,...,v⋆n)begivenby
+Table1;everyfoldedrowthereisatmostk+rincolumnr.
+
+                   ⋆    Φ  v⋆r                                            ∆
+
+                   C0     ΦC uCr                                            ∆C
+                   Ct     ΦC    [k+r]C−tr[k−r]C               ∆C
+                   BC   ΦC uCr +τ˜uCr                                 ∆C
+                   B0     ΦB uBr                                            ∆B
+                   B− ΦB   [k+r]B +τ2r−1[k+1−r]B   ∆B
+                   B+    Φ+ u+r                                            ∆ +
+                   Bt     ΦB uBr−t˜uBr                                 ∆B
+
+          Table1:Finitecolumndata.IntheBCandB−rows,t =τ2.
+
+
+Proposition2.2.Forn,k≥1,thedataofTable1satisfy
+
+                                  P⋆n,k = det(ΦV⋆)∆   .
+
+Moreover, detV⋆H = 1forH ={k+1,...,k+n}.
+
+Proof. Multiply(2.2)bytherelevantdenominatorin(2.6).IntheC0case,(2.3)
+givesrowfunctionsz−n−kfr(z).Summingoverinversionsfoldseachrowbyg(z)↦→
+g(z)−g(z−1),andthesefunctionsgive−ΦCuCr.Thencolumnsignscancelthe
+factor (−1)nin ∆C. TheBCcalculationmultipliesthesamerowfunctionsby
+1+τz,giving−ΦC(uCr +τ˜uCr ). ForCt,replacefrbyzn−r−trzn+rusing(2.4);
+thefoldedcolumnis−ΦC([k+r]C−tr[k−r]C).
+   Fortheshiftedfoldingusez−(n+k−1)fr(z)andg(z)↦→g(z)−zg(z−1). This
+gives−ΦBuBr incaseB0;multiplyingby 1−tzgives−ΦB(uBr−t˜uBr )incaseBt.
+
+
+                                           5
+
+===== PAGE 6 =====
+Equation(2.5)givestheB−columninexactlythesameway.Againthecolumn
+signscancel (−1)n.
+   IncaseB+, ∆ +isinvariantundereachinversion. Use(2.3)andtherow
+functionsz−(n+k−1)fr(z),nowwithg(z)↦→g(z)+g(z−1).Thefirstfoldedcolumn
+isCk,andtheothersareCk+r−1+tr−1Ck+1−r,exactly Φ+u+r.Thisalsochecksthe
+normalizationofthefirstcolumnwithoutintroducinganadditionaleven-orthogonal
+alternant.
+   Finally,ineverycasetheleadingbracketplacesa 1inrowk+rofcolumnr.
+Fork≥1allotherfoldedrowsarestrictlysmaller,includingthosearisingfrom
+nonpositiveindices.HenceV⋆Hisunituppertriangular.
+
+3 Complementarykernelsandtransfer
+
+ThroughoutSections3–5,assumen,k≥1andwrite
+
+          L =n+k,   Q0 ={1,...,n},   J ={n+1,...,n+k},
+                  H ={k+1,...,k+n},   I ={1,...,k},
+                      ω= (−1)k(k+1)/2,   ζ= (−1)nkω.
+
+Subsetsarealwaysorderedincreasingly.Asubscriptonann×Lmatrixselects
+columns;onamatrixwithLrowsitselectsrows.
+
+3.1 Thenormalizedtransfer
+Theorem3.1.LetFbeafield,andletX∈Fn×L,Y∈FL×n,andU,Z∈FL×k
+satisfyXU = 0andYTZ = 0.If detXQ0, detUJ, detYH,and detZIarenonzero,
+then
+                 det(XY) = (−1)nkdetXQ0detYHdetUJdetZI        det(UTZ).
+
+Proof.Thenonzerominorsgivemaximalrank,hence col(U) = kerX.Theforms
+
+                      (v1,...,vn)↦−→det[Xv1···Xvn],
+                      (v1,...,vn)↦−→det[Uv1···vn]
+
+inducenonzerotopformsonFL/col(U)andarethereforeproportional. For∑
+Q ={q1<···<qn}setϵ(Q) = (−1)         r(qr−r).Expansionalongthelastncolumns
+gives
+                   det[U eq1···eqn] = (−1)nkϵ(Q)detUQc.
+Consequently,forconstantsα,βindependentofQ,
+
+             detXQ =αϵ(Q)detUQc,       detYQ =βϵ(Q)detZQc,
+
+wherethesecondrelationfollowsfromYTZ = 0.Cauchy–Binetgives
+                             ∑
+              det(XY) =αβ        detUQcdetZQc =αβdet(UTZ).
+                            |Q|=n
+
+                                      6
+
+===== PAGE 7 =====
+EvaluatingthefirstrelationatQ0andthesecondatH,forwhichϵ(Q0) = 1and
+ϵ(H) = (−1)nk,givestheresult.
+    Inthefiniterepresentations, detΦQ0 = ∆ and detVH = 1. Hencematrices
+D,Csatisfying ΦD = 0,VTC = 0,andhavingnonzerominorsDJ,CIgivethe
+singlenormalizationformula
+
+                          P⋆n,k =      (−1)nkdetDJdetCI det(DTC).                 (3.1)
+
+Onlythetwoindicatedminorsareneededineachapplication.
+
+3.2 Threecoefficientkernels
+Palindromicitygives
+    Λi(−m) =−Λi(m),   hi(1−m) =hi(m),   h+i (2−m) =h+i (m).  (3.2)
+Inparticular,
+          hi(m) = ˙en−i+m+ ˙en−i−m+1,   h+i (m) = ˙en−i+m+ ˙en−i−m+2.
+DefineL×kmatricesby
+      DCp,i = (−1)pΛi(p),   DBp,i = (−1)phi(p),   D+p,i = (−1)ph+i (p).    (3.3)
+Lemma3.2.Thethreepairssatisfy ΦCDC = 0, ΦBDB = 0,and Φ+D+ = 0.
+Theircomplementaryminorsare detDCJ = detDBJ =ζand detD+J = 2ζ.
+Proof.Thegeneratingidentitiesare
+                         ∑
+
+                         ∑m Λi(m)zm =z−n ˙E(z)(zi−z−i),
+
+                        ∑mhi(m)zm =z−n ˙E(z)(zi+z1−i),
+
+
+                         mh+i (m)zm =z−n ˙E(z)(zi+z2−i).
+Theyvanishatz =−xa.Pairtheintegerindicesbym↔−m,m↔1−m,and
+m↔2−m,respectively.Thefirsttwopairedsumsare∑p≥1(−1)pΛi(p)ϕp(xa)and
+∑
+  p≥1(−1)phi(p)ψp(xa).Inthethird,thefixedindexm = 1gives,afterdivisionby
+xa,                               ∑
+                       −h+i (1)+     (−1)ph+i (p)Cp−1(xa) = 0.
+                                  p≥2
+Allthreekernelsvanishforp>L,givingtheassertedkernelrelations.Inparticular,
+thefirstrowofD+hasnoextrafactor 2.
+    For 1≤r,i≤k,thelastkrowssatisfy
+                     DCn+r,i =DBn+r,i = (−1)n+r˙ei−r,
+                               D+n+r,i = (−1)n+r(˙ei−r + ˙e2−i−r).
+Theseblocksareuppertriangular.Thefirsttwohavediagonal (−1)n+r;thethird
+hasthesamediagonalexceptthatitsfirstentryis 2(−1)n+1,givingthestated
+minors.
+
+                                          7
+
+===== PAGE 8 =====
+3.3 Foldingandfiniteunfolding
+Wewillfoldscalarsequencesbj(m),m∈Z,intoaffinematrices. Thethree
+conventionsare
+               CC(b)p,j =bj(p)−bj(−p),
+                                                 ),                      (3.4)
+               CB(b)p,j = (−1)p(bj(p)+bj(1−p)
+                          
+               C+(b)p,j =   −bj(1),             p = 1,),   2≤p≤L.
+                          (−1)p(bj(p)+bj(2−p)
+
+Thesequencesneednothavefinitesupport;theproductsbelowdo.
+Lemma3.3.Forthematricesin(3.3)and(3.4),
+                    ((DC)TCC(b))ij = ∑    (−1)mΛi(m)bj(m),             (3.5)
+                                       m∈Z
+                                       ∑
+                    ((DB)TCB(b))ij =       hi(m)bj(m),                   (3.6)
+                                       m∈Z∑
+                    ((D+)TC+(b))ij =       h+i (m)bj(m).                  (3.7)
+                                       m∈Z
+Proof. Forthefirstidentity,pairm =pwithm =−p,using(3.2)and Λi(0) = 0.
+Forthesecond,pairp≥1with 1−p≤0.Forthethird,therowp = 1contributes
+h+i (1)bj(1),whilep≥2pairswith 2−p≤0.Thusthefixedcenteriscountedonce,
+nottwice.Thevanishingforp>Lestablishedabovejustifieseachunfolding.
+   Acommonboundcontrolsallsubsequentrowsums. IfK> 0andEr = 0
+outside [0,N],arowwithentries
+            En−i+j−Ky +σEn+i+j−Ky−δ,       1≤j≤k, δ∈{0,1,2},
+vanishesunless     ⌈n−i+1−N        ⌉        ⌊n+i+k−δ⌋
+                           K         ≤y≤           K         .
+
+Indeed,outsidethisintervaleveryindexisaboveNorbelow 0;here 2i−δ≥0.
+TakeN = 2n,or 2n+1for ˆh. Thus,ifAij = ∑ywj(y)Fi(j−Ky),finiterow
+multilinearitygives detA = JK[w,F;Zk]. Theeven-sublatticecasewillusea
+parityprojectioninstead.
+   EveryweighthasexponentK2y2−(j−η)y,withη∈{0, 12,1},K/2≥k−η,and
+j−η≥0.Itisnonnegativeforeveryintegery.IncaseB0itisanintegerbecause
+y2−yiseven;inthesquare-rootcasestwicethisexponentistheexponentofτ.
+Theresultingaffineexpressionsarethereforepolynomialintorτ,eventhough
+reflectionrelationswillbeprovedinthecorrespondingrationalfunctionfields.
+
+4 Thefourordinaryaffinekernels
+
+Fourspecializationshavenodoubledcomplementaryblock. Thetwounshifted
+foldingsshareonereflection,andthetwoshiftedfoldingsshareanother.
+
+                                        8
+
+===== PAGE 9 =====
+4.1 ThepairC0andBC
+Proposition4.1.Equations(1.6)and(1.8)holdforn,k≥1.
+
+Proof.TakeK = 2k+2forC0andK = 2k+1forBC,witht =τ2inthelatter
+case.For 1≤j≤kdefine
+                          
+                  bj(m) =   tKq2/2+jq, m =j +Kq, q∈Z,
+                          0,      m̸≡j   (modK),
+
+                  cj(m) =bj(m)−bj(−m),
+
+andletC =CC(b).Shiftingqgivesbj(m+K) =tm+K/2bj(m),hence
+
+             cj(−m) =−cj(m),   cj(m)+tm−K/2cj(K−m) = 0.       (4.1)
+
+Thesecondrelationfollowsbyapplyingthequasiperiodicitytobj(K−m)and
+bj(m−K);itholdsalsooutsidetheresidueclasses.
+   ForC0,therelationatm =k +1givescj(k +1) = 0,andatm =k +rit
+givescj(k+r)+tr−1cj(k+2−r) = 0.Sincetheoddextensionagreeswiththe
+bracket [m]C,theseareprecisely (VC0)TC = 0. ForBC,thefirstcolumngives
+cj(k +1)+τcj(k) = 0. Forr≥2,puth =k +r. Thefourtermsinitsfinite
+columnsplitas
+                       (cj(h)+τ2h−Kcj(K−h))
+          (vBCr   )TC•,j =
+                           (cj(h−1)+τ2(h−1)−Kcj(K−h+1))= 0.
+                        +τ
+
+Thusthesecondkernelrelationholdsinbothcases.
+   BecauseK> 2k,theresiduesjand−jaredisjointandthefirstkrowsgive
+CI =Ik.By(3.5)andy =−q,
+
+                   (DC)TC =Adiag((−1)1,...,(−1)k),
+                        Aij =∑(−1)KytKy2/2−jyΛi(j−Ky).
+                              y∈Z
+
+Thesign (−1)Kyis 1forC0and (−1)yforBC.Since detDCJ =ζ= (−1)nkω,(3.1)
+givesP⋆n,k = detA.Finiterowmultilinearityprovesthetwoidentities.
+
+4.2 ThepairB0andB−
+Proposition4.2.Equations(1.3)and(1.4)holdforn,k≥1.
+
+Proof.TakeK = 2k+1forB0andK = 2kforB−,witht =τ2inthelattercase.
+Define              
+            bj(m) =   (−1)KytKy2/2−(j−1/2)y, m =j−Ky, y∈Z,
+                    0,              m̸≡j   (modK),
+
+andput                                          ),   C =CB(b).
+              γj(m) = (−1)m(bj(m)+bj(1−m)
+
+                                       9
+
+===== PAGE 10 =====
+Changingytoy−1givesbj(m+K) = (−1)Ktm+(K−1)/2bj(m). Applyingthis
+relationtothetworeflectedtermsyields
+
+         γj(1−m) =−γj(m),   γj(m) =−tm−(K+1)/2γj(K +1−m).   (4.2)
+
+Forexample,bothbj(K+1−m)andbj(m−K)acquirethefactor(−1)Kt(K+1)/2−m
+frombj(1−m)andbj(m).Theparityinthedefinitionofγjleavestheminussign
+in(4.2)foreitherparityofK.
+   ForB0,thefixedindexm =k+1inthesecondreflectionhasγj(k+1) = 0;
+theremainingcolumnsarekilledbyγj(k +r)+tr−1γj(k +2−r) = 0. ForB−,
+itgivesinsteadγj(k +r)+τ2r−1γj(k +1−r) = 0. Thefirstreflectionmakes
+evaluationagainst [m]Bagreewithγj(m),soVTC = 0inbothcases.
+   For 1≤p,j≤k,bj(p) =δp,j,whereasbj(1−p) = 0because 1≤j +p−1≤
+2k−1<K. ThusCI = diag((−1)1,...,(−1)k)and detCI =ω. Thecommon
+pairing(3.6)gives
+                                 ∑
+            ((DB)TC)ij =Aij :=      (−1)KytKy2/2−(j−1/2)yhi(j−Ky).
+                                 y∈Z
+
+Now(3.1)and detDBJ =ζgiveP⋆n,k = detA.ForoddKtheaffinesignis(−1)y;
+forevenKitisabsent.Finitemultilinearityprovesthestatedidentities.
+
+5 Fixedclassesandadjacentresidues
+
+Theremainingcaseshaveonedoubledcomplementaryminor.Wetreatseparately
+itsthreesources: afixedresidue,afixedcenter,andtheoverlapofadjacent
+residues.
+
+5.1 ThefixedresidueinCt
+Proposition5.1.Equation(1.7)holdsforn,k≥1.
+
+Proof. SetK = 2kanddefine
+                         
+                bj(m) =    (−1)qtkq2+jq, m =j +2kq, q∈Z,
+                         0,        m̸≡j   (mod 2k).
+
+Letcj(m)  =bj(m)−bj(−m)andC  =CC(b). The quasiperiodicity is now
+bj(m+2k) =−tm+kbj(m),sothecalculationleadingto(4.1)gives
+
+                cj(−m) =−cj(m),   cj(m) =tm−kcj(2k−m).
+
+Atm =k+rthisannihilatesthecolumn [k+r]C−tr[k−r]C;hence (VCt)TC = 0.
+   Unliketheordinarycases,theresidueskand−kcoincide.Theircontributions
+addratherthancancel:
+
+                     ck(k+2kq) = 2(−1)qtkq(q+1)   (q∈Z).
+
+                                       10
+
+===== PAGE 11 =====
+Forj<kthetworesiduesremaindisjoint.Consequently,CI = diag(1,...,1,2)
+and detCI = 2.Thisincludesk = 1,whentheblockconsistsofthesingleentry 2.
+   Write
+                            aij(y) =tky2−jyΛi(j−2ky),
+                           ∑                    ∑
+                    A+ij =
+                            yaij(y),   A−ij =    y (−1)yaij(y).
+Thepairing(3.5),withy =−q,gives (DC)TC =A−diag((−1)1,...,(−1)k).Thus
+thefixed-residueminorand(3.1)yieldPCtn,k = 12detA−.
+   Itremainstoidentifytheeven-sublatticeexpression,notthefulllatticesum.
+Theparityprojectorandfinitemultilinearitygive
+                      ∑                    (detA++detA−).
+                           det[aij(yi)] = 12
+                     y∈Zkeven
+
+Inthelastcolumn,y↦→1−ypreservesky2−kyandsendsk−2kytoitsnegative.
+Since Λiisodd,ai,k(1−y) =−ai,k(y).Thisfixed-point-freeinvolutionmakesthe
+lastcolumnofA+zero.Theparityprojectionthereforeequals  12detA−,proving
+theidentity.
+
+5.2 ThefixedcenterinB+
+Thesequenceusedherewillalsosupplytheadjacent-residuereflectioninthenext
+subsection.For 1≤j≤k,set
+                        
+               bj(m) =    (−1)ytky2−(j−1)y, m =j−2ky, y∈Z,
+                        0,           m̸≡j   (mod 2k),                          (5.1)
+                                                   ).
+               Γj(m) = (−1)m(bj(m)+bj(2−m)
+
+Lemma5.2.Foreveryintegerm,
+
+                      bj(m+2k) =−tm+k−1bj(m),
+                       Γj(2−m) = Γj(m),
+                           Γj(m) =−tm−k−1Γj(2k+2−m).              (5.2)
+
+Inparticular, Γj(k+1) = 0.
+
+Proof.Thefirstrelationfollowsfromy↦→y−1in(5.1);thesecondisthedefining
+symmetry.Forthelast,thefirstrelationgives
+
+     bj(2k+2−m) =−tk+1−mbj(2−m),   bj(m−2k) =−tk+1−mbj(m).
+
+Sincemand 2k+2−mhavethesameparity,addingtheserelationsproves(5.2).
+Itsfixedindexm =k+1haseigenvalue−1andhencevanishes.
+
+
+
+
+                                         11
+
+===== PAGE 12 =====
+Proposition5.3.Equation(1.5)holdsforn,k≥1.
+Proof.TakeC =C+(b)for(5.1).ThenormalizedcenterrowisC1,j =−bj(1),so
+                       [1]T+C•,j = 2C1,j =−2bj(1) = Γj(1).
+Togetherwith Γj(2−m) = Γj(m),thisshowsthateverybracket [m]+evaluatesto
+Γj(m),includingthefixedcenter.Lemma5.2thereforegives (VB+)TC = 0:the
+firstcolumnevaluatestoΓj(k+1)andtheotherstoΓj(k+r)+tr−1Γj(k+2−r) = 0.
+   ThefirstkrowsareCI = diag((−1)1,...,(−1)k). Indeed,bj(1) =δj,1;for
+2≤p≤k,bj(p) =δp,jandthereflectedcongruencewouldrequire2ky =j+p−2∈
+{1,...,2k−2},whichisimpossible.Thus detCI =ω.Thefactor 2occursinstead
+in detD+J = 2ζ,whosefirstdiagonalcoefficientis ˙e0+ ˙e0byLemma3.2.
+   By(3.7),
+                                     ∑
+              ((D+)TC)ij =AB+ij   :=
+                                      y (−1)ytky2−(j−1)yh+i (j−2ky).
+Inthispairingthecentercontributesexactlyh+i (1)bj(1);itscoefficientisnot
+doubled.Formula(3.1)nowgivesPB+n,k = 12detAB+,andfiniterowmultilinearity
+provestheresult.
+
+5.3 AdjacentresiduesinBt
+ThiscaseusesthesamecoefficientmatrixDBasB0andB−. Itsdifferentrow
+kernelsatisfiesˆhi(m) =hi(m)+hi(m−1),directlyfrom ¨er = ˙er + ˙er−1.Keepbj
+and Γjfrom(5.1)andput
+                       aj(m) =bj(m)+bj(m+1),              ),
+                       cj(m) = (−1)m(aj(m)+aj(1−m)
+                       γj(m) =cj(m)−tcj(m−1).
+Thusajissupportedonthetwoadjacentresiduesjandj−1,andcj(1−m) =
+−cj(m).
+Lemma5.4.Theadjacent-residuesequencessatisfy
+                 cj(m) = Γj(m)−Γj(m+1),                           (5.3)
+                γj(m) = (1+t)Γj(m)−Γj(m+1)−tΓj(m−1),          (5.4)
+                γj(m) =−tm−k−1γj(2k+2−m).                       (5.5)
+Inparticular,γj(k+1) = 0.
+Proof. Expandingthedefinitionsproves(5.3),andsubtractingtcj(m−1)gives
+(5.4).LetT = 2k+2andd =m−k−1.Apply(5.2)atm,m+1,m−1tothe
+latteridentity:
+                                                                           )
+       γj(m) =−td((1+t)Γj(T−m)−tΓj(T−m−1)−Γj(T−m+1)
+             =−tdγj(T−m).
+Thefixed-indexassertionfollowsatm =k+1.
+
+                                        12
+
+===== PAGE 13 =====
+Proposition5.5.Equation(1.9)holdsforn,k≥1.
+
+Proof. SetC =CB(a),soCp,j =cj(p).Evaluationagainstthefirstfinitecolumn
+gives
+                     ([k+1]B−t[k]B)TC•,j =γj(k+1) = 0.
+Forr≥2,thefourtermsinuBr−t˜uBr giveγj(k+r)+tr−1γj(k+2−r) = 0by
+(5.5).Hence (VBt)TC = 0.
+   Thefirstcomplementaryblockcontainstheoverlapthatfixesthenormalization.
+For 1≤p,j≤k,onlyy = 0contributes,and
+
+                   aj(p) =δp,j +δp,j−1,   aj(1−p) =δp,1δj,1.
+
+Thesecondequalityfollowsbecausethetwocongruencesrequire 2ky =j +p−1
+or 2ky =j +p−2;onlythelattercanoccur,atp =j = 1.Therefore
+                                                  )  (1≤p,j≤k).
+               Cp,j = (−1)p(δp,j +δp,j−1+δp,1δj,1
+
+Thisblockisupperbidiagonal,withdiagonal−2,1,−1,1,...,andhence detCI =
+2ω.Thereisnodoublingin detDBJ =ζ.
+   Finally,thecommonpairing(3.6)andthedefinitionofˆhigive
+                       ∑         (bj(m)+bj(m+1))
+        ((DB)TC)ij =
+                        mhi(m)                                            )
+                       ∑
+                     =
+                        y (−1)ytky2−(j−1)y(hi(j−2ky)+hi(j−1−2ky)
+                     =∑
+                        y (−1)ytky2−(j−1)yˆhi(j−2ky).
+Thenormalizationformulayieldsonehalfofthisdeterminant,andfinitemultilin-
+earityprovesTheoremB.
+
+6 Widthzeroandclassicalspecializations
+
+6.1 Thenormalizedemptyrectangle
+Proposition6.1.Foreveryn≥1,allsevennormalizedwidth-zerovaluesare 1.
+Consequently,thefivenon-prefactoredidentitiesinTheoremAholdalsoatk = 0.
+
+Proof.Thesymmetric-groupreduction(2.2)isvalidatk = 0.Thealternantand
+row-foldingcalculationinProposition2.2thereforegives
+
+                            ν⋆(0)P⋆n,0 = det(ΦV⋆|k=0)∆    ,
+
+withoutusingthecomplementary-kerneltransfer. Relativetotheinitialbasis
+defining ∆,thesecolumntransformationsareuppertriangular. Theirdiagonal
+coefficientsincolumnrare
+
+
+                                         13
+
+===== PAGE 14 =====
+                     Case       Diagonalcoefficient  Product
+                     C0,BC,B0   1                                1
+                     Ct,Bt           1+tr                         (−t;t)n
+                     B−            1−τ2r−1                    (τ;τ2)n
+                     B+               1+tr−1                      (−1;t)n
+
+Forexample,theBtcolumnsare (1+t)ψ1and
+
+                        (1+tr)ψr−(t+tr−1)ψr−1       (r≥2),
+
+whiletheBCcolumnsareϕ1and
+
+                    ϕr +(τ−τ2r−1)ϕr−1−τ2r−2ϕr−2       (r≥2).
+
+ForB+thefirstcolumnisC0 = 2relativetoχ1 = 1,soitsdiagonalisindeed
+1+t0 = 2. Eachproductinthetableequalsν⋆(0),provingtheclaim. Thefive
+affineexpressionswithoutanexternalhalf-factorare 1bytheempty-determinant
+convention.
+
+    Thesearerational-functionidentitiesbeforecancellation;anyremovablesingu-
+laritiesofthedisplayednormalizationfactorsareunderstoodaftercancellation.
+Inparticular,theconclusiondoesnotrequireanonvanishingnumericalvalueof
+everyPochhammerfactor.
+
+6.2 Thespecializationt = 0
+TheclassicalrectangulardualJacobi–Trudiformulasarerecoveredinthreefinite
+foldings.Theyarethesymplecticandorthogonaldeterminantsin[2,Theorem2.1];
+seealsothelattice-pathproofsin[3].
+
+Corollary6.2.Forn,k≥1,with 1≤a,r≤nontheleftand 1≤i,j≤kon
+theright,
+
+                         det[ϕk+r(xa)]
+                            ∆C(x)      = det[˙en−i+j−˙en+i+j],                (6.1)
+                        det[ψk+r(xa)]
+                            ∆B(x)      = det[˙en−i+j + ˙en+i+j−1]
+                                        = 12det[¨en−i+j +¨en+i+j−1],            (6.2)
+                      det[Ck+r−1(xa)]
+                           ∆ +(x)        = 12det[˙en−i+j + ˙en+i+j−2].            (6.3)
+
+Thesevenfiniterepresentationsspecializetothecorrespondingleftsides:C0,Ct,BC
+to(6.1);B0,B−,Btto(6.2);andB+to(6.3).
+
+
+
+
+                                             14
+
+===== PAGE 15 =====
+Proof.Att = 0(andτ= 0inthesquare-rootcases),everyfinitecolumnin
+Table1reducesto [k+r]⋄.Thisidentifiesthefiniteratios.Intheaffineformulas
+forC0,B0,B+,Bt,everynonzeroshifthasastrictlypositiveparameterexponent,
+leavingonlyy = 0ineachrowandgivingthedisplayeddualdeterminants.For
+Ctoneshouldinsteaduseitsfiniteratio: atj =k,y = 1theweightexponent
+iszero,sononzeroshiftsdonotdisappearentrywise.Thealreadyprovedparity
+identityidentifiesitsspecializedeven-sublatticesumwiththesamesymplectic
+determinant.
+
+AIusedeclaration.Artificialintelligencewasusedtoassistinexploringproof
+strategiesanddevelopingpreliminarycodefornumericalexperiments.Allresults
+wereindependentlyverifiedbytheauthors.Theauthorsassumeresponsibilityfor
+allcontent.
+
+References
+
+ [1]A.C.Aitken,Noteondualsymmetricfunctions,Proc.EdinburghMath.Soc.
+    (2)2(1931),no.3,164–167,doi:10.1017/S0013091500007719.
+
+ [2] S.P.Albion,I.Fischer,H.HöngesbergandF.Schreier-Aigner,Skew
+    symplecticandorthogonalcharactersthroughlatticepaths,EuropeanJ.
+     Combin.122(2024),Article104000,26pages,
+     doi:10.1016/j.ejc.2024.104000.
+
+ [3] M.FulmekandC.Krattenthaler,Latticepathproofsfordeterminantal
+     formulasforsymplecticandorthogonalcharacters,J.Combin.TheorySer.A
+     77(1997),no.1,3–50,doi:10.1006/jcta.1996.2711.
+
+ [4] E.McDowell,FlaggedSchurpolynomialdualityviaalatticepathbijection,
+     Electron.J.Combin.30(2023),no.1,PaperNo.P1.5,17pages,
+     doi:10.37236/11200.
+
+ [5]S.Müller,E.Feliu,G.Regensburger,C.Conradi,A.ShiuandA.Dickenstein,
+    Signconditionsforinjectivityofgeneralizedpolynomialmapswith
+    applicationstochemicalreactionnetworksandrealalgebraicgeometry,Found.
+     Comput.Math.16(2016),no.1,69–97,doi:10.1007/s10208-014-9239-3.
+
+ [6]V.Venkateswaran,SymmetricandnonsymmetricHall-Littlewoodpolynomials
+    oftypeBC,arXiv:1209.2933v2(2013).
+
+ [7] S.OleWarnaar,AffineJacobi–Trudiidentitiesandq,t-Rogers–Ramanujan
+    identities,SIGMA22(2026),062,50pages, doi:10.3842/SIGMA.2026.062;
+     arXiv:2511.17034v2.
+
+
+
+
+
+
+                                         15

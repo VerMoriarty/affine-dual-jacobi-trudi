@@ -1,0 +1,14 @@
+build/
+.lake/
+.tooling/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk

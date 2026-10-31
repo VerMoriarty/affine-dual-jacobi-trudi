@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "authority": "authoritative_pdf",
+  "inputs": {
+    "authoritative_pdf": {
+      "path": "fidelity/inputs/authoritative.pdf",
+      "sha256": "b13eaa9ed2a2dc2919980a702965a2d138ee634b49d9a32125ddeaa67fece7ab",
+      "original_path": "/Users/bigbigcats/Downloads/Affine Dual Jacobi–Trudi Identities.pdf"
+    },
+    "source_archive": {
+      "path": "fidelity/inputs/original-source.zip",
+      "sha256": "b980f92c8556917056b351e66789bd9da86f62f4dfdb2dbd77566afc8dfd271c",
+      "original_path": "/Users/bigbigcats/Downloads/affine_dual_jt_complete-source.zip"
+    },
+    "source_tex": {
+      "path": "source.tex",
+      "sha256": "4141e8fa7c8fc8d7499b1d10bb77fcc1440d229169f44610709ebaf8968a5a19",
+      "original_path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/source.tex"
+    },
+    "packaged_pdf": {
+      "path": "fidelity/inputs/packaged.pdf",
+      "sha256": "5b78cce542772dd63ea579fa88cb8f412f1b2a80f2eba39fe94118c12f74473a",
+      "original_path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/source.pdf"
+    },
+    "lean_toolchain": {
+      "path": "lean-toolchain",
+      "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47",
+      "original_path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/lean-toolchain"
+    },
+    "lakefile": {
+      "path": "lakefile.toml",
+      "sha256": "0570d408ed3d71c5684a6bb774f18427102938d54a04ebf6ccbfbeeac2cf4786",
+      "original_path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/lakefile.toml"
+    },
+    "lake_manifest": {
+      "path": "lake-manifest.json",
+      "sha256": "1e5951b8a2ce6c33a475127ca6a8e3b97ee62c04bf4f4883f30d248841027ca5",
+      "original_path": "/Users/bigbigcats/Documents/数学形式化/affine_dual_jt_complete/lake-manifest.json"
+    }
+  },
+  "known_difference": "Authoritative PDF adds AI use declaration on page 15; mathematical extracted text compared separately."
+}

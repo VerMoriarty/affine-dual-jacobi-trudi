@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-10-31T02:18:27.787+00:00",
+  "source_zip": {
+    "path": "dist/affine-dual-jt-fidelity-20261031.zip",
+    "sha256": "0a40289c30aa7fbabf19b8c08b567948f1c94ee93982acea939892912d5823dd",
+    "bytes": 19053813
+  },
+  "extracted_root": "/var/folders/nx/t1vv5bl53wg0t6_fbz2421tc0000gn/T/affine-final-delivery-swp5b89s/affine_dual_jt_complete",
+  "verified_manifest_files": 457,
+  "input_snapshot_sha256": "1dceb00ab137370076aec552c9042c36a497ad067d8c6d4dca82aaa8146b2a3b",
+  "command": [
+    "python3",
+    "scripts/check_fidelity.py",
+    "--run-id",
+    "final-delivery-zip-20261031"
+  ],
+  "project_build_initially_absent": true,
+  "dependencies": "Only the checked pinned dependency checkout cache is shared.",
+  "finished_at": "2026-10-31T02:30:22.990+00:00",
+  "exit_code": 0,
+  "overall": "pass",
+  "dimensions": {
+    "kernel": "pass",
+    "object_correspondence": "pass",
+    "reproduction": "pass",
+    "route_correspondence": "pass",
+    "statement_correspondence": "pass"
+  },
+  "same_mathematical_inputs": true,
+  "same_checker_tools": true,
+  "same_compiled_declarations": true,
+  "report": {
+    "path": "fidelity/runs/final-delivery-zip-20261031/report.json",
+    "sha256": "0ee821c2f22dc4c8c7e1921da9c95c1191977d9d504784b4e9b82bef99a7e58c"
+  },
+  "main_report": {
+    "path": "fidelity/runs/acceptance-final-20261031/report.json",
+    "sha256": "c97d92673ed323de94082fb07c44301918f7153178ec39b27f1f6098fc07e1e7"
+  },
+  "unresolved": [],
+  "console": {
+    "path": "fidelity/delivery_reproduction/console.log",
+    "sha256": "10d88ad53b458ef82d2734919893381aed6b7590caed51e48d66c27e136f5484"
+  },
+  "note": "This receipt is external to the frozen source ZIP, so recording its verification cannot change the ZIP being verified."
+}

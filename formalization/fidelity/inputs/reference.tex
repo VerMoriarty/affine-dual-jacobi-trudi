@@ -1,0 +1,1117 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=32mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,needspace}
+\usepackage[final]{microtype}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Affine Dual Jacobi--Trudi Identities for Classical Hall--Littlewood Polynomials via Complementary Minors},
+  pdfauthor={},
+  pdfsubject={Affine dual Jacobi--Trudi identities},
+  pdfkeywords={Hall--Littlewood polynomials, complementary minors, Jacobi--Trudi identities}
+}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{maintheorem}{Theorem}
+\renewcommand{\themaintheorem}{\Alph{maintheorem}}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\numberwithin{equation}{section}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\dote}{\dot e}
+\newcommand{\ddote}{\ddot e}
+\newcommand{\dotE}{\dot E}
+\newcommand{\ddotE}{\ddot E}
+\newcommand{\ph}{\phi}
+\newcommand{\ps}{\psi}
+\newcommand{\Jaff}{\mathfrak J}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\latticeeven}{\Z_{\mathrm{even}}^k}
+\newcommand{\eb}{\mathbf e}
+\setlength{\emergencystretch}{2em}
+\setlength{\jot}{4pt}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\raggedbottom
+% Title
+\begin{document}
+\begin{center}
+\LARGE
+Affine Dual Jacobi--Trudi Identities\\[3pt]
+for Classical Hall--Littlewood Polynomials\\[3pt]
+via Complementary Minors
+\end{center}
+\medskip
+
+\begin{abstract}
+We prove the six affine dual Jacobi--Trudi identities conjectured by
+Warnaar for rectangular Hall--Littlewood polynomials of types $B_n$,
+$C_n$, and $BC_n$, together with his additional type-$B_n$ identity at
+$s=t$. We give a uniform proof by adapting the complementary-minor
+method used by Aitken for symmetric-function duality.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords.} Hall--Littlewood polynomials; Jacobi--Trudi
+identities; Weyl characters; complementary minors; affine root systems.
+
+\smallskip
+\noindent\textbf{2020 Mathematics Subject Classification.}
+05E05; 05E10; 15A15; 17B67.
+
+\section{Introduction and main identities}
+
+Classical dual Jacobi--Trudi identities express rectangular Weyl
+characters of rank $n$ as determinants of order $k$, where $k$ is the
+width of the rectangle.  Warnaar proposed affine analogues for classical
+Hall--Littlewood polynomials in \cite[Conjectures~1.2--1.4]{Warnaar2026},
+and a further type-$B_n$ identity in \cite[Section~6]{Warnaar2026}.
+We prove these identities, with one necessary correction at width zero.
+Warnaar established the $k=1$ cases of the six numbered conjectures and
+the $t=1$ specializations (1.6a) and (1.8)
+\cite[Lemmas~4.1--4.4]{Warnaar2026}; his type-$A$ analogue is
+\cite[Theorem~1.1]{Warnaar2026}.  The applications to affine and
+$q,t$-Rogers--Ramanujan identities developed there use the classical-type
+formulas proved here.
+
+For $x=(x_1,\ldots,x_n)$, define
+\begin{equation}\label{eq:elementary}
+\begin{aligned}
+ \dotE(u)&=\prod_{a=1}^n(1+ux_a)(1+ux_a^{-1})
+          =\sum_{r=0}^{2n}\dote_r u^r,\\
+ \ddotE(u)&=(1+u)\dotE(u)=\sum_{r=0}^{2n+1}\ddote_r u^r.
+\end{aligned}
+\end{equation}
+Both coefficient families are extended by zero to all integer indices.
+Thus
+\[
+ \dote_{2n-r}=\dote_r,\qquad
+ \ddote_{2n+1-r}=\ddote_r,\qquad
+ \ddote_r=\dote_r+\dote_{r-1}.
+\]
+For $1\le i\le k$ and $m\in\Z$, use the row kernels:
+\begin{align*}
+ \Lambda_i(m)&=\dote_{n-i+m}-\dote_{n+i+m},&
+ h_i(m)&=\dote_{n-i+m}+\dote_{n+i+m-1},\\
+ h_i^+(m)&=\dote_{n-i+m}+\dote_{n+i+m-2},&
+ \widehat h_i(m)&=\ddote_{n-i+m}+\ddote_{n+i+m-1}.
+\end{align*}
+For weights $w_j(y)$, kernels $F_i(m)$, and
+$\mathcal L\subseteq\Z^k$, put
+\begin{equation}\label{eq:J}
+ \Jaff_K[w,F;\mathcal L]
+ :=\sum_{(y_1,\ldots,y_k)\in\mathcal L}
+       \det_{1\le i,j\le k}[w_j(y_i)F_i(j-Ky_i)].
+\end{equation}
+In this notation an expression in $j,y$ in the weight slot specifies
+$w_j(y)$.  All sums below are finite by zero extension.  Write
+$\latticeeven=\{y\in\Z^k:y_1+\cdots+y_k\in2\Z\}$.
+The empty determinant and the sum indexed by the empty vector both have
+value $1$.  When $k=0$, no entry or weight in \eqref{eq:J} is evaluated.
+The coefficient field is $\Q(t,x_1,\ldots,x_n)$, except in the
+two square-root cases, where it is $\Q(\tau,x_1,\ldots,x_n)$ and
+$t^{r/2}:=\tau^r$ for $r\in\Z$.
+
+\Needspace{17\baselineskip}
+\begin{maintheorem}\label{thm:A}
+For $n\ge1$, the following identities hold for $k\ge0$, except that
+\eqref{eq:main-Bplus} requires $k\ge1$:
+\begin{align}
+ P_{(k^n)}^{B_n}(x;t,0)
+ &=\Jaff_{2k+1}[(-1)^y t^{(k+\frac12)y^2-(j-\frac12)y},h;\Z^k],
+ \label{eq:main-B0}\\
+ P_{(k^n)}^{B_n}(x;\tau^2,-\tau)
+ &=\Jaff_{2k}[\tau^{2ky^2-(2j-1)y},h;\Z^k],
+ \label{eq:main-Bminus}\\
+ P_{(k^n)}^{B_n}(x;t,1)
+ &=\tfrac12\Jaff_{2k}[(-1)^y t^{ky^2-(j-1)y},h^+;\Z^k],
+ \label{eq:main-Bplus}\\
+ P_{(k^n)}^{C_n}(x;t,0)
+ &=\Jaff_{2k+2}[t^{(k+1)y^2-jy},\Lambda;\Z^k],
+ \label{eq:main-C0}\\
+ P_{(k^n)}^{C_n}(x;t,t)
+ &=\Jaff_{2k}[t^{ky^2-jy},\Lambda;\latticeeven],
+ \label{eq:main-Ct}\\
+ P_{(k^n)}^{BC_n}(x;\tau^2,-\tau,0)
+ &=\Jaff_{2k+1}[(-1)^y\tau^{(2k+1)y^2-2jy},\Lambda;\Z^k].
+ \label{eq:main-BC}
+\end{align}
+At width zero the normalized value in \eqref{eq:main-Bplus} is
+$P_{\varnothing}^{B_n}(x;t,1)=1$.
+\end{maintheorem}
+
+These are, in order, Conjectures~1.2(a)--(c), 1.3(a)--(b), and 1.4 of
+\cite{Warnaar2026}.  The literal $k=0$ assertion of Conjecture~1.2(c)
+would give $1/2$ on the right of \eqref{eq:main-Bplus}; its correct
+normalized endpoint is therefore separate from the positive-width
+identity.
+
+\Needspace{8\baselineskip}
+\begin{maintheorem}\label{thm:B}
+For $n,k\ge1$,
+\begin{equation}\label{eq:main-Bt}
+ P_{(k^n)}^{B_n}(x;t,t)
+ =\tfrac12\Jaff_{2k}[(-1)^y t^{ky^2-(j-1)y},\widehat h;\Z^k].
+\end{equation}
+The normalized width-zero value is $P_{\varnothing}^{B_n}(x;t,t)=1$.
+\end{maintheorem}
+
+Theorem~\ref{thm:B} is the additional, unnumbered identity in
+\cite[Section~6]{Warnaar2026}.  Our Hall--Littlewood conventions are
+those of \cite[(2.16)--(2.17)]{Warnaar2026}; for the type-$BC$ Weyl
+sum and polynomiality, see also
+\cite[Definition~2.4 and Theorems~2.5--2.6]{Venkateswaran2013}.
+
+The proof uses complementary minors, a familiar source of dual
+symmetric-function determinants \cite{Aitken1931,McDowell2023}.
+The corresponding proportionality of complementary maximal minors is
+also the basic Gale-dual relation; see
+\cite[Lemma~2.10]{MullerEtAl2016}.  We apply it to the kernel pairs
+$\Phi D=0$ and $V^{\mathsf T}C=0$.
+Here $\det(\Phi V)/\Delta$ is a finite Weyl representation, while
+$D^{\mathsf T}C$ is the affine matrix.  The coefficient kernels $D$
+come from \eqref{eq:elementary}; the affine kernels $C$ come from
+reflections of weighted residue classes.  Explicit complementary blocks
+fix all signs and constants.
+
+Section~\ref{sec:finite} derives the finite Weyl determinants.
+Section~\ref{sec:transfer} gives the normalized transfer and the three
+coefficient kernels.  Section~\ref{sec:ordinary} treats four ordinary
+cases in two pairs.  Section~\ref{sec:exceptional} treats the fixed
+residue, fixed center, and adjacent residues responsible for the three
+half-determinant formulas.  Width zero and the classical specializations
+are collected in Section~\ref{sec:boundary}.
+
+
+\Needspace{10\baselineskip}
+\section{Finite Weyl determinants}\label{sec:finite}
+
+We abbreviate the seven polynomials by $P^\star_{n,k}$, where
+$\star=C_0,C_t,BC,B_0,B_-,B_+,B_t$ denotes the type and boundary
+parameter in Theorems~\ref{thm:A} and~\ref{thm:B}.
+For $(a;t)_m=\prod_{r=0}^{m-1}(1-at^r)$, set
+\[
+ V_n(t)=\prod_{r=1}^n(1+t+\cdots+t^{r-1}).
+\]
+The rectangular Weyl-sum definition, including width zero, is
+\begin{equation}\label{eq:weyl}
+ P^\star_{n,k}
+ =\frac{1}{V_n(t)\nu_\star(k)}
+ \sum_{w\in W_n}w\left[
+ \prod_{a=1}^n x_a^{-k}\rho_\star(x_a)
+ \prod_{a<b}\frac{(tx_a-x_b)(1-tx_ax_b)}
+                    {(x_a-x_b)(1-x_ax_b)}\right],
+\end{equation}
+where $W_n=S_n\ltimes\{\pm1\}^n$ acts by permutations and inversions,
+$\nu_\star(k)=1$ for $k\ge1$, and the remaining data are as follows.
+In the $BC$ and $B_-$ rows, $t=\tau^2$.
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Case $\star$ & $\rho_\star(z)$ & $\nu_\star(0)$\\
+\midrule
+$C_0$ & $(1-z^2)^{-1}$ & $1$\\
+$C_t$ & $(1-tz^2)/(1-z^2)$ & $(-t;t)_n$\\
+$BC$ & $(1+\tau z)/(1-z^2)$ & $1$\\
+$B_0$ & $(1-z)^{-1}$ & $1$\\
+$B_-$ & $(1+\tau z)/(1-z)$ & $(\tau;\tau^2)_n$\\
+$B_+$ & $1$ & $(-1;t)_n$\\
+$B_t$ & $(1-tz)/(1-z)$ & $(-t;t)_n$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Indeed, the symmetric-group normalization of either $(k^n)$, $k>0$,
+or $\varnothing$ is $V_n(t)$; only the boundary Pochhammer factor
+changes at width zero.
+
+The standard symmetrizer identity
+\[
+ \sum_{\sigma\in S_n}
+ \prod_{a<b}\frac{tz_{\sigma(a)}-z_{\sigma(b)}}
+                  {z_{\sigma(a)}-z_{\sigma(b)}}=V_n(t)
+\]
+follows by alternation and comparison of degrees; setting $z_n=0$
+gives the recurrence $V_n=(1+t+\cdots+t^{n-1})V_{n-1}$.
+Since the other factors in \eqref{eq:weyl} are symmetric, it reduces
+that expression to
+\begin{equation}\label{eq:signsum}
+ P^\star_{n,k}
+ =\frac{1}{\nu_\star(k)}
+   \sum_{\eta\in\{\pm1\}^n}
+   \prod_a u_a^{-k}\rho_\star(u_a)
+   \prod_{a<b}\frac{1-tu_au_b}{1-u_au_b},
+ \qquad u_a=x_a^{\eta_a}.
+\end{equation}
+
+\subsection{Alternants and finite foldings}
+
+Write $N_t(z)=\prod_{a<b}(z_a-z_b)(1-tz_az_b)$ and put
+\[
+ f_1(z)=z^{n-1},\qquad
+ f_r(z)=z^{n-r}+t^{r-1}z^{n+r-2}\quad(2\le r\le n).
+\]
+The finite numerator calculations reduce to three alternants.
+
+\begin{lemma}
+With rows indexed by $1\le a\le n$ and columns by $1\le r\le n$,
+\begin{align}
+ \det[f_r(z_a)]&=N_t(z),\label{eq:alternant-basic}\\
+ \det[z_a^{n-r}-t^rz_a^{n+r}]
+ &=\prod_a(1-tz_a^2)N_t(z),\label{eq:alternant-Ct}\\
+ \det[z_a^{n-r}+\tau^{2r-1}z_a^{n+r-1}]
+ &=\prod_a(1+\tau z_a)N_{\tau^2}(z).
+ \label{eq:alternant-Bminus}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Each determinant is alternating.  On setting $z_b=(tz_a)^{-1}$,
+rows $a,b$ are proportional, with multipliers
+$t^{1-n}z_a^{2-2n}$, $-t^{-n}z_a^{-2n}$, and
+$\tau^{1-2n}z_a^{1-2n}$, respectively; in the last expression
+$t=\tau^2$.  This gives the factors $1-tz_az_b$.
+The second determinant has row factor $1-tz_a^2$, and the third
+vanishes at $z_a=-\tau^{-1}$.  Divisibility can be checked over the
+fraction field in the remaining variables and returned to the polynomial
+ring by Gauss's lemma.  The factors are pairwise coprime and,
+together with $z_a-z_b$, have
+total degrees
+\[
+ 3\binom n2,\qquad 2n+3\binom n2,\qquad n+3\binom n2,
+\]
+which are the respective upper bounds on the determinant degrees.
+In each case the lowest-degree homogeneous part is
+$\det[z_a^{n-r}]=\prod_{a<b}(z_a-z_b)$, fixing the constant at $1$.
+\end{proof}
+
+Set $\ph_m(z)=z^m-z^{-m}$, $\ps_m(z)=z^m-z^{1-m}$, and
+$C_m(z)=z^m+z^{-m}$.
+For $L=n+k$ and standard basis $\eb_1,\ldots,\eb_L$, use the foldings
+\[
+\begin{aligned}
+ [m]_C&=\begin{cases}\eb_m&m>0,\\0&m=0,\\-\eb_{-m}&m<0,\end{cases}
+ & [m]_B&=\begin{cases}\eb_m&m\ge1,\\-\eb_{1-m}&m\le0,\end{cases}\\
+ [m]_+&=\begin{cases}\eb_m&m\ge2,\\2\eb_1&m=1,\\\eb_{2-m}&m\le0.\end{cases}
+\end{aligned}
+\]
+Only indices whose folded rows lie in $\{1,\ldots,L\}$ will occur.
+The evaluation matrices are
+\[
+\begin{gathered}
+ \Phi^C_{a,p}=\ph_p(x_a),\qquad \Phi^B_{a,p}=\ps_p(x_a),\\[2pt]
+ \Phi^+_{a,p}=\begin{cases}
+ 1,&p=1,\\
+ C_{p-1}(x_a),&p\ge2.
+ \end{cases}
+\end{gathered}
+\]
+Thus $\Phi^C[m]_C=\ph_m(x)$, $\Phi^B[m]_B=\ps_m(x)$,
+and $\Phi^+[m]_+=C_{m-1}(x)$, with vector evaluation understood.
+In particular, $[1]_+=2\eb_1$ is forced by $C_0=2$.
+
+The three initial minors are the Weyl denominators
+\begin{align}
+ \Delta_C(z)&=\det[\ph_r(z_a)]
+ =(-1)^n\prod_a z_a^{-n}(1-z_a^2)N_1(z),\notag\\
+ \Delta_B(z)&=\det[\ps_r(z_a)]
+ =(-1)^n\prod_a z_a^{-(n-1)}(1-z_a)N_1(z),\label{eq:denominators}\\
+ \Delta_+(z)&=\det[\chi_r(z_a)]
+ =\prod_a z_a^{-(n-1)}N_1(z),\notag
+\end{align}
+where $\chi_1=1$ and $\chi_r=C_{r-1}$ for $r\ge2$.
+These evaluations are immediate Vandermonde determinants in $z+z^{-1}$:
+$\ph_r/(z-z^{-1})$, $\ps_r/(z-1)$, and $\chi_r$ are monic
+polynomials of degree $r-1$.  Inversion of a row multiplies the three
+denominators by $-1$, $-z^{-1}$, and $1$, respectively.
+
+\subsection{The finite column matrices}
+
+For $\diamond\in\{C,B,+\}$, define
+\[
+\begin{aligned}
+ u_1^\diamond&=[k+1]_\diamond,\qquad
+ \widetilde u_1^\diamond=[k]_\diamond,\\
+ u_r^\diamond&=[k+r]_\diamond+t^{r-1}[k+2-r]_\diamond
+ \quad(r\ge2),\\
+ \widetilde u_r^\diamond&=[k+r-1]_\diamond+t^{r-1}[k+1-r]_\diamond
+ \quad(r\ge2).
+\end{aligned}
+\]
+The notation $\widetilde u_r^\diamond$ is used only for $\diamond=C,B$.
+Let $V^\star=(v_1^\star,\ldots,v_n^\star)$ be given by
+Table~\ref{tab:finite-columns}; every folded row there is at most $k+r$
+in column $r$.
+
+\begin{table}[htbp]
+\centering
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{@{}llll@{}}
+\toprule
+$\star$ & $\Phi$ & $v_r^\star$ & $\Delta$\\
+\midrule
+$C_0$ & $\Phi^C$ & $u_r^C$ & $\Delta_C$\\
+$C_t$ & $\Phi^C$ & $[k+r]_C-t^r[k-r]_C$ & $\Delta_C$\\
+$BC$ & $\Phi^C$ & $u_r^C+\tau\widetilde u_r^C$ & $\Delta_C$\\
+$B_0$ & $\Phi^B$ & $u_r^B$ & $\Delta_B$\\
+$B_-$ & $\Phi^B$ & $[k+r]_B+\tau^{2r-1}[k+1-r]_B$ & $\Delta_B$\\
+$B_+$ & $\Phi^+$ & $u_r^+$ & $\Delta_+$\\
+$B_t$ & $\Phi^B$ & $u_r^B-t\widetilde u_r^B$ & $\Delta_B$\\
+\bottomrule
+\end{tabular}
+\caption{Finite column data.  In the $BC$ and $B_-$ rows, $t=\tau^2$.}
+\label{tab:finite-columns}
+\end{table}
+
+\begin{proposition}\label{prop:finite}
+For $n,k\ge1$, the data of Table~\ref{tab:finite-columns} satisfy
+\[
+ P^\star_{n,k}=\frac{\det(\Phi V^\star)}{\Delta}.
+\]
+Moreover, $\det V^\star_H=1$ for $H=\{k+1,\ldots,k+n\}$.
+\end{proposition}
+
+\begin{proof}
+Multiply \eqref{eq:signsum} by the relevant denominator in
+\eqref{eq:denominators}.  In the $C_0$ case,
+\eqref{eq:alternant-basic} gives row functions
+$z^{-n-k}f_r(z)$.  Summing over inversions folds each row by
+$g(z)\mapsto g(z)-g(z^{-1})$, and these functions give
+$-\Phi^C u_r^C$.  The $n$ column signs cancel the factor $(-1)^n$
+in $\Delta_C$.  The $BC$ calculation multiplies the same row
+functions by $1+\tau z$, giving
+$-\Phi^C(u_r^C+\tau\widetilde u_r^C)$.
+For $C_t$, replace $f_r$ by $z^{n-r}-t^rz^{n+r}$ using
+\eqref{eq:alternant-Ct}; the folded column is
+$-\Phi^C([k+r]_C-t^r[k-r]_C)$.
+
+For the shifted folding use $z^{-(n+k-1)}f_r(z)$ and
+$g(z)\mapsto g(z)-zg(z^{-1})$.  This gives
+$-\Phi^B u_r^B$ in case $B_0$; multiplying by $1-tz$ gives
+$-\Phi^B(u_r^B-t\widetilde u_r^B)$ in case $B_t$.
+Equation~\eqref{eq:alternant-Bminus} gives the $B_-$ column in
+exactly the same way.  Again the column signs cancel $(-1)^n$.
+
+In case $B_+$, $\Delta_+$ is invariant under each inversion.
+Use \eqref{eq:alternant-basic} and the row functions
+$z^{-(n+k-1)}f_r(z)$, now with
+$g(z)\mapsto g(z)+g(z^{-1})$.  The first folded column is $C_k$,
+and the others are
+$C_{k+r-1}+t^{r-1}C_{k+1-r}$, exactly $\Phi^+u_r^+$.
+This also checks the normalization of the first column without
+introducing an additional even-orthogonal alternant.
+
+Finally, in every case the leading bracket places a $1$ in row $k+r$
+of column $r$.  For $k\ge1$ all other folded rows are strictly
+smaller, including those arising from nonpositive indices.  Hence
+$V^\star_H$ is unit upper triangular.
+\end{proof}
+
+
+\section{Complementary kernels and transfer}\label{sec:transfer}
+
+Throughout Sections~\ref{sec:transfer}--\ref{sec:exceptional}, assume
+$n,k\ge1$ and write
+\[
+\begin{gathered}
+ L=n+k,\qquad Q_0=\{1,\ldots,n\},\qquad J=\{n+1,\ldots,n+k\},\\
+ H=\{k+1,\ldots,k+n\},\qquad I=\{1,\ldots,k\},\\
+ \omega=(-1)^{k(k+1)/2},\qquad \zeta=(-1)^{nk}\omega.
+\end{gathered}
+\]
+Subsets are always ordered increasingly.  A subscript on an
+$n\times L$ matrix selects columns; on a matrix with $L$ rows it
+selects rows.
+
+\subsection{The normalized transfer}
+
+\begin{theorem}
+Let $F$ be a field, and let $X\in F^{n\times L}$,
+$Y\in F^{L\times n}$, and $U,Z\in F^{L\times k}$ satisfy $XU=0$ and $Y^{\mathsf T}Z=0$.
+If $\det X_{Q_0}$, $\det U_J$, $\det Y_H$, and $\det Z_I$ are
+nonzero, then
+\[
+ \det(XY)=
+ \frac{(-1)^{nk}\det X_{Q_0}\det Y_H}
+      {\det U_J\det Z_I}\det(U^{\mathsf T}Z).
+\]
+\end{theorem}
+
+\begin{proof}
+The nonzero minors give maximal rank, hence
+$\operatorname{col}(U)=\ker X$.  The forms
+\[
+\begin{aligned}
+ (v_1,\ldots,v_n)&\longmapsto\det[Xv_1\ \cdots\ Xv_n],\\
+ (v_1,\ldots,v_n)&\longmapsto\det[U\ v_1\ \cdots\ v_n]
+\end{aligned}
+\]
+induce nonzero top forms on $F^L/\operatorname{col}(U)$ and are
+therefore proportional.  For $Q=\{q_1<\cdots<q_n\}$ set
+$\epsilon(Q)=(-1)^{\sum_r(q_r-r)}$.  Expansion along the last $n$
+columns gives
+\[
+ \det[U\ \eb_{q_1}\ \cdots\ \eb_{q_n}]
+ =(-1)^{nk}\epsilon(Q)\det U_{Q^c}.
+\]
+Consequently, for constants $\alpha,\beta$ independent of $Q$,
+\[
+ \det X_Q=\alpha\epsilon(Q)\det U_{Q^c},\qquad
+ \det Y_Q=\beta\epsilon(Q)\det Z_{Q^c},
+\]
+where the second relation follows from $Y^{\mathsf T}Z=0$.
+Cauchy--Binet gives
+\[
+ \det(XY)=\alpha\beta
+ \sum_{|Q|=n}\det U_{Q^c}\det Z_{Q^c}
+ =\alpha\beta\det(U^{\mathsf T}Z).
+\]
+Evaluating the first relation at $Q_0$ and the second at $H$, for
+which $\epsilon(Q_0)=1$ and $\epsilon(H)=(-1)^{nk}$, gives the result.
+\end{proof}
+
+In the finite representations, $\det\Phi_{Q_0}=\Delta$ and
+$\det V_H=1$.  Hence matrices $D,C$ satisfying
+$\Phi D=0$, $V^{\mathsf T}C=0$, and having nonzero minors $D_J,C_I$
+give the single normalization formula
+\begin{equation}\label{eq:normalized-transfer}
+ P^\star_{n,k}
+ =\frac{(-1)^{nk}}{\det D_J\det C_I}
+   \det(D^{\mathsf T}C).
+\end{equation}
+Only the two indicated minors are needed in each application.
+
+\subsection{Three coefficient kernels}
+
+Palindromicity gives
+\begin{equation}\label{eq:coefficient-reflections}
+ \Lambda_i(-m)=-\Lambda_i(m),\qquad
+ h_i(1-m)=h_i(m),\qquad h_i^+(2-m)=h_i^+(m).
+\end{equation}
+In particular,
+\[
+ h_i(m)=\dote_{n-i+m}+\dote_{n-i-m+1},\qquad
+ h_i^+(m)=\dote_{n-i+m}+\dote_{n-i-m+2}.
+\]
+Define $L\times k$ matrices by
+\begin{equation}\label{eq:D}
+ D^C_{p,i}=(-1)^p\Lambda_i(p),\qquad
+ D^B_{p,i}=(-1)^ph_i(p),\qquad
+ D^+_{p,i}=(-1)^ph_i^+(p).
+\end{equation}
+
+\begin{lemma}\label{lem:coefficient-kernels}
+The three pairs satisfy $\Phi^C D^C=0$, $\Phi^B D^B=0$, and
+$\Phi^+D^+=0$.  Their complementary minors are
+$\det D^C_J=\det D^B_J=\zeta$ and $\det D^+_J=2\zeta$.
+\end{lemma}
+
+\begin{proof}
+The generating identities are
+\begin{align*}
+ \sum_m\Lambda_i(m)z^m&=z^{-n}\dotE(z)(z^i-z^{-i}),\\
+ \sum_m h_i(m)z^m&=z^{-n}\dotE(z)(z^i+z^{1-i}),\\
+ \sum_m h_i^+(m)z^m&=z^{-n}\dotE(z)(z^i+z^{2-i}).
+\end{align*}
+They vanish at $z=-x_a$.  Pair the integer indices by
+$m\leftrightarrow-m$, $m\leftrightarrow1-m$, and
+$m\leftrightarrow2-m$, respectively.  The first two paired sums are
+$\sum_{p\ge1}(-1)^p\Lambda_i(p)\ph_p(x_a)$ and
+$\sum_{p\ge1}(-1)^ph_i(p)\ps_p(x_a)$.
+In the third, the fixed index $m=1$ gives, after division by $x_a$,
+\[
+ -h_i^+(1)+\sum_{p\ge2}(-1)^ph_i^+(p)C_{p-1}(x_a)=0.
+\]
+All three kernels vanish for $p>L$, giving the asserted kernel
+relations.  In particular, the first row of $D^+$ has no extra factor $2$.
+
+For $1\le r,i\le k$, the last $k$ rows satisfy
+\begin{align*}
+ D^C_{n+r,i}=D^B_{n+r,i}&=(-1)^{n+r}\dote_{i-r},\\
+ D^+_{n+r,i}&=(-1)^{n+r}
+       (\dote_{i-r}+\dote_{2-i-r}).
+\end{align*}
+These blocks are upper triangular.  The first two have diagonal
+$(-1)^{n+r}$; the third has the same diagonal except that its first
+entry is $2(-1)^{n+1}$, giving the stated minors.
+\end{proof}
+
+\subsection{Folding and finite unfolding}
+
+We will fold scalar sequences $b_j(m)$, $m\in\Z$, into affine
+matrices.  The three conventions are
+\begin{align}
+ \mathcal C^C(b)_{p,j}&=b_j(p)-b_j(-p),\notag\\
+ \mathcal C^B(b)_{p,j}&=(-1)^p\bigl(b_j(p)+b_j(1-p)\bigr),
+ \label{eq:affine-foldings}\\
+ \mathcal C^+(b)_{p,j}&=
+ \begin{cases}
+ -b_j(1),&p=1,\\
+ (-1)^p\bigl(b_j(p)+b_j(2-p)\bigr),&2\le p\le L.
+ \end{cases}\notag
+\end{align}
+The sequences need not have finite support; the products below do.
+
+\begin{lemma}
+For the matrices in \eqref{eq:D} and \eqref{eq:affine-foldings},
+\begin{align}
+ ((D^C)^{\mathsf T}\mathcal C^C(b))_{ij}
+ &=\sum_{m\in\Z}(-1)^m\Lambda_i(m)b_j(m),\label{eq:pairing-C}\\
+ ((D^B)^{\mathsf T}\mathcal C^B(b))_{ij}
+ &=\sum_{m\in\Z}h_i(m)b_j(m),\label{eq:pairing-B}\\
+ ((D^+)^{\mathsf T}\mathcal C^+(b))_{ij}
+ &=\sum_{m\in\Z}h_i^+(m)b_j(m).\label{eq:pairing-plus}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+For the first identity, pair $m=p$ with $m=-p$, using
+\eqref{eq:coefficient-reflections} and $\Lambda_i(0)=0$.
+For the second, pair $p\ge1$ with $1-p\le0$.
+For the third, the row $p=1$ contributes $h_i^+(1)b_j(1)$, while
+$p\ge2$ pairs with $2-p\le0$.  Thus the fixed center is counted
+once, not twice.  The vanishing for $p>L$ established above justifies
+each unfolding.
+\end{proof}
+
+\Needspace{10\baselineskip}
+A common bound controls all subsequent row sums.  If $K>0$ and
+$\mathcal E_r=0$ outside $[0,N]$, a row with entries
+\[
+ \mathcal E_{n-i+j-Ky}
+       +\sigma\mathcal E_{n+i+j-Ky-\delta},
+ \qquad 1\le j\le k,\quad \delta\in\{0,1,2\},
+\]
+vanishes unless
+\[
+ \left\lceil\frac{n-i+1-N}{K}\right\rceil
+ \le y\le
+ \left\lfloor\frac{n+i+k-\delta}{K}\right\rfloor.
+\]
+Indeed, outside this interval every index is above $N$ or below $0$;
+here $2i-\delta\ge0$.  Take $N=2n$, or $2n+1$ for
+$\widehat h$.  Thus, if $A_{ij}=\sum_y w_j(y)F_i(j-Ky)$, finite row
+multilinearity gives $\det A=\Jaff_K[w,F;\Z^k]$.
+The even-sublattice case will use a parity projection instead.
+
+Every weight has exponent
+$\frac K2y^2-(j-\eta)y$, with
+$\eta\in\{0,\tfrac12,1\}$,
+$K/2\ge k-\eta$, and $j-\eta\ge0$.
+It is nonnegative for every integer $y$.  In case $B_0$ it is an
+integer because $y^2-y$ is even; in the square-root cases twice this
+exponent is the exponent of $\tau$.  The resulting affine expressions
+are therefore polynomial in $t$ or $\tau$, even though reflection
+relations will be proved in the corresponding rational function fields.
+
+
+\section{The four ordinary affine kernels}\label{sec:ordinary}
+
+Four specializations have no doubled complementary block.  The two
+unshifted foldings share one reflection, and the two shifted foldings
+share another.
+
+\subsection{The pair \texorpdfstring{$C_0$ and $BC$}{C0 and BC}}
+
+\begin{proposition}
+Equations~\eqref{eq:main-C0} and~\eqref{eq:main-BC} hold for $n,k\ge1$.
+\end{proposition}
+
+\begin{proof}
+Take $K=2k+2$ for $C_0$ and $K=2k+1$ for $BC$, with $t=\tau^2$
+in the latter case.  For $1\le j\le k$ define
+\[
+\begin{aligned}
+ b_j(m)&=
+ \begin{cases}
+ t^{Kq^2/2+jq},&m=j+Kq,\quad q\in\Z,\\
+ 0,&m\not\equiv j\pmod K,
+ \end{cases}\\
+ c_j(m)&=b_j(m)-b_j(-m),
+\end{aligned}
+\]
+and let $C=\mathcal C^C(b)$.  Shifting $q$ gives
+$b_j(m+K)=t^{m+K/2}b_j(m)$, hence
+\begin{equation}\label{eq:ordinary-C-reflection}
+ c_j(-m)=-c_j(m),\qquad
+ c_j(m)+t^{m-K/2}c_j(K-m)=0.
+\end{equation}
+The second relation follows by applying the quasiperiodicity to
+$b_j(K-m)$ and $b_j(m-K)$; it holds also outside the residue classes.
+
+For $C_0$, the relation at $m=k+1$ gives $c_j(k+1)=0$, and at
+$m=k+r$ it gives
+$c_j(k+r)+t^{r-1}c_j(k+2-r)=0$.  Since the odd extension agrees with
+the bracket $[m]_C$, these are precisely
+$(V^{C_0})^{\mathsf T}C=0$.
+For $BC$, the first column gives
+$c_j(k+1)+\tau c_j(k)=0$.
+For $r\ge2$, put $h=k+r$.  The four terms in its finite column split as
+\begin{align*}
+ (v_r^{BC})^{\mathsf T}C_{\bullet,j}
+ ={}&\bigl(c_j(h)+\tau^{2h-K}c_j(K-h)\bigr)\\
+ &+\tau\bigl(c_j(h-1)+\tau^{2(h-1)-K}c_j(K-h+1)\bigr)=0.
+\end{align*}
+Thus the second kernel relation holds in both cases.
+
+Because $K>2k$, the residues $j$ and $-j$ are disjoint and the first
+$k$ rows give $C_I=I_k$.  By \eqref{eq:pairing-C} and $y=-q$,
+\[
+\begin{aligned}
+ (D^C)^{\mathsf T}C&=A\diag((-1)^1,\ldots,(-1)^k),\\
+ A_{ij}&=\sum_{y\in\Z}(-1)^{Ky}t^{Ky^2/2-jy}\Lambda_i(j-Ky).
+\end{aligned}
+\]
+The sign $(-1)^{Ky}$ is $1$ for $C_0$ and $(-1)^y$ for $BC$.
+Since $\det D^C_J=\zeta=(-1)^{nk}\omega$,
+\eqref{eq:normalized-transfer} gives $P^\star_{n,k}=\det A$.
+Finite row multilinearity proves the two identities.
+\end{proof}
+
+\subsection{The pair \texorpdfstring{$B_0$ and $B_-$}{B0 and B-}}
+
+\begin{proposition}
+Equations~\eqref{eq:main-B0} and~\eqref{eq:main-Bminus} hold for $n,k\ge1$.
+\end{proposition}
+
+\begin{proof}
+Take $K=2k+1$ for $B_0$ and $K=2k$ for $B_-$, with $t=\tau^2$
+in the latter case.  Define
+\[
+ b_j(m)=
+ \begin{cases}
+ (-1)^{Ky}t^{Ky^2/2-(j-1/2)y},&m=j-Ky,\quad y\in\Z,\\
+ 0,&m\not\equiv j\pmod K,
+ \end{cases}
+\]
+and put
+\[
+ \gamma_j(m)=(-1)^m\bigl(b_j(m)+b_j(1-m)\bigr),
+ \qquad C=\mathcal C^B(b).
+\]
+Changing $y$ to $y-1$ gives
+$b_j(m+K)=(-1)^K t^{m+(K-1)/2}b_j(m)$.
+Applying this relation to the two reflected terms yields
+\begin{equation}\label{eq:ordinary-B-reflection}
+ \gamma_j(1-m)=-\gamma_j(m),\qquad
+ \gamma_j(m)=-t^{m-(K+1)/2}\gamma_j(K+1-m).
+\end{equation}
+For example, both $b_j(K+1-m)$ and $b_j(m-K)$ acquire the factor
+$(-1)^K t^{(K+1)/2-m}$ from $b_j(1-m)$ and $b_j(m)$.
+The parity in the definition of $\gamma_j$ leaves the minus sign
+in \eqref{eq:ordinary-B-reflection} for either parity of $K$.
+
+For $B_0$, the fixed index $m=k+1$ in the second reflection has
+$\gamma_j(k+1)=0$; the remaining columns are killed by
+$\gamma_j(k+r)+t^{r-1}\gamma_j(k+2-r)=0$.
+For $B_-$, it gives instead
+$\gamma_j(k+r)+\tau^{2r-1}\gamma_j(k+1-r)=0$.
+The first reflection makes evaluation against $[m]_B$ agree with
+$\gamma_j(m)$, so $V^{\mathsf T}C=0$ in both cases.
+
+For $1\le p,j\le k$, $b_j(p)=\delta_{p,j}$, whereas
+$b_j(1-p)=0$ because $1\le j+p-1\le2k-1<K$.
+Thus $C_I=\diag((-1)^1,\ldots,(-1)^k)$ and $\det C_I=\omega$.
+The common pairing \eqref{eq:pairing-B} gives
+\[
+ ((D^B)^{\mathsf T}C)_{ij}
+ =A_{ij}:=\sum_{y\in\Z}
+ (-1)^{Ky}t^{Ky^2/2-(j-1/2)y}h_i(j-Ky).
+\]
+Now \eqref{eq:normalized-transfer} and $\det D^B_J=\zeta$ give
+$P^\star_{n,k}=\det A$.  For odd $K$ the affine sign is $(-1)^y$;
+for even $K$ it is absent.  Finite multilinearity proves the stated
+identities.
+\end{proof}
+
+
+\section{Fixed classes and adjacent residues}\label{sec:exceptional}
+
+The remaining cases have one doubled complementary minor.  We treat
+separately its three sources: a fixed residue, a fixed center, and the
+overlap of adjacent residues.
+
+\subsection{The fixed residue in \texorpdfstring{$C_t$}{Ct}}
+
+\begin{proposition}
+Equation~\eqref{eq:main-Ct} holds for $n,k\ge1$.
+\end{proposition}
+
+\begin{proof}
+Set $K=2k$ and define
+\[
+ b_j(m)=
+ \begin{cases}
+ (-1)^q t^{kq^2+jq},&m=j+2kq,\quad q\in\Z,\\
+ 0,&m\not\equiv j\pmod{2k}.
+ \end{cases}
+\]
+Let $c_j(m)=b_j(m)-b_j(-m)$ and $C=\mathcal C^C(b)$.
+The quasiperiodicity is now
+$b_j(m+2k)=-t^{m+k}b_j(m)$, so the calculation leading to
+\eqref{eq:ordinary-C-reflection} gives
+\[
+ c_j(-m)=-c_j(m),\qquad
+ c_j(m)=t^{m-k}c_j(2k-m).
+\]
+At $m=k+r$ this annihilates the column
+$[k+r]_C-t^r[k-r]_C$; hence $(V^{C_t})^{\mathsf T}C=0$.
+
+Unlike the ordinary cases, the residues $k$ and $-k$ coincide.
+Their contributions add rather than cancel:
+\[
+ c_k(k+2kq)=2(-1)^qt^{kq(q+1)}\quad(q\in\Z).
+\]
+For $j<k$ the two residues remain disjoint.  Consequently,
+$C_I=\diag(1,\ldots,1,2)$ and $\det C_I=2$.
+This includes $k=1$, when the block consists of the single entry $2$.
+
+Write
+\[
+\begin{gathered}
+ a_{ij}(y)=t^{ky^2-jy}\Lambda_i(j-2ky),\\
+ A^+_{ij}=\sum_y a_{ij}(y),\qquad
+ A^-_{ij}=\sum_y(-1)^y a_{ij}(y).
+\end{gathered}
+\]
+The pairing \eqref{eq:pairing-C}, with $y=-q$, gives
+$(D^C)^{\mathsf T}C=A^-\diag((-1)^1,\ldots,(-1)^k)$.
+Thus the fixed-residue minor and \eqref{eq:normalized-transfer} yield
+$P^{C_t}_{n,k}=\tfrac12\det A^-$.
+
+It remains to identify the even-sublattice expression, not the full
+lattice sum.  The parity projector and finite multilinearity give
+\[
+ \sum_{y\in\latticeeven}\det[a_{ij}(y_i)]
+ =\tfrac12\bigl(\det A^++\det A^-\bigr).
+\]
+In the last column, $y\mapsto1-y$ preserves $ky^2-ky$ and sends
+$k-2ky$ to its negative.  Since $\Lambda_i$ is odd,
+$a_{i,k}(1-y)=-a_{i,k}(y)$.  This fixed-point-free involution makes
+the last column of $A^+$ zero.  The parity projection therefore equals
+$\tfrac12\det A^-$, proving the identity.
+\end{proof}
+
+\subsection{The fixed center in \texorpdfstring{$B_+$}{B+}}
+
+The sequence used here will also supply the adjacent-residue reflection
+in the next subsection.  For $1\le j\le k$, set
+\begin{equation}\label{eq:Bplus-sequence}
+\begin{aligned}
+ b_j(m)&=
+ \begin{cases}
+ (-1)^y t^{ky^2-(j-1)y},&m=j-2ky,\quad y\in\Z,\\
+ 0,&m\not\equiv j\pmod{2k},
+ \end{cases}\\
+ \Gamma_j(m)&=(-1)^m\bigl(b_j(m)+b_j(2-m)\bigr).
+\end{aligned}
+\end{equation}
+
+\begin{lemma}\label{lem:center-reflection}
+For every integer $m$,
+\begin{align}
+ b_j(m+2k)&=-t^{m+k-1}b_j(m),\notag\\
+ \Gamma_j(2-m)&=\Gamma_j(m),\notag\\
+ \Gamma_j(m)&=-t^{m-k-1}\Gamma_j(2k+2-m).
+ \label{eq:center-reflection}
+\end{align}
+In particular, $\Gamma_j(k+1)=0$.
+\end{lemma}
+
+\begin{proof}
+The first relation follows from $y\mapsto y-1$ in
+\eqref{eq:Bplus-sequence}; the second is the defining symmetry.
+For the last, the first relation gives
+\[
+ b_j(2k+2-m)=-t^{k+1-m}b_j(2-m),\qquad
+ b_j(m-2k)=-t^{k+1-m}b_j(m).
+\]
+Since $m$ and $2k+2-m$ have the same parity, adding these relations
+proves \eqref{eq:center-reflection}.  Its fixed index $m=k+1$
+has eigenvalue $-1$ and hence vanishes.
+\end{proof}
+
+\Needspace{6\baselineskip}
+\begin{proposition}
+Equation~\eqref{eq:main-Bplus} holds for $n,k\ge1$.
+\end{proposition}
+
+\begin{proof}
+Take $C=\mathcal C^+(b)$ for \eqref{eq:Bplus-sequence}.
+The normalized center row is $C_{1,j}=-b_j(1)$, so
+\[
+ [1]_+^{\mathsf T}C_{\bullet,j}=2C_{1,j}
+ =-2b_j(1)=\Gamma_j(1).
+\]
+Together with $\Gamma_j(2-m)=\Gamma_j(m)$, this shows that every
+bracket $[m]_+$ evaluates to $\Gamma_j(m)$, including the fixed
+center.  Lemma~\ref{lem:center-reflection} therefore gives
+$(V^{B_+})^{\mathsf T}C=0$: the first column evaluates to
+$\Gamma_j(k+1)$ and the others to
+$\Gamma_j(k+r)+t^{r-1}\Gamma_j(k+2-r)=0$.
+
+The first $k$ rows are
+$C_I=\diag((-1)^1,\ldots,(-1)^k)$.
+Indeed, $b_j(1)=\delta_{j,1}$; for $2\le p\le k$,
+$b_j(p)=\delta_{p,j}$ and the reflected congruence would require
+$2ky=j+p-2\in\{1,\ldots,2k-2\}$, which is impossible.
+Thus $\det C_I=\omega$.  The factor $2$ occurs instead in
+$\det D^+_J=2\zeta$, whose first diagonal coefficient is
+$\dote_0+\dote_0$ by Lemma~\ref{lem:coefficient-kernels}.
+
+By \eqref{eq:pairing-plus},
+\[
+ ((D^+)^{\mathsf T}C)_{ij}
+ =A^{B_+}_{ij}:=\sum_y(-1)^yt^{ky^2-(j-1)y}h_i^+(j-2ky).
+\]
+In this pairing the center contributes exactly $h_i^+(1)b_j(1)$;
+its coefficient is not doubled.  Formula~\eqref{eq:normalized-transfer}
+now gives $P^{B_+}_{n,k}=\tfrac12\det A^{B_+}$, and finite row
+multilinearity proves the result.
+\end{proof}
+
+\subsection{Adjacent residues in \texorpdfstring{$B_t$}{Bt}}
+
+This case uses the same coefficient matrix $D^B$ as $B_0$ and $B_-$.
+Its different row kernel satisfies
+$\widehat h_i(m)=h_i(m)+h_i(m-1)$, directly from
+$\ddote_r=\dote_r+\dote_{r-1}$.
+Keep $b_j$ and $\Gamma_j$ from \eqref{eq:Bplus-sequence} and put
+\[
+\begin{aligned}
+ a_j(m)&=b_j(m)+b_j(m+1),\\
+ c_j(m)&=(-1)^m\bigl(a_j(m)+a_j(1-m)\bigr),\\
+ \gamma_j(m)&=c_j(m)-tc_j(m-1).
+\end{aligned}
+\]
+Thus $a_j$ is supported on the two adjacent residues $j$ and $j-1$,
+and $c_j(1-m)=-c_j(m)$.
+
+\begin{lemma}
+The adjacent-residue sequences satisfy
+\begin{align}
+ c_j(m)&=\Gamma_j(m)-\Gamma_j(m+1),\label{eq:adjacent-difference}\\
+ \gamma_j(m)&=(1+t)\Gamma_j(m)-\Gamma_j(m+1)-t\Gamma_j(m-1),
+ \label{eq:adjacent-gamma}\\
+ \gamma_j(m)&=-t^{m-k-1}\gamma_j(2k+2-m).
+ \label{eq:adjacent-reflection}
+\end{align}
+In particular, $\gamma_j(k+1)=0$.
+\end{lemma}
+
+\begin{proof}
+Expanding the definitions proves \eqref{eq:adjacent-difference}, and
+subtracting $tc_j(m-1)$ gives \eqref{eq:adjacent-gamma}.
+Let $T=2k+2$ and $d=m-k-1$.  Apply
+\eqref{eq:center-reflection} at $m,m+1,m-1$ to the latter identity:
+\begin{align*}
+ \gamma_j(m)
+ &=-t^d\bigl((1+t)\Gamma_j(T-m)
+             -t\Gamma_j(T-m-1)-\Gamma_j(T-m+1)\bigr)\\
+ &=-t^d\gamma_j(T-m).
+\end{align*}
+The fixed-index assertion follows at $m=k+1$.
+\end{proof}
+
+\begin{proposition}
+Equation~\eqref{eq:main-Bt} holds for $n,k\ge1$.
+\end{proposition}
+
+\begin{proof}
+Set $C=\mathcal C^B(a)$, so $C_{p,j}=c_j(p)$.
+Evaluation against the first finite column gives
+\[
+ ([k+1]_B-t[k]_B)^{\mathsf T}C_{\bullet,j}
+ =\gamma_j(k+1)=0.
+\]
+For $r\ge2$, the four terms in $u_r^B-t\widetilde u_r^B$ give
+$\gamma_j(k+r)+t^{r-1}\gamma_j(k+2-r)=0$ by
+\eqref{eq:adjacent-reflection}.  Hence
+$(V^{B_t})^{\mathsf T}C=0$.
+
+The first complementary block contains the overlap that fixes the
+normalization.  For $1\le p,j\le k$, only $y=0$ contributes, and
+\[
+ a_j(p)=\delta_{p,j}+\delta_{p,j-1},\qquad
+ a_j(1-p)=\delta_{p,1}\delta_{j,1}.
+\]
+The second equality follows because the two congruences require
+$2ky=j+p-1$ or $2ky=j+p-2$; only the latter can occur, at $p=j=1$.
+Therefore
+\[
+ C_{p,j}=(-1)^p\bigl(\delta_{p,j}+\delta_{p,j-1}
+                         +\delta_{p,1}\delta_{j,1}\bigr)
+ \quad(1\le p,j\le k).
+\]
+This block is upper bidiagonal, with diagonal $-2,1,-1,1,\ldots$,
+and hence $\det C_I=2\omega$.  There is no doubling in
+$\det D^B_J=\zeta$.
+
+Finally, the common pairing \eqref{eq:pairing-B} and the definition of
+$\widehat h_i$ give
+\begin{align*}
+ ((D^B)^{\mathsf T}C)_{ij}
+ &=\sum_m h_i(m)\bigl(b_j(m)+b_j(m+1)\bigr)\\
+ &=\sum_y(-1)^yt^{ky^2-(j-1)y}
+          \bigl(h_i(j-2ky)+h_i(j-1-2ky)\bigr)\\
+ &=\sum_y(-1)^yt^{ky^2-(j-1)y}\widehat h_i(j-2ky).
+\end{align*}
+The normalization formula yields one half of this determinant, and
+finite multilinearity proves Theorem~\ref{thm:B}.
+\end{proof}
+
+
+\section{Width zero and classical specializations}\label{sec:boundary}
+
+\subsection{The normalized empty rectangle}
+
+\begin{proposition}
+For every $n\ge1$, all seven normalized width-zero values are $1$.
+Consequently, the five non-prefactored identities in
+Theorem~\ref{thm:A} hold also at $k=0$.
+\end{proposition}
+
+\begin{proof}
+The symmetric-group reduction \eqref{eq:signsum} is valid at $k=0$.
+The alternant and row-folding calculation in Proposition~\ref{prop:finite}
+therefore gives
+\[
+ \nu_\star(0)P^\star_{n,0}
+ =\frac{\det(\Phi V^\star|_{k=0})}{\Delta},
+\]
+without using the complementary-kernel transfer.
+Relative to the initial basis defining $\Delta$, these column
+transformations are upper triangular.  Their diagonal coefficients in
+column $r$ are
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Case & Diagonal coefficient & Product\\
+\midrule
+$C_0,BC,B_0$ & $1$ & $1$\\
+$C_t,B_t$ & $1+t^r$ & $(-t;t)_n$\\
+$B_-$ & $1-\tau^{2r-1}$ & $(\tau;\tau^2)_n$\\
+$B_+$ & $1+t^{r-1}$ & $(-1;t)_n$\\
+\bottomrule
+\end{tabular}
+\end{center}
+For example, the $B_t$ columns are $(1+t)\ps_1$ and
+\[
+ (1+t^r)\ps_r-(t+t^{r-1})\ps_{r-1}\qquad(r\ge2),
+\]
+while the $BC$ columns are $\ph_1$ and
+\[
+ \ph_r+(\tau-\tau^{2r-1})\ph_{r-1}
+        -\tau^{2r-2}\ph_{r-2}\qquad(r\ge2).
+\]
+For $B_+$ the first column is $C_0=2$ relative to $\chi_1=1$,
+so its diagonal is indeed $1+t^0=2$.
+Each product in the table equals $\nu_\star(0)$, proving the claim.
+The five affine expressions without an external half-factor are $1$
+by the empty-determinant convention.
+\end{proof}
+
+These are rational-function identities before cancellation; any
+removable singularities of the displayed normalization factors are
+understood after cancellation.  In particular, the conclusion does not
+require a nonvanishing numerical value of every Pochhammer factor.
+
+\subsection{The specialization \texorpdfstring{$t=0$}{t=0}}
+
+The classical rectangular dual Jacobi--Trudi formulas are recovered in
+three finite foldings.  They are the symplectic and orthogonal
+determinants in \cite[Theorem~2.1]{AlbionEtAl2024}; see also the
+lattice-path proofs in \cite{FulmekKrattenthaler1997}.
+
+\begin{corollary}
+For $n,k\ge1$, with $1\le a,r\le n$ on the left and
+$1\le i,j\le k$ on the right,
+\begin{align}
+ \frac{\det[\ph_{k+r}(x_a)]}{\Delta_C(x)}
+ &=\det[\dote_{n-i+j}-\dote_{n+i+j}],\label{eq:classical-C}\\
+ \frac{\det[\ps_{k+r}(x_a)]}{\Delta_B(x)}
+ &=\det[\dote_{n-i+j}+\dote_{n+i+j-1}]\notag\\
+ &=\tfrac12\det[\ddote_{n-i+j}+\ddote_{n+i+j-1}],
+ \label{eq:classical-B}\\
+ \frac{\det[C_{k+r-1}(x_a)]}{\Delta_+(x)}
+ &=\tfrac12\det[\dote_{n-i+j}+\dote_{n+i+j-2}].
+ \label{eq:classical-plus}
+\end{align}
+The seven finite representations specialize to the corresponding left
+sides: $C_0,C_t,BC$ to \eqref{eq:classical-C};
+$B_0,B_-,B_t$ to \eqref{eq:classical-B}; and $B_+$ to
+\eqref{eq:classical-plus}.
+\end{corollary}
+
+\Needspace{9\baselineskip}
+\begin{proof}
+At $t=0$ (and $\tau=0$ in the square-root cases), every finite
+column in Table~\ref{tab:finite-columns} reduces to
+$[k+r]_\diamond$.  This identifies the finite ratios.
+In the affine formulas for $C_0,B_0,B_+,B_t$, every nonzero shift
+has a strictly positive parameter exponent, leaving only $y=0$ in
+each row and giving the displayed dual determinants.
+For $C_t$ one should instead use its finite ratio: at $j=k,y=1$
+the weight exponent is zero, so nonzero shifts do not disappear
+entrywise.  The already proved parity identity identifies its
+specialized even-sublattice sum with the same symplectic determinant.
+\end{proof}
+
+
+\Needspace{30\baselineskip}
+\begin{thebibliography}{99}
+\raggedright
+
+\bibitem{Aitken1931}
+A.~C. Aitken,
+\emph{Note on dual symmetric functions},
+Proc. Edinburgh Math. Soc. (2) \textbf{2} (1931), no.~3, 164--167,
+\texttt{doi:10.1017/S0013091500007719}.
+
+\bibitem{AlbionEtAl2024}
+S.~P. Albion, I.~Fischer, H.~H\"ongesberg and F.~Schreier-Aigner,
+\emph{Skew symplectic and orthogonal characters through lattice paths},
+European J. Combin. \textbf{122} (2024), Article 104000, 26 pages,
+\texttt{doi:10.1016/j.ejc.2024.104000}.
+
+\bibitem{FulmekKrattenthaler1997}
+M.~Fulmek and C.~Krattenthaler,
+\emph{Lattice path proofs for determinantal formulas for symplectic and
+orthogonal characters},
+J. Combin. Theory Ser. A \textbf{77} (1997), no.~1, 3--50,
+\texttt{doi:10.1006/jcta.1996.2711}.
+
+\bibitem{McDowell2023}
+E.~McDowell,
+\emph{Flagged Schur polynomial duality via a lattice path bijection},
+Electron. J. Combin. \textbf{30} (2023), no.~1, Paper No.~P1.5, 17 pages,
+\texttt{doi:10.37236/11200}.
+
+\bibitem{MullerEtAl2016}
+S.~M\"uller, E.~Feliu, G.~Regensburger, C.~Conradi, A.~Shiu and
+A.~Dickenstein,
+\emph{Sign conditions for injectivity of generalized polynomial maps with
+applications to chemical reaction networks and real algebraic geometry},
+Found. Comput. Math. \textbf{16} (2016), no.~1, 69--97,
+\texttt{doi:10.1007/s10208-014-9239-3}.
+
+\bibitem{Venkateswaran2013}
+V.~Venkateswaran,
+\emph{Symmetric and nonsymmetric Hall-Littlewood polynomials of type
+$BC$},
+arXiv:1209.2933v2 (2013).
+
+\bibitem{Warnaar2026}
+S.~Ole Warnaar,
+\emph{Affine Jacobi--Trudi identities and $q,t$-Rogers--Ramanujan identities},
+SIGMA \textbf{22} (2026), 062, 50 pages,
+\texttt{doi:10.3842/SIGMA.2026.062}; arXiv:2511.17034v2.
+
+\end{thebibliography}
+
+\end{document}

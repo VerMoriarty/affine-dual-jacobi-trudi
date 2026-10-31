@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "run_id": "github-preparation-20261101",
+  "overall": "pass",
+  "dimensions": {
+    "kernel": "pass",
+    "object_correspondence": "pass",
+    "reproduction": "pass",
+    "route_correspondence": "pass",
+    "statement_correspondence": "pass"
+  },
+  "finished_at": "2026-10-31T17:22:25.081+00:00",
+  "environment": "Local macOS preparation; checked pinned dependency cache reused; this is not a GitHub Actions result.",
+  "source_archive_sha256": "0a40289c30aa7fbabf19b8c08b567948f1c94ee93982acea939892912d5823dd",
+  "source_view_manifest_sha256": "2dc396704a46e238f9bdd090fcb01059681714dd204c3fcb1b67e64b9f8a1fd3",
+  "repository_wrapper_sha256": "7ae0d407db98c8e4a1ca4b0e00e0fc2a89b899a954b6b6b071e1bba3474fe223",
+  "mathematical_input_snapshot_sha256": "1dceb00ab137370076aec552c9042c36a497ad067d8c6d4dca82aaa8146b2a3b",
+  "checker_tool_snapshot_sha256": "6c5c3187092f7fab9d449bb2fa8a454c4522ce19066ae82c4be2be397682cb04",
+  "full_report": {
+    "path": "artifacts/github-preparation-20261101-report.json.gz",
+    "sha256": "8dfa17bd5d35f81c29c2c67d829c148ed38c81abe3a09f82d3b595f04323aa1f",
+    "uncompressed_sha256": "9e3fbb60291bb92fff25a227304ab7ffce9afd1a7a54c1dfb32df3f0e4008b2f"
+  }
+}

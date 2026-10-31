@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "cwd": ".",
+  "finished_at": "2026-10-31T02:01:40.413+00:00",
+  "exit_code": 0,
+  "tests": 90,
+  "result": "pass",
+  "log": {
+    "path": "fidelity/checker_tests.log",
+    "sha256": "ad858b6549d10c1f39c70d1d487822515fd1c296a277dff56be2f7e39946f735"
+  },
+  "tools": {
+    "FidelityLean/Export.lean": "6a4a9d9f40b15901672c7d5ae565780aad4dfd1efe026dedc6eca255f3948dd7",
+    "fidelity/protocol.json": "53fb330785ca76709bf22e4cb9557972a62e37db1489da2b73e83612ea960f9b",
+    "scripts/check_fidelity.py": "9aa848bd3121d97e2b9a60022102889d33ec1930a3f7dd5bab7645c01809744a",
+    "scripts/fidelity/__init__.py": "31416b44d5c7bdf163c9bef12e8d0a992d7275e9aefc97eb4f1310e4f3200a2e",
+    "scripts/fidelity/archive.py": "286405f693109ae9184c39c836921249167861b342dd5eb8b26d7d64fcdd0632",
+    "scripts/fidelity/checks.py": "ba6c88cc6a120a0aee22dae6552cad9e9ef0142951eb8396a6a029216aa55f05",
+    "scripts/fidelity/common.py": "e9c74b8bb2d4f994d048156ee4c9c83d182d20a5fd8d9e5977a177ada907b659",
+    "scripts/fidelity/exact_experiments.py": "e7843416e147b459c85b870ee6f52dd895165b42a57ab5ce3ec7f0890bcd5b2d",
+    "scripts/fidelity/experiments.py": "19fe25fe2b2f45cd23b318570cdadb0ea24a280afdcddaa34044a778b1257a77",
+    "scripts/fidelity/inspection.py": "29ea8272fb40e87f324a24cfac480fdfe0c8bd52bf74b7f0b44fbf02c5d1a0a9",
+    "scripts/fidelity/metadata.py": "51cb0b6fcd0b8d79bf35572f467feb368fa3c7fdebba9c0125e5a13507bbcc28",
+    "scripts/fidelity/prepare_review.py": "4bca95d95f84135f296b6d0cab3f9974ced09543620bfe450864c0b683650e42",
+    "scripts/fidelity/route_dependencies.py": "d613fe9a7fb2ca81ea352fa2f452ba723683b479a74a6ab33ea207854c85c730",
+    "scripts/fidelity/runner.py": "cbe8b498ee34be3779279a1e2989b0117457f097b2a3c1aa65e85e4b22e9e115",
+    "scripts/fidelity/semantic_mutations.py": "d311a0c3511c5bbefff53f6b1bbaf35191f479c9b9bc5dc4d348a5354972b82c"
+  },
+  "test_sources": {
+    "tests/test_archive.py": "31483a511c0c666f6c090c26319e87e06b5aa8a75bb806b21a05e666a758f428",
+    "tests/test_exact_experiments.py": "87948de8fac18b2faa62adea5a976c87439b78b8a6f1753d41c20d2263cb41ab",
+    "tests/test_fidelity.py": "ab0cf537f64f177ace07920b9dc77a22b97c4745042ce844a952b2b1724cbad2",
+    "tests/test_review_packets.py": "4fb42bdaf084fd930e85073578fc02ab9920fb7709a4dfd31a76f05ceb58426e"
+  },
+  "meaning": "Checker regression tests; not an independent mathematical fidelity verdict."
+}
