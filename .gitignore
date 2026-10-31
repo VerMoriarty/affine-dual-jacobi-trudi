@@ -8,6 +8,7 @@ __pycache__/
 .env.*
 *.aux
 *.log
+!formalization/fidelity/checker_tests.log
 *.out
 *.synctex.gz
 *.fls
