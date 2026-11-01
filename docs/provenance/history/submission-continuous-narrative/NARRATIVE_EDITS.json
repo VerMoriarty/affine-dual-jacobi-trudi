@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "before_tex_sha256": "d0c3df02729d78de50080a0dc944c5df11ee6300cc12622acca08fcea0970122",
+  "after_tex_sha256": "d857b99bb3432aaa18d789dad80274baf3c7c5c2d3ab321ad54e35b4c7f32e22",
+  "frozen_source_sha256": "4141e8fa7c8fc8d7499b1d10bb77fcc1440d229169f44610709ebaf8968a5a19",
+  "forward_exact_match": true,
+  "inverse_frozen_source_exact_match": true,
+  "edits": [
+    {
+      "id": "alternants",
+      "before": "\\subsection{Alternants and finite foldings}\n\n",
+      "after": "To turn the sign sum \\eqref{eq:signsum} into finite determinant\nrepresentations, we begin with three alternants.\n"
+    },
+    {
+      "id": "alternant-preview-deduplication",
+      "before": "The finite numerator calculations reduce to three alternants.\n\n\\begin{lemma}\nWith rows indexed by $1\\le a\\le n$ and columns by $1\\le r\\le n$,",
+      "after": "\n\\begin{lemma}\nWith rows indexed by $1\\le a\\le n$ and columns by $1\\le r\\le n$,"
+    },
+    {
+      "id": "finite-columns",
+      "before": "\\subsection{The finite column matrices}\n\n",
+      "after": "We now assemble the columns for the seven cases using these foldings.\n"
+    },
+    {
+      "id": "transfer",
+      "before": "\\subsection{The normalized transfer}\n\n",
+      "after": "We use the following complementary-minor identity to transfer the\nfinite representations to determinants of order $k$.\n\n"
+    },
+    {
+      "id": "coefficient-kernels",
+      "before": "\\subsection{Three coefficient kernels}\n\n",
+      "after": "We begin with the three coefficient kernels and their complementary\nminors.\n"
+    },
+    {
+      "id": "folding-and-unfolding",
+      "before": "\\subsection{Folding and finite unfolding}\n\nWe will fold scalar sequences $b_j(m)$, $m\\in\\Z$, into affine\nmatrices.  The three conventions are\n",
+      "after": "For the affine kernels, we fold scalar sequences $b_j(m)$, $m\\in\\Z$,\ninto matrices using the following three conventions.\n"
+    },
+    {
+      "id": "ordinary-unshifted",
+      "before": "\n\n\\subsection{The pair \\texorpdfstring{$C_0$ and $BC$}{C0 and BC}}\n\n",
+      "after": "\nWe first treat $C_0$ and $BC$ together.\n\n"
+    },
+    {
+      "id": "ordinary-shifted",
+      "before": "\\subsection{The pair \\texorpdfstring{$B_0$ and $B_-$}{B0 and B-}}\n\n",
+      "after": "For $B_0$ and $B_-$, we use the shifted folding and its\ncorresponding reflection.\n\n"
+    },
+    {
+      "id": "fixed-residue",
+      "before": "\n\n\\subsection{The fixed residue in \\texorpdfstring{$C_t$}{Ct}}\n\n",
+      "after": "\nWe begin with the fixed residue in the $C_t$ kernel.\n\n"
+    },
+    {
+      "id": "fixed-center",
+      "before": "\\subsection{The fixed center in \\texorpdfstring{$B_+$}{B+}}\n\nThe sequence used here will also supply the adjacent-residue reflection\nin the next subsection.  For $1\\le j\\le k$, set\n",
+      "after": "For $B_+$, the relevant reflection has a fixed center.\nThe sequence below will also supply the adjacent-residue\nreflection needed for $B_t$.  For $1\\le j\\le k$, set\n"
+    },
+    {
+      "id": "adjacent-residues",
+      "before": "\\subsection{Adjacent residues in \\texorpdfstring{$B_t$}{Bt}}\n\nThis case uses the same coefficient matrix $D^B$ as $B_0$ and $B_-$.\n",
+      "after": "Adjacent residues enter in the remaining case $B_t$, which uses the\nsame coefficient matrix $D^B$ as $B_0$ and $B_-$.\n"
+    },
+    {
+      "id": "empty-rectangle",
+      "before": "\\subsection{The normalized empty rectangle}\n\n",
+      "after": "We first determine the normalized empty-rectangle values directly\nfrom the finite Weyl representation.\n\n"
+    },
+    {
+      "id": "classical-specialization",
+      "before": "\\subsection{The specialization \\texorpdfstring{$t=0$}{t=0}}\n\nThe classical rectangular dual Jacobi--Trudi formulas are recovered in\nthree finite foldings.  ",
+      "after": "At $t=0$, the three finite foldings recover the classical rectangular\ndual Jacobi--Trudi formulas.  "
+    }
+  ]
+}

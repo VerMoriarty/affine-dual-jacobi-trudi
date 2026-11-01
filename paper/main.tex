@@ -88,6 +88,17 @@ the $t=1$ specializations (1.6a) and (1.8)
 $q,t$-Rogers--Ramanujan identities developed there use the classical-type
 formulas proved here.
 
+% GITHUB-EDITION:RELATEDWORK-BEGIN
+Fischer, Gangl, Guti\'errez and Kumari~\cite{FGGK2026}
+have proved these six identities for positive width using character
+expansions and the classical dual Jacobi--Trudi identities.
+Our proof was obtained independently and proceeds directly from
+finite Weyl determinants to affine determinant sums through a
+normalized complementary-minor transfer.\footnote{An earlier
+version of this manuscript was completed in September 2026.
+Work on its Lean formalization began on 3 October 2026.}
+
+% GITHUB-EDITION:RELATEDWORK-END
 For $x=(x_1,\ldots,x_n)$, define
 \begin{equation}\label{eq:elementary}
 \begin{aligned}
@@ -258,14 +269,13 @@ that expression to
  \qquad u_a=x_a^{\eta_a}.
 \end{equation}
 
-\subsection{Alternants and finite foldings}
-
+To turn the sign sum \eqref{eq:signsum} into finite determinant
+representations, we begin with three alternants.
 Write $N_t(z)=\prod_{a<b}(z_a-z_b)(1-tz_az_b)$ and put
 \[
  f_1(z)=z^{n-1},\qquad
  f_r(z)=z^{n-r}+t^{r-1}z^{n+r-2}\quad(2\le r\le n).
 \]
-The finite numerator calculations reduce to three alternants.
 
 \begin{lemma}
 With rows indexed by $1\le a\le n$ and columns by $1\le r\le n$,
@@ -339,8 +349,7 @@ $\ph_r/(z-z^{-1})$, $\ps_r/(z-1)$, and $\chi_r$ are monic
 polynomials of degree $r-1$.  Inversion of a row multiplies the three
 denominators by $-1$, $-z^{-1}$, and $1$, respectively.
 
-\subsection{The finite column matrices}
-
+We now assemble the columns for the seven cases using these foldings.
 For $\diamond\in\{C,B,+\}$, define
 \[
 \begin{aligned}
@@ -437,7 +446,8 @@ Subsets are always ordered increasingly.  A subscript on an
 $n\times L$ matrix selects columns; on a matrix with $L$ rows it
 selects rows.
 
-\subsection{The normalized transfer}
+We use the following complementary-minor identity to transfer the
+finite representations to determinants of order $k$.
 
 \begin{theorem}
 Let $F$ be a field, and let $X\in F^{n\times L}$,
@@ -495,8 +505,8 @@ give the single normalization formula
 \end{equation}
 Only the two indicated minors are needed in each application.
 
-\subsection{Three coefficient kernels}
-
+We begin with the three coefficient kernels and their complementary
+minors.
 Palindromicity gives
 \begin{equation}\label{eq:coefficient-reflections}
  \Lambda_i(-m)=-\Lambda_i(m),\qquad
@@ -550,10 +560,8 @@ $(-1)^{n+r}$; the third has the same diagonal except that its first
 entry is $2(-1)^{n+1}$, giving the stated minors.
 \end{proof}
 
-\subsection{Folding and finite unfolding}
-
-We will fold scalar sequences $b_j(m)$, $m\in\Z$, into affine
-matrices.  The three conventions are
+For the affine kernels, we fold scalar sequences $b_j(m)$, $m\in\Z$,
+into matrices using the following three conventions.
 \begin{align}
  \mathcal C^C(b)_{p,j}&=b_j(p)-b_j(-p),\notag\\
  \mathcal C^B(b)_{p,j}&=(-1)^p\bigl(b_j(p)+b_j(1-p)\bigr),
@@ -624,8 +632,7 @@ relations will be proved in the corresponding rational function fields.
 Four specializations have no doubled complementary block.  The two
 unshifted foldings share one reflection, and the two shifted foldings
 share another.
-
-\subsection{The pair \texorpdfstring{$C_0$ and $BC$}{C0 and BC}}
+We first treat $C_0$ and $BC$ together.
 
 \begin{proposition}
 Equations~\eqref{eq:main-C0} and~\eqref{eq:main-BC} hold for $n,k\ge1$.
@@ -682,7 +689,8 @@ Since $\det D^C_J=\zeta=(-1)^{nk}\omega$,
 Finite row multilinearity proves the two identities.
 \end{proof}
 
-\subsection{The pair \texorpdfstring{$B_0$ and $B_-$}{B0 and B-}}
+For $B_0$ and $B_-$, we use the shifted folding and its
+corresponding reflection.
 
 \begin{proposition}
 Equations~\eqref{eq:main-B0} and~\eqref{eq:main-Bminus} hold for $n,k\ge1$.
@@ -744,8 +752,7 @@ identities.
 The remaining cases have one doubled complementary minor.  We treat
 separately its three sources: a fixed residue, a fixed center, and the
 overlap of adjacent residues.
-
-\subsection{The fixed residue in \texorpdfstring{$C_t$}{Ct}}
+We begin with the fixed residue in the $C_t$ kernel.
 
 \begin{proposition}
 Equation~\eqref{eq:main-Ct} holds for $n,k\ge1$.
@@ -806,10 +813,9 @@ the last column of $A^+$ zero.  The parity projection therefore equals
 $\tfrac12\det A^-$, proving the identity.
 \end{proof}
 
-\subsection{The fixed center in \texorpdfstring{$B_+$}{B+}}
-
-The sequence used here will also supply the adjacent-residue reflection
-in the next subsection.  For $1\le j\le k$, set
+For $B_+$, the relevant reflection has a fixed center.
+The sequence below will also supply the adjacent-residue
+reflection needed for $B_t$.  For $1\le j\le k$, set
 \begin{equation}\label{eq:Bplus-sequence}
 \begin{aligned}
  b_j(m)&=
@@ -884,9 +890,8 @@ now gives $P^{B_+}_{n,k}=\tfrac12\det A^{B_+}$, and finite row
 multilinearity proves the result.
 \end{proof}
 
-\subsection{Adjacent residues in \texorpdfstring{$B_t$}{Bt}}
-
-This case uses the same coefficient matrix $D^B$ as $B_0$ and $B_-$.
+Adjacent residues enter in the remaining case $B_t$, which uses the
+same coefficient matrix $D^B$ as $B_0$ and $B_-$.
 Its different row kernel satisfies
 $\widehat h_i(m)=h_i(m)+h_i(m-1)$, directly from
 $\ddote_r=\dote_r+\dote_{r-1}$.
@@ -977,7 +982,8 @@ finite multilinearity proves Theorem~\ref{thm:B}.
 
 \section{Width zero and classical specializations}\label{sec:boundary}
 
-\subsection{The normalized empty rectangle}
+We first determine the normalized empty-rectangle values directly
+from the finite Weyl representation.
 
 \begin{proposition}
 For every $n\ge1$, all seven normalized width-zero values are $1$.
@@ -1031,10 +1037,8 @@ removable singularities of the displayed normalization factors are
 understood after cancellation.  In particular, the conclusion does not
 require a nonvanishing numerical value of every Pochhammer factor.
 
-\subsection{The specialization \texorpdfstring{$t=0$}{t=0}}
-
-The classical rectangular dual Jacobi--Trudi formulas are recovered in
-three finite foldings.  They are the symplectic and orthogonal
+At $t=0$, the three finite foldings recover the classical rectangular
+dual Jacobi--Trudi formulas.  They are the symplectic and orthogonal
 determinants in \cite[Theorem~2.1]{AlbionEtAl2024}; see also the
 lattice-path proofs in \cite{FulmekKrattenthaler1997}.
 
@@ -1086,7 +1090,18 @@ theorem correspondence, and verification instructions are available at
 \noindent\textbf{AI use declaration.}
 This Lean 4 formalization was developed by Hangzhou Logicon AI Studio, with AI assistance from OpenAI Codex (GPT-6.1 Sol), under human supervision and review.
 
-Artificial intelligence was used to assist in exploring proof strategies and developing preliminary code for numerical experiments. All results were independently verified by the authors. The authors assume responsibility for all content.
+The idea of adapting Aitken's complementary-minor method for
+symmetric-function duality to the identities studied here emerged
+through repeated discussions between the authors and OpenAI's
+GPT-5.6 Pro. After an initial case had been established, GPT
+used this method to derive the corresponding identities for all
+the remaining types treated in this paper. AI assistance was also
+used to substantially condense and restructure the manuscript and
+to develop preliminary code for numerical experiments.
+
+The present version was additionally checked using GPT-6.1 Sol.
+The authors independently checked the mathematical arguments and
+results and take full responsibility for the content of the paper.
 \medskip
 % GITHUB-EDITION:DISCLOSURE-END
 \Needspace{30\baselineskip}
@@ -1138,6 +1153,14 @@ S.~Ole Warnaar,
 SIGMA \textbf{22} (2026), 062, 50 pages,
 \texttt{doi:10.3842/SIGMA.2026.062}; arXiv:2511.17034v2.
 
+% GITHUB-EDITION:RELATEDREFERENCE-BEGIN
+\bibitem{FGGK2026}
+I.~Fischer, M.~Gangl, \'A.~Guti\'errez and N.~Kumari,
+\emph{Character expansions and affine Jacobi--Trudi identities},
+arXiv:2610.08500v1 (2026).
+
+
+% GITHUB-EDITION:RELATEDREFERENCE-END
 \end{thebibliography}
 
 \end{document}

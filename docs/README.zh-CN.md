@@ -2,7 +2,11 @@
 
 本仓库提供论文 *Affine Dual Jacobi–Trudi Identities for Classical Hall–Littlewood Polynomials via Complementary Minors* 的 Lean 4 形式化与复现材料。论文作者为 **Helen W. J. Zhang、Chengdong Zhao**；形式化开发者为 **Hangzhou Logicon AI Studio**。
 
-[论文 PDF](../paper/paper.pdf) · [LaTeX 源文件](../paper/main.tex) · [英文主说明](../README.md) · [完整复现说明与命题对应表](REPRODUCIBILITY.md) · [引用信息](../CITATION.cff)
+[论文 PDF](../paper/paper.pdf) · [LaTeX 源文件](../paper/main.tex) · [投稿压缩包](../paper/affine-dual-jt-submission-final.zip) · [论文发行版](https://github.com/VerMoriarty/affine-dual-jacobi-trudi/releases/tag/paper-20261101) · [英文主说明](../README.md) · [完整复现说明与命题对应表](REPRODUCIBILITY.md) · [引用信息](../CITATION.cff)
+
+`main` 分支的 [论文目录](../paper/)提供当前 **16 页投稿稿件**，论文发行标识为 `paper-20261101`。本版补引 [Fischer–Gangl–Gutiérrez–Kumari 的 arXiv:2610.08500](https://arxiv.org/abs/2610.08500)，说明六个正宽恒等式的已有证明与本文独立互补子式证明的路线差异；同时纳入作者的研究时间注记和更新后的 AI 声明，采用六个主节、不设 subsection。数学命题与证明保持不变。[投稿压缩包](../paper/affine-dual-jt-submission-final.zip)仅包含完整单文件 TeX 和 PDF；[校验清单](../paper/SHA256SUMS.txt)记录了这两个文件及压缩包的哈希。
+
+[形式化冻结发行版 `fidelity-20261031`](https://github.com/VerMoriarty/affine-dual-jacobi-trudi/releases/tag/fidelity-20261031)所附论文为历史版本，其已发布文件和冻结 Lean 材料与当前稿件分别保留。
 
 本[仓库](https://github.com/VerMoriarty/affine-dual-jacobi-trudi)提供论文、Lean 证明与复现材料。冻结版本为 `fidelity-20261031`，软件版本为 `0.2.0-rc3`；论文引用的形式化代码固定在[此提交](https://github.com/VerMoriarty/affine-dual-jacobi-trudi/tree/7d58ee5913d67d8036991a5a363260f24f0625bf)。本地完整复验 `github-preparation-20261101` 已通过；该结果来自本地主机，不是 GitHub Actions 通过记录。
 

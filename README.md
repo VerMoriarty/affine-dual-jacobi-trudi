@@ -2,7 +2,11 @@
 
 Lean 4 proofs and reproducibility materials for **Affine Dual Jacobi–Trudi Identities for Classical Hall–Littlewood Polynomials via Complementary Minors**, by **Helen W. J. Zhang** and **Chengdong Zhao**. The Lean formalization was developed by **Hangzhou Logicon AI Studio**.
 
-[Paper PDF](paper/paper.pdf) · [LaTeX source](paper/main.tex) · [中文简版](docs/README.zh-CN.md) · [Reproduction and mathematical scope](docs/REPRODUCIBILITY.md) · [Citation metadata](CITATION.cff)
+[Paper PDF](paper/paper.pdf) · [LaTeX source](paper/main.tex) · [Submission ZIP](paper/affine-dual-jt-submission-final.zip) · [Paper release](https://github.com/VerMoriarty/affine-dual-jacobi-trudi/releases/tag/paper-20261101) · [中文简版](docs/README.zh-CN.md) · [Reproduction and mathematical scope](docs/REPRODUCIBILITY.md) · [Citation metadata](CITATION.cff)
+
+The current [paper files](paper/) on `main` contain the **16-page submission manuscript**, identified by the paper release `paper-20261101`. This edition cites [Fischer–Gangl–Gutiérrez–Kumari, arXiv:2610.08500](https://arxiv.org/abs/2610.08500) for the six positive-width identities and explains the independent complementary-minor proof route. It includes the authors' chronology note and updated AI disclosure, and uses six main sections without subsections. The mathematical statements and proofs are unchanged. The [submission ZIP](paper/affine-dual-jt-submission-final.zip) contains exactly the standalone TeX and PDF; [checksums](paper/SHA256SUMS.txt) bind these files and the ZIP.
+
+The paper bundled with the [frozen formalization release `fidelity-20261031`](https://github.com/VerMoriarty/affine-dual-jacobi-trudi/releases/tag/fidelity-20261031) is a historical edition. Its published files and the frozen Lean artifacts are retained separately from the current manuscript.
 
 This [repository](https://github.com/VerMoriarty/affine-dual-jacobi-trudi) provides the paper, Lean proofs, and reproducibility materials. Its frozen formalization release is `fidelity-20261031`, software version `0.2.0-rc3`; [the fixed code commit](https://github.com/VerMoriarty/affine-dual-jacobi-trudi/tree/7d58ee5913d67d8036991a5a363260f24f0625bf) identifies the formalization referenced by the paper. The complete local run `github-preparation-20261101` passed. This is local verification evidence, not a GitHub Actions result.
 

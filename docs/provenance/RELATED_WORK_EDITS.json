@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "before_tex_sha256": "d857b99bb3432aaa18d789dad80274baf3c7c5c2d3ab321ad54e35b4c7f32e22",
+  "after_tex_sha256": "99daa6015835f1fead3e040805d57c2ce0ecaddd163f505f1410fc99c129826a",
+  "inverse_without_added_blocks_equals_previous_tex": true,
+  "frozen_source_sha256": "4141e8fa7c8fc8d7499b1d10bb77fcc1440d229169f44610709ebaf8968a5a19",
+  "frozen_source_recovery_pass": true,
+  "related_work_block": "Fischer, Gangl, Guti\\'errez and Kumari~\\cite{FGGK2026}\nhave proved these six identities for positive width using character\nexpansions and the classical dual Jacobi--Trudi identities.\nOur proof was obtained independently and proceeds directly from\nfinite Weyl determinants to affine determinant sums through a\nnormalized complementary-minor transfer.\\footnote{An earlier\nversion of this manuscript was completed in September 2026.\nWork on its Lean formalization began on 3 October 2026.}\n",
+  "bibliography_addition": "\\bibitem{FGGK2026}\nI.~Fischer, M.~Gangl, \\'A.~Guti\\'errez and N.~Kumari,\n\\emph{Character expansions and affine Jacobi--Trudi identities},\narXiv:2610.08500v1 (2026).\n\n",
+  "narrative_rewrites_preserved": true,
+  "research_sources": [
+    "https://arxiv.org/abs/2610.08500",
+    "https://arxiv.org/html/2610.08500v1"
+  ],
+  "chronology_source": "User-confirmed research chronology; completion of an earlier manuscript in September 2026 and start of formalization on 3 October 2026, not a certification of public priority."
+}

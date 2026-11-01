@@ -1,45 +1,290 @@
 {
-  "schema_version": 1,
+  "schema_version": 4,
+  "edition": "submission-final-related-work-and-chronology",
+  "checked_at": "2026-11-01T02:31:20.190763+00:00",
+  "status": "pass",
   "automated_status": "pass",
   "visual_status": "pass",
+  "independent_math_review_status": "pass",
   "pages": 16,
   "code_commit": "7d58ee5913d67d8036991a5a363260f24f0625bf",
   "code_permalink": "https://github.com/VerMoriarty/affine-dual-jacobi-trudi/tree/7d58ee5913d67d8036991a5a363260f24f0625bf",
-  "tex_sha256": "a0d75e665e618ddc03af77d686a1517749d369931f1366e0672c5713951246d3",
-  "pdf_sha256": "c5ba2805793beecc1258c2a8487d11eeef4f9beec4cd33c469aa308e364d75f4",
+  "tex_sha256": "99daa6015835f1fead3e040805d57c2ce0ecaddd163f505f1410fc99c129826a",
+  "pdf_sha256": "ca40a9a3413f01a07b89e0dc3cf07514614e05add4310a5e138419ae657a9302",
+  "previous_tex_sha256": "d857b99bb3432aaa18d789dad80274baf3c7c5c2d3ab321ad54e35b4c7f32e22",
+  "previous_pdf_sha256": "75a30099c660ddf01f6114fe7635747cb1a1d183ad79c2d6c12342255f5a4da8",
+  "previous_validation_record": "docs/provenance/history/submission-continuous-narrative/PAPER_PUBLICATION.json",
+  "only_approved_related_work_and_reference_blocks_added": true,
+  "related_work_paragraph_matches_approved_text": true,
+  "new_reference_key": "FGGK2026",
+  "new_reference_number": 8,
+  "bibliography_entries": 8,
+  "original_seven_references_and_numbers_preserved": true,
+  "chronology_source": "User-confirmed research chronology; completion of an earlier manuscript in September 2026 and start of formalization on 3 October 2026, not a certification of public priority.",
+  "subsections_removed": 12,
+  "six_main_sections_preserved": true,
+  "no_hierarchical_subheadings": true,
+  "pdf_outline_only_six_main_sections": true,
   "frozen_math_source_recovers_byte_for_byte": true,
+  "mathematical_fragments_comparison": {
+    "results": {
+      "count": 16,
+      "byte_identical": true,
+      "sha256": "6090f209a8cc8441872bb8c7018ac735038145220df23fb200f7c0b05f49b03a"
+    },
+    "proofs": {
+      "count": 14,
+      "byte_identical": true,
+      "sha256": "23a997835b9cc1bd8e15ac2bdeeb547e9fe35de954803f939eda2b8f853fcc66"
+    },
+    "display_math": {
+      "count": 64,
+      "byte_identical": true,
+      "sha256": "7b3c358c194b9d731c851e3d6123922dd4f66357999c4ffc51a2cb656cf56fbb"
+    },
+    "tables": {
+      "count": 3,
+      "byte_identical": true,
+      "sha256": "f06429428d612da54a82784e0863528fa7f9dca3ba4b61c2df299f685acd7ab6"
+    }
+  },
+  "display_math_extraction_correction": "The literal display delimiters exclude a preceding backslash, so author line-spacing commands are not mistaken for math delimiters. The correct count is 64 in both editions; earlier 63-count reports merged the first two mathematical displays. This correction does not indicate a mathematical change.",
   "original_labels_preserved": 43,
-  "original_reference_numbers_preserved": 7,
-  "ai_paragraphs_preserved": true,
-  "only_changed_rendered_pages": [
-    15
-  ],
-  "pages_pixel_identical_to_previously_reviewed_edition": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    16
-  ],
-  "previous_pdf_sha256": "796308c43a7fb85d927cba0ef4b073ea3670033d42a5422a8b7fb1f3c032495b",
+  "label_numbers_unchanged_allowing_page_reflow": true,
+  "approved_ai_paragraphs_exact_in_tex": true,
+  "approved_ai_paragraphs_present_in_pdf": true,
+  "research_model": "OpenAI's GPT-5.6 Pro",
+  "author_block_and_pdf_author_preserved": true,
+  "lean_and_ai_disclosure_block_byte_identical": true,
+  "pdf_hyperlink_target_verified": true,
+  "new_citation_and_footnote_named_destinations_verified": true,
+  "clean_standalone_compilation": {
+    "runs": [
+      {
+        "command": [
+          "/Users/bigbigcats/texlive/current/bin/universal-darwin/pdflatex",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "-file-line-error",
+          "main.tex"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "/Users/bigbigcats/texlive/current/bin/universal-darwin/pdflatex",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "-file-line-error",
+          "main.tex"
+        ],
+        "exit_code": 0
+      }
+    ],
+    "clean_directory": true
+  },
+  "compilation_directory": "build/paper/standalone-vm0396gh",
   "latex_diagnostics": "No overfull/underfull boxes, missing characters, unresolved references or LaTeX warnings.",
-  "desktop_editor_compile": "success",
-  "status": "pass",
-  "visual_review": {
-    "reviewed_changed_page": 15,
-    "method": "Coordinator inspected full rendered page 15. The other 15 pages are pixel-identical to the previously individually reviewed 16-page edition.",
-    "changed_page_png_sha256": "36ecfa4a6ac2706e620183f3dd35b901168dab7d909e3012e390bfd8900cc78e",
+  "fonts": {
+    "/NIFBQA+LMRoman17-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/WWJZHW+LMRoman12-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/XZXWOD+LMRoman10-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/CVBPUK+LMRoman8-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/NIYQVH+LMMono10-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/LRBAHR+LMRoman10-Bold": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/OARVIB+LMMathItalic10-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/NPQFTB+LMMathItalic8-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/RMRALS+LMRoman12-Bold": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/YFYYQK+LMMathItalic12-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/NONQNL+LMRoman7-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/LESUDY+LMMathExtension10-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/FZNFIS+LMMathSymbols8-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/BMCXUP+LMMathSymbols10-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/JLSBFK+MSBM10": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/VIJWNX+EUFM10": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/GPXBYJ+LMRoman6-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/TCVBZP+LMMathItalic6-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/QMQGOJ+LMRoman12-Italic": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/RYEVFW+LMSans8-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/NZMZMR+LMMono12-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    }
+  },
+  "all_fonts_embedded": true,
+  "type3_fonts_absent": true,
+  "frozen_source_archives_and_projection_bytes_check": "pass",
+  "lean_recompiled_for_editorial_only_revision": false,
+  "remote_github_release_modified": false,
+  "disclosure_facts_source": "User-provided account of AI use and author checks; not an independent reconstruction of historical conversations.",
+  "static_independent_review": {
+    "reviewer": "/root/related_work_final_review",
+    "status": "pass",
+    "tex_sha256": "99daa6015835f1fead3e040805d57c2ce0ecaddd163f505f1410fc99c129826a",
+    "pdf_sha256": "ca40a9a3413f01a07b89e0dc3cf07514614e05add4310a5e138419ae657a9302",
     "unresolved_findings": []
   },
-  "pdf_hyperlink_target_verified": true
+  "visual_review": {
+    "status": "pass",
+    "render_dpi": 120,
+    "reviewed_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "reviewers": [
+      {
+        "reviewer": "/root",
+        "pages": [
+          1,
+          15,
+          16
+        ],
+        "method": "Each full rendered page inspected using view_image",
+        "result": "pass"
+      },
+      {
+        "reviewer": "/root/related_visual_first",
+        "pages": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "method": "Each full rendered page inspected using view_image",
+        "result": "pass"
+      },
+      {
+        "reviewer": "/root/related_visual_second",
+        "pages": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "method": "Each full rendered page inspected using view_image",
+        "result": "pass"
+      }
+    ],
+    "page_png_sha256": {
+      "1": "773c7d9bd0c4b3d518821926b35efaa788c69f5f527c9e52ec150d2bc326ad14",
+      "2": "f78a5c7e78ed7a577d45e9826a08bc58b3858e79377e759a6883d2f6587fdf7e",
+      "3": "7d06eb5fb1dcbaab5e81adf7242dd1989a222d5d55346fec68e0d1e47850a487",
+      "4": "c77c830091be3fa83e5051c7919d83390a878ab9f2941c428349922475b60dd3",
+      "5": "08c56614676367b3423f061164f870b3f8771b11e55b37ac55218cadd0d29d50",
+      "6": "384abb94d63a7fbf988953a5abc0148da6261924c2c5b2451a870f9aa33f312c",
+      "7": "c44ce7a1d80ce7f154e8fab504ce0230597d2bbb30eb439960030f3cd011aafc",
+      "8": "a1cf64f6644386be04a9497fa6660593821f43584aa3eb22f8dc0b009716b75a",
+      "9": "332a367a8c9f0904baf8b60ed6687ecf91a6b7ac8635ee0dd58b66f833745896",
+      "10": "48c6610baac8c712c0edad77e68f9105ec8b864cea5bebde9aaa8a704d7164cf",
+      "11": "c3f8b8c5ebfdff94fe7908c59e07789b82be636022419d8a50c566e85de61c03",
+      "12": "72c575959c5d4996f2590c20e3dc2e1abcad64f4fa00c08c96cd93f1d4ee438c",
+      "13": "de64881eee8761ad58a433b7b172a966c487cc1cb5eb5a429b18fbcb30f529e6",
+      "14": "95a13158a0be050e08d198ef5398ced4e4ea4150d4934f57480b853d2d668506",
+      "15": "50a15341f2e327c7f79897efb0904fe705ac574d73cd252945235703cfe9d4c8",
+      "16": "cd0b2f83a8fc1d2ed865e0133d6bc6e936f7c8c8cc6e2676258718af05afbfdc"
+    },
+    "unresolved_findings": []
+  },
+  "generator_sha256": "c2f938ff6d377e770135626962edee3ae987c5f08d91722d97c52c7080e5717f",
+  "editorial_registries": [
+    {
+      "path": "docs/provenance/NARRATIVE_EDITS.json",
+      "phase": "Previously completed subsection removal",
+      "sha256": "1a58e4a1361446f926387e2fc9be607035fc28a0ec99d5202310bb4a85d63a8e"
+    },
+    {
+      "path": "docs/provenance/RELATED_WORK_EDITS.json",
+      "phase": "Current related-work and chronology addition",
+      "sha256": "577aa6176d5c0584f428473b0e02e342117934d49355c05220fd6578b62caed7"
+    }
+  ],
+  "submission_package": {
+    "path": "paper/affine-dual-jt-submission-final.zip",
+    "sha256": "fab58201ebd790fc5958dce2c0144960f6d1a133e6da15e54643bcd320cc89b5",
+    "bytes": 436250,
+    "members": [
+      "main.tex",
+      "paper.pdf"
+    ],
+    "members_equal_final_deliverables": true
+  }
 }

@@ -1,0 +1,266 @@
+{
+  "schema_version": 2,
+  "edition": "submission-final-ai-pro",
+  "checked_at": "2026-11-01T01:48:34.499683+00:00",
+  "automated_status": "pass",
+  "visual_status": "pass",
+  "status": "pass",
+  "pages": 16,
+  "code_commit": "7d58ee5913d67d8036991a5a363260f24f0625bf",
+  "code_permalink": "https://github.com/VerMoriarty/affine-dual-jacobi-trudi/tree/7d58ee5913d67d8036991a5a363260f24f0625bf",
+  "tex_sha256": "d0c3df02729d78de50080a0dc944c5df11ee6300cc12622acca08fcea0970122",
+  "pdf_sha256": "44492f4ba956d5539aa74fa75f8dbaf43a9027344bff8b14d2d7b873a209731b",
+  "frozen_math_source_recovers_byte_for_byte": true,
+  "original_labels_preserved": 43,
+  "original_reference_numbers_preserved": 7,
+  "auxiliary_labels_and_bibliography_equal_previous_edition": true,
+  "approved_ai_paragraphs_exact_in_tex": true,
+  "approved_ai_paragraphs_present_in_pdf": true,
+  "research_model": "OpenAI's GPT-5.6 Pro",
+  "author_block_and_pdf_author_preserved": true,
+  "lean_paragraph_and_fixed_link_preserved": true,
+  "pdf_hyperlink_target_verified": true,
+  "code_permalink_public_access": "pass",
+  "clean_standalone_compilation": {
+    "runs": [
+      {
+        "command": [
+          "/Users/bigbigcats/texlive/current/bin/universal-darwin/pdflatex",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "-file-line-error",
+          "main.tex"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "/Users/bigbigcats/texlive/current/bin/universal-darwin/pdflatex",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "-file-line-error",
+          "main.tex"
+        ],
+        "exit_code": 0
+      }
+    ],
+    "clean_directory": true
+  },
+  "compilation_directory": "build/paper/standalone-6m7rhgu3",
+  "latex_diagnostics": "No overfull/underfull boxes, missing characters, unresolved references or LaTeX warnings.",
+  "fonts": {
+    "/NIFBQA+LMRoman17-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/EOQEXO+LMRoman12-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/EFFZYI+LMRoman10-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/CVBPUK+LMRoman8-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/NIYQVH+LMMono10-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/LRBAHR+LMRoman10-Bold": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/OARVIB+LMMathItalic10-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/NPQFTB+LMMathItalic8-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/EIPKRT+LMRoman12-Bold": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/YFYYQK+LMMathItalic12-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/LESUDY+LMMathExtension10-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/FZNFIS+LMMathSymbols8-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/BMCXUP+LMMathSymbols10-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/JLSBFK+MSBM10": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/VIJWNX+EUFM10": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/GPXBYJ+LMRoman6-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/TCVBZP+LMMathItalic6-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/QMQGOJ+LMRoman12-Italic": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/RYEVFW+LMSans8-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    },
+    "/NZMZMR+LMMono12-Regular": {
+      "embedded": true,
+      "subtype": "/Type1"
+    }
+  },
+  "all_fonts_embedded": true,
+  "type3_fonts_absent": true,
+  "previous_pdf_sha256": "c5ba2805793beecc1258c2a8487d11eeef4f9beec4cd33c469aa308e364d75f4",
+  "previous_validation_record": "docs/provenance/history/publication-9846dc3/PAPER_PUBLICATION.json",
+  "disclosure_facts_source": "User-provided account of AI use and author checks; not an independent reconstruction of historical conversations.",
+  "only_changed_rendered_pages": [
+    15
+  ],
+  "pages_pixel_identical_to_previous_edition": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    16
+  ],
+  "static_independent_review": {
+    "reviewer": "/root/submission_static_review",
+    "status": "pass",
+    "source_bound_by_tex_sha256": "d0c3df02729d78de50080a0dc944c5df11ee6300cc12622acca08fcea0970122",
+    "checks": [
+      "Approved disclosure exact after whitespace normalization",
+      "Generator paragraphs match generated TeX",
+      "Previous generic disclosure, Thinking and pending text absent",
+      "Only AI prose changed relative to published paper",
+      "Author block, Lean paragraph and fixed code commit unchanged",
+      "Independent source recovery byte-for-byte",
+      "43 labels, seven bibliography entries and 16 result environments preserved"
+    ],
+    "lean_recompiled": false
+  },
+  "visual_review": {
+    "status": "pass",
+    "render_dpi": 120,
+    "reviewed_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "reviewers": [
+      {
+        "reviewer": "/root/submission_visual_first",
+        "pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "method": "Each page PNG inspected using view_image",
+        "result": "pass"
+      },
+      {
+        "reviewer": "/root/submission_visual_second",
+        "pages": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "method": "Each page PNG inspected using view_image",
+        "result": "pass"
+      },
+      {
+        "reviewer": "/root",
+        "pages": [
+          15,
+          16
+        ],
+        "method": "Full rendered pages inspected; complete AI declaration, fixed URL and seven references fit cleanly",
+        "result": "pass"
+      }
+    ],
+    "page_png_sha256": {
+      "1": "caf5cdaa99d1e88f2c9d058782679f937c783079abb36fb8d3b6c6fb649f6e85",
+      "2": "f31a15e75aed820927c6ab6270fcfdd507d92ccf2641eb593273a1ddb93a96b3",
+      "3": "ce76ab093905799a1927b86c50b94a064465c1a4eb459d3fa3f2f7bbfa020ced",
+      "4": "133e155a0534d73e994c7e693545f41f65f46492d6475213719e82d3a8be5591",
+      "5": "566ce65c16a307f6bc89d93ad656742a07b442fec0d0a1f23d1ab689a79451a0",
+      "6": "b148f0c428f69c4e2ea9360d9224c7c2122874fac7ab21155813db3b65b5ed37",
+      "7": "c0fcc7520c1c6d3b0c4d4f9472c51338292f46065bbb749c165275aa4713cd06",
+      "8": "14eea981df6116ccee6997a2742e3c961818dd53be6245c615fc66754e909937",
+      "9": "829c77e9bc8f9b8bf06cb4899b36f4bc27c42d300d87dbe9215212e827e8318a",
+      "10": "3d4d9ca983c3989a62b3d6a0ea462a83674e8972a9260388532323215369879a",
+      "11": "457057372ee2634fb2229bacc35f638414830c0310a1a19f673d67fa5a0ea28e",
+      "12": "b697d6fd5c6676bd9513dc00ee64282c4fc72c63fc3b1195320b7561ea4a0e43",
+      "13": "de64881eee8761ad58a433b7b172a966c487cc1cb5eb5a429b18fbcb30f529e6",
+      "14": "63d492f395576b0ee3007bf3d2a0cd0714d86972065078f644050c6ab938e1c2",
+      "15": "50a15341f2e327c7f79897efb0904fe705ac574d73cd252945235703cfe9d4c8",
+      "16": "f9dd8aadea53411c32d053d9b44bd79da176ec73408371c46a857f8099036aff"
+    },
+    "unresolved_findings": []
+  },
+  "submission_package": {
+    "path": "paper/affine-dual-jt-submission-final.zip",
+    "sha256": "64d516bf6b2e0fe70d0dad6f7478240998b5711aa37c020866857dc7c4b3146f",
+    "bytes": 415955,
+    "members": [
+      "main.tex",
+      "paper.pdf"
+    ],
+    "members_equal_final_deliverables": true
+  },
+  "frozen_source_archives_and_projection_bytes_check": "pass",
+  "lean_recompiled_for_disclosure_only_revision": false,
+  "remote_github_release_modified": false
+}
